@@ -6,9 +6,8 @@ Um das Skript zu benutzen, müsst ihr tweepy (pip install tweepy) installieren.
 ## Usage
 
 python get_tweets.py -h gibt Hilfe zu allen command-line arguments, die das Skript versteht. Das ist die Ausgabe:
-
+```
 usage: get_tweets.py [-h] [-a ATTRIBUTES [ATTRIBUTES ...]] [-f FILENAME]
-
                      [-l LIMIT] [-t TRANSLATOR] [-i TARGET_ID] [-d DELIMITER]
                      [--force] [--overwrite]
                      target
@@ -49,7 +48,7 @@ optional arguments:
                         default delimiter (;) will be used.
   --force               Force to fetch all Tweets until the limit.
   --overwrite           Overwrite the given file, if it exists already
-  
+  ```
   ## Take care
   
   Das Limit liegt default bei 2000, mehr gibt die API in einem Aufruf eh nicht her. Wollt ihr mehr Tweets haben, 
