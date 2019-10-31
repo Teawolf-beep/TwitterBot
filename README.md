@@ -6,7 +6,9 @@ Um das Skript zu benutzen, müsst ihr tweepy (pip install tweepy) installieren.
 ## Usage
 
 python get_tweets.py -h gibt Hilfe zu allen command-line arguments, die das Skript versteht. Das ist die Ausgabe:
+
 usage: get_tweets.py [-h] [-a ATTRIBUTES [ATTRIBUTES ...]] [-f FILENAME]
+
                      [-l LIMIT] [-t TRANSLATOR] [-i TARGET_ID] [-d DELIMITER]
                      [--force] [--overwrite]
                      target
