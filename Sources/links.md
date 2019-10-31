@@ -9,7 +9,3 @@ https://arxiv.org/pdf/1808.03867.pdf
 https://arxiv.org/pdf/1507.01526v1.pdf
 
 https://arxiv.org/pdf/1503.04069.pdf
-<<<<<<< HEAD
-=======
-
->>>>>>> Initial commit
