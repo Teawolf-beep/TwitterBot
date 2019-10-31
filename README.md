@@ -61,8 +61,8 @@ optional arguments:
   
   Beispiel: `python get_tweets.py -f tweets.csv -l 500 -i 1189592785311223815 --force`
   
-  Holt 500 Tweets, die eine ID vor 1189592785311223815 haben und speichert sie in tweets.csv. Existiert die Datei,
-  werden die Tweets angehängt, existiert sie nicht, wird eine neue Datei erstellt.
+  Holt die letzten 500 Tweets, die vor dem Tweet mit der ID 1189592785311223815 getweetet wurden und speichert sie in tweets.csv.
+  Existiert die Datei, werden die Tweets angehängt, existiert sie nicht, wird eine neue Datei erstellt.
   
   ## Get limit
   
