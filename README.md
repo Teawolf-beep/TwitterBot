@@ -57,7 +57,7 @@ optional arguments:
   Ich würde immer die --force flag setzen (sollen wir das als default nehmen??), weil der sonst eine beliebige Anzahl Tweets
   holt. Mit dem default Translator werden nur #.,@ übernommen. Andere Sonderzeichen (Außer Emojis) werden entfernt.
   
-  Beispiel: `python get_tweets.py -f tweets.csv -l 500 -i 1189592785311223815 --force`
+  Beispiel: `python get_tweets.py realDonaldTrump -f tweets.csv -l 500 -i 1189592785311223815 --force`
   
   Holt die letzten 500 Tweets, die vor dem Tweet mit der ID 1189592785311223815 getweetet wurden und speichert sie in tweets.csv.
   Existiert die Datei, werden die Tweets angehängt, existiert sie nicht, wird eine neue Datei erstellt.
