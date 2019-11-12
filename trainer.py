@@ -5,7 +5,7 @@ import numpy as np
 # models
 from model.lstm_model import MultiStepLSTM as Mdl
 # datasets
-from dataset.trump_tweets import Tweetsdataset as Dataset
+from dataset.tweets import Tweetdataset as Dataset
 
 class Trainer:
     def __init__(self, config):
@@ -18,8 +18,10 @@ class Trainer:
 
     def train(self, plot=True):
         future_target = 128
+        maxlen = 40
+        step = 1
 
-        train_data, val_data, text, shape = self.data.get_text(future_target=future_target)
+        text, shape = self.data.get_text(maxlen, step, future_target=future_target)
 
         model = self.mdl.get_model(shape, future_target=future_target)
 
