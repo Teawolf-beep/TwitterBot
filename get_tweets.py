@@ -111,7 +111,7 @@ class TweetDumper:
         for tweet in got.manager.TweetManager.getTweets(self.tweet_criteria):
             processed_text = self.preprocess_text(tweet.text)
             if processed_text:
-                rows.append([tweet.date.strftime('%Y-%m-%d %H:%M:%S'), processed_text])
+                rows.append([tweet.date.strftime('%Y-%m-%d %H:%M:%S'), processed_text + ";;"])
 
         with open(self.filename, 'w' if self.make_new_file else 'a') as csv_file:
             csv_writer = csv.writer(csv_file, delimiter=self.delimiter)
@@ -143,10 +143,3 @@ if __name__ == '__main__':
 
     # Run main()
     main()
-
-
-# tweetCriteria = got.manager.TweetCriteria().setUsername("realDonaldTrump").setMaxTweets(5)
-#
-# print(got.manager.TweetManager.getTweets(tweetCriteria)[0].date)
-# print(got.manager.TweetManager.getTweets(tweetCriteria)[1].date)
-# print(got.manager.TweetManager.getTweets(tweetCriteria)[2].date)
