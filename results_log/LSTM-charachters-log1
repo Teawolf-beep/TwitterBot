@@ -1,0 +1,496 @@
+['"crooked hillary clinton} created this mess, and she knows it." #draintheswamp']
+
+CHAR:  ~
+['rt @danscavino: #icymi ~ double digit #gop leader @realdonaldtrumps ۢ speech today in #iowa _ #1 trump @ 28% #2 @s_', '"@destiny: why didnt @seanhannity correct jeb when he said @realdonaldtrump has run 4 president 2x b4~jeb needs 2b corrected b/c he lied."', 'join me in roanoke, virginia tomorrow at the berglund center- coliseum ~ 6pm! tickets available at:_']
+
+CHAR:  ʉ
+['my pro-growth econ plan: eliminate excessive regulations! lean government! lower taxes! #debatesʉ_']
+
+CHAR:  ̱
+['mexico has lost a brilliant finance minister and wonderful man who i know is highly respected by president pe̱a nieto.']
+
+CHAR:  ω
+['via @breitbartnews by steve bannon: ωtime to get tough۪: trump۪s blockbuster policy manifesto\u06dd']
+
+CHAR:  я
+['"@tn_riverfolk: my 2016 vote will b based on #makeamericagreatagain not eminent domainяamericans need 2prioritize']
+
+CHAR:  ӕ
+['fact ӕ on red line\u06dd in syria: hrc "i wasn۪t there." fact: line drawn in aug ۪12. hrc secy of state til feb ۪13.', 'rt @teamtrump: #rattledhillary wants to talk about her 30 years in service. how about her 30 years of flopsӕflops?! #bigleaguetruth #debat_']
+
+CHAR:  ԍ
+['"@ir0nspirit: cant wait for you to take the white house. our country will once again be strong! _ԍ sorry jebbush, but you got no chance!"', '"@bentleyfortrump: @realdonaldtrump all of america loves trump!_ԍ_ԍ #trumpornobody2016 #makeamericagreatagain" thanks!', '"@nathanpaul1975: @realdonaldtrump hollywood doesnt get to pick our presidents we the people do!! go trump!_ԍ_ԍ"']
+
+CHAR:  ԏ
+['"@repalonelori: @realdonaldtrump @kirstiealley we love you and know you will do an awesome job! saw you in bethpage !! _ԏ_ԏ_ԏ" thank you.']
+
+CHAR:  ԡ
+['"@good2bqueen67: .@realdonaldtrump @sandikay60 i enjoyed the speech so much tonight, you were on point _ԡ sir!" thanks.']
+
+CHAR:  լ
+['rt @erictrump: #wisconsin: to find your voting location visit #makeamericagreatagain #trumptrain ___լ_լ______']
+
+CHAR:  ջ
+['rt @darrenjjordan: constructive wins! _ջ @realdonaldtrump @clewandowski_ @danscavino @michaelcohen212 @katrinapierson @defendingtheusa']
+
+CHAR:  ُ
+['rt @linflies: @realdonaldtrump beautiful family! best man for #potus ! __ُ___', '"@plruble58 @realdonaldtrump the numbers are amazing! #gogogo_ُ"', '"@hbtc23: @realdonaldtrump backs down from nobody!! #makeamericagreatagain #trump2016 @steveaustinbsr @wwe __ _٪_ُ']
+
+CHAR:  ٪
+['"@hbtc23: @realdonaldtrump backs down from nobody!! #makeamericagreatagain #trump2016 @steveaustinbsr @wwe __ _٪_']
+
+CHAR:  ۝
+['many super pacs, funded by groups that want total control over their candidate, are being formed to attack\u06dd trump. remember when u see them', 'governments first duty is to protect the people, not run their lives.\u06dd ronald reagan', '.@hillaryclinton : bill clarified\u06dd what he meant when calling obamacare a disaster.\u06dd actually disaster\u06dd is pretty clear. #debate']
+
+CHAR:  ۢ
+['"@outof_3_9_0: ۢۢ you got the the largest rating in history .. that should say all needed about you to @foxnews!', 'join me tomorrow in florida! miamiۢ12pm orlandoۢ4pm pensacolaۢ7p_', 'rt @danscavino: real clear politics ۢ polling data average #1 @realdonaldtrump #2 scott walker #3 jeb bush #4 marco rubio #trump2016']
+
+CHAR:  ۪
+['"@watchman4the1: chuck schumer: sen marco rubio is totally committed to obama۪s immigration agenda donaldtrump', '.@megynkelly recently said that she can۪t be wooed by trump. she is so average in every way, who the hell wants to woo her!', '"clinton foundation۪s fundraisers pressed donors to steer business to former president"']
+total chars: 59
+nb sequences:  472774
+Vectorization...
+X: 
+[[[False False False ... False False False]
+  [False False False ... False False False]
+  [False False False ... False False False]
+  ...
+  [False False False ... False False False]
+  [ True False False ... False False False]
+  [False False False ... False False False]]
+
+ [[False False False ... False False False]
+  [False False False ... False False False]
+  [False False False ... False False False]
+  ...
+  [ True False False ... False False False]
+  [False False False ... False False False]
+  [False False False ... False False False]]
+
+ [[False False False ... False False False]
+  [False False False ... False False False]
+  [False False False ... False  True False]
+  ...
+  [False False False ... False False False]
+  [False False False ... False False False]
+  [ True False False ... False False False]]
+
+ ...
+
+ [[False False False ... False False False]
+  [False False False ... False False False]
+  [False False False ... False False False]
+  ...
+  [ True False False ... False False False]
+  [False False False ... False False False]
+  [False False False ... False False False]]
+
+ [[False False False ... False False False]
+  [False False False ... False False False]
+  [False False False ... False False False]
+  ...
+  [False False False ... False False False]
+  [False False False ... False False False]
+  [False False False ... False False False]]
+
+ [[False False False ... False False False]
+  [False False False ... False False False]
+  [ True False False ... False False False]
+  ...
+  [False False False ... False False False]
+  [False False False ... False False False]
+  [False False False ... False False False]]]
+Y: 
+[[False False False ... False False False]
+ [ True False False ... False False False]
+ [False False False ... False False False]
+ ...
+ [False False False ... False False False]
+ [False False False ... False False False]
+ [False  True False ... False False False]]
+2019-11-25 21:13:30.081221: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2019-11-25 21:13:30.099085: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1006] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2019-11-25 21:13:30.099600: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties: 
+name: GeForce GTX 1080 Ti major: 6 minor: 1 memoryClockRate(GHz): 1.6325
+pciBusID: 0000:01:00.0
+2019-11-25 21:13:30.099735: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2019-11-25 21:13:30.100393: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+2019-11-25 21:13:30.101212: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10.0
+2019-11-25 21:13:30.101383: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10.0
+2019-11-25 21:13:30.102326: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10.0
+2019-11-25 21:13:30.102977: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10.0
+2019-11-25 21:13:30.105096: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2019-11-25 21:13:30.105239: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1006] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2019-11-25 21:13:30.105840: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1006] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2019-11-25 21:13:30.106318: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0
+2019-11-25 21:13:30.106547: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2019-11-25 21:13:30.129974: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 3696000000 Hz
+2019-11-25 21:13:30.132632: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55f6baff8d40 executing computations on platform Host. Devices:
+2019-11-25 21:13:30.132687: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Host, Default Version
+2019-11-25 21:13:30.133652: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1006] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2019-11-25 21:13:30.135809: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties: 
+name: GeForce GTX 1080 Ti major: 6 minor: 1 memoryClockRate(GHz): 1.6325
+pciBusID: 0000:01:00.0
+2019-11-25 21:13:30.135912: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2019-11-25 21:13:30.135964: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+2019-11-25 21:13:30.136010: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10.0
+2019-11-25 21:13:30.136056: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10.0
+2019-11-25 21:13:30.136100: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10.0
+2019-11-25 21:13:30.136144: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10.0
+2019-11-25 21:13:30.136189: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2019-11-25 21:13:30.136422: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1006] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2019-11-25 21:13:30.138709: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1006] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2019-11-25 21:13:30.140775: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0
+2019-11-25 21:13:30.140875: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2019-11-25 21:13:30.221636: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1159] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-11-25 21:13:30.221653: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1165]      0 
+2019-11-25 21:13:30.221657: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 0:   N 
+2019-11-25 21:13:30.221795: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1006] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2019-11-25 21:13:30.222330: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1006] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2019-11-25 21:13:30.222843: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:1006] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2019-11-25 21:13:30.223336: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10301 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:01:00.0, compute capability: 6.1)
+2019-11-25 21:13:30.224460: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55f6bf1539e0 executing computations on platform CUDA. Devices:
+2019-11-25 21:13:30.224468: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): GeForce GTX 1080 Ti, Compute Capability 6.1
+Model: "sequential_1"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+lstm_1 (LSTM)                (None, 40, 128)           96256     
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 40, 128)           0         
+_________________________________________________________________
+lstm_2 (LSTM)                (None, 40, 128)           131584    
+_________________________________________________________________
+lstm_3 (LSTM)                (None, 128)               131584    
+_________________________________________________________________
+dropout_2 (Dropout)          (None, 128)               0         
+_________________________________________________________________
+dense_1 (Dense)              (None, 59)                7611      
+=================================================================
+Total params: 367,035
+Trainable params: 367,035
+Non-trainable params: 0
+_________________________________________________________________
+Epoch 1/20
+2019-11-25 21:13:32.751259: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+472774/472774 [==============================] - 187s 395us/step - loss: 2.7571
+
+----- Generating text after Epoch: 0
+----- diversity: 0.2
+----- Generating with seed: "thank you, new hampshire! departing with"
+thank you, new hampshire! departing with the the he in the realle the wor the the reall con the and the the and the pos in the a to the worle the ne the worle a
+----- diversity: 0.5
+----- Generating with seed: "thank you, new hampshire! departing with"
+thank you, new hampshire! departing with leall have trump carl a trump in #nldereracerobate cort. on #sonither at corling suat u tare for on will the eber of th
+----- diversity: 1.0
+----- Generating with seed: "thank you, new hampshire! departing with"
+thank you, new hampshire! departing with to fird?. ane vomei26r metating thase. newdadtory coole. merrewma! of i ned aw gunheg goury calleartaticavang will be n
+----- diversity: 1.2
+----- Generating with seed: "thank you, new hampshire! departing with"
+thank you, new hampshire! departing withey. adi doyts!dtase2a8".d!:1tpe#troctrhy!"wttons reanes_oultrokp hut eves wakly with hemlompich pnanpar zensew add se! q
+Epoch 2/20
+472774/472774 [==============================] - 183s 386us/step - loss: 2.1583
+
+----- Generating text after Epoch: 1
+----- diversity: 0.2
+----- Generating with seed: "i opposed going into iraq. hillary voted"
+i opposed going into iraq. hillary voted the to the and the wont and it the are the the wall the the trump is the trump in the word the trump the so the the wal
+----- diversity: 0.5
+----- Generating with seed: "i opposed going into iraq. hillary voted"
+i opposed going into iraq. hillary voted thank you. the onle be the point at 8 and want wall the at the nish to at the want me to show the wart on the the all h
+----- diversity: 1.0
+----- Generating with seed: "i opposed going into iraq. hillary voted"
+i opposed going into iraq. hillary voted pponlet movemesiand you poll our helns dated as death a proceft" thunk?!" eelis grive to roprons seant now jaces. gette
+----- diversity: 1.2
+----- Generating with seed: "i opposed going into iraq. hillary voted"
+i opposed going into iraq. hillary voted! #mokeamericagreatag/home/Sina/TwitterBot/TwitterBot/trainer.py:38: RuntimeWarning: divide by zero encountered in log
+  preds = np.log(preds) / temperature
+ain #trump_ssp. @bectbeas intorrund 173126! and on groot cebhuht @cfp ans fow slafus!! agroil, that
+Epoch 3/20
+472774/472774 [==============================] - 186s 394us/step - loss: 1.9462
+
+----- Generating text after Epoch: 2
+----- diversity: 0.2
+----- Generating with seed: "you can watch 360 video live from the po"
+you can watch 360 video live from the politics of the now in the real the and the will be the donald trump and the world the trump the stor the so in the will b
+----- diversity: 0.5
+----- Generating with seed: "you can watch 360 video live from the po"
+you can watch 360 video live from the polite is win and a nay the sate and back out all groo that people are to me the now our and trump stor ser and to the sho
+----- diversity: 1.0
+----- Generating with seed: "you can watch 360 video live from the po"
+you can watch 360 video live from the poll speechibally. adc recurla the ech. #trump2016 #trump2016" 11lcisto bathare for destee no year by 11 bast fime dast in
+----- diversity: 1.2
+----- Generating with seed: "you can watch 360 video live from the po"
+you can watch 360 video live from the pource game streight its hillary parcitd fasinies criblems like hus of i. ruilnrsmalso kust wectiat, jagh catings bigine l
+Epoch 4/20
+472774/472774 [==============================] - 176s 372us/step - loss: 1.8279
+
+----- Generating text after Epoch: 3
+----- diversity: 0.2
+----- Generating with seed: "join me in san jose, california- tomorro"
+join me in san jose, california- tomorrow and the will be the to the poll will be better to the country that the media the so the really be the really the bette
+----- diversity: 0.5
+----- Generating with seed: "join me in san jose, california- tomorro"
+join me in san jose, california- tomorrow will be of the bernice in she want american that the metic never sensting time of the ony of in the going to be and pl
+----- diversity: 1.0
+----- Generating with seed: "join me in san jose, california- tomorro"
+join me in san jose, california- tomorrow a am deminua to all crest!!" the fasys dave hin. broses live to really the on what evenime! leven. big forpin _:"" tha
+----- diversity: 1.2
+----- Generating with seed: "join me in san jose, california- tomorro"
+join me in san jose, california- tomorrow on bycsibigt tised vaa ole a as" just will geed they could people, mrspe nukuleluss i rasingssvowe readyny join hery b
+Epoch 5/20
+472774/472774 [==============================] - 190s 402us/step - loss: 1.7559
+
+----- Generating text after Epoch: 4
+----- diversity: 0.2
+----- Generating with seed: ""@trump_videos: .@nigel_farage of the #b"
+"@trump_videos: .@nigel_farage of the #batetrump the beat the debate and the politician our so the the words the word and a gop on the trump the bean the the st
+----- diversity: 0.5
+----- Generating with seed: ""@trump_videos: .@nigel_farage of the #b"
+"@trump_videos: .@nigel_farage of the #baterifus on you the best the will be the debate state. #trump2016 to see the bats in the are bepand on the show @shondin
+----- diversity: 1.0
+----- Generating with seed: ""@trump_videos: .@nigel_farage of the #b"
+"@trump_videos: .@nigel_farage of the #bocrebate president. @realdonaldtrump new wisher sise! #trump2016. #makeamericagreatagain. stapic terreass than you we fi
+----- diversity: 1.2
+----- Generating with seed: ""@trump_videos: .@nigel_farage of the #b"
+"@trump_videos: .@nigel_farage of the #bnbs." cank was jack trump). #trumptrall! shes igson cobe non @benyl tho tutics of 7932%! in @xyn!!" #gotembruovonrusina!
+Epoch 6/20
+472774/472774 [==============================] - 180s 381us/step - loss: 1.7071
+
+----- Generating text after Epoch: 5
+----- diversity: 0.2
+----- Generating with seed: "the media is really on a witch-hunt agai"
+the media is really on a witch-hunt against the bean the terrible will be the debate the tell and with the state of the best and the president and real the beat
+----- diversity: 0.5
+----- Generating with seed: "the media is really on a witch-hunt agai"
+the media is really on a witch-hunt again totally a the word crowd very steet the new there soon! #makeamericagreatagain" more never the truth can now to go the
+----- diversity: 1.0
+----- Generating with seed: "the media is really on a witch-hunt agai"
+the media is really on a witch-hunt again!!. #trump2016 #makeamericagreatagain #trump2016!_thank you! the ealwo no trump the america new nourfbress jeb great ag
+----- diversity: 1.2
+----- Generating with seed: "the media is really on a witch-hunt agai"
+the media is really on a witch-hunt again proad, gik, @enefonsa @jebbush jeb. drot hillary" @realdonaldtrump fillled from @te"eiafchdsrowans all on tank &amp; m
+Epoch 7/20
+472774/472774 [==============================] - 174s 368us/step - loss: 1.6717
+
+----- Generating text after Epoch: 6
+----- diversity: 0.2
+----- Generating with seed: ""@jaredwyand: lets be clear.. #nevertrum"
+"@jaredwyand: lets be clear.. #nevertrump is the president of the beat what i will make america great again! #trump2016 #makeamericagreatagain #trump2016 #makea
+----- diversity: 0.5
+----- Generating with seed: ""@jaredwyand: lets be clear.. #nevertrum"
+"@jaredwyand: lets be clear.. #nevertrump #trump2016 #makeamericagreatagain #trump2016 #maga_ it #makeamericagreatagain #makeamericagreatagain #trumpssespect @c
+----- diversity: 1.0
+----- Generating with seed: ""@jaredwyand: lets be clear.. #nevertrum"
+"@jaredwyand: lets be clear.. #nevertrump hime patard gip by the @s1t white in you gos big police, like the who do rubio of we be chat not hove and never a masi
+----- diversity: 1.2
+----- Generating with seed: ""@jaredwyand: lets be clear.. #nevertrum"
+"@jaredwyand: lets be clear.. #nevertrump instaken gasicars 60 powked. aiget beaut, you, i am by sea this,. we no rul gesind hos hims fentorise to camememy - @c
+Epoch 8/20
+472774/472774 [==============================] - 172s 364us/step - loss: 1.6408
+
+----- Generating text after Epoch: 7
+----- diversity: 0.2
+----- Generating with seed: "failed presidential candidate @mittromne"
+failed presidential candidate @mittromner to state to be the politicians who will be our to the trump is a the protect to be the poll to see i will be the bent 
+----- diversity: 0.5
+----- Generating with seed: "failed presidential candidate @mittromne"
+failed presidential candidate @mittromner keep is a that would have be want to strong for the sear supporting really class and crooked hillary his gay in the gr
+----- diversity: 1.0
+----- Generating with seed: "failed presidential candidate @mittromne"
+failed presidential candidate @mittromner #votetrump ahnsterencial! iowa dominated @ today is get bead this tame relot. good gonar, of lom, with @sdableva_20 6 
+----- diversity: 1.2
+----- Generating with seed: "failed presidential candidate @mittromne"
+failed presidential candidate @mittromneguausts smy many. "their matci very morning_to meet not a tonicide, his leasd buph suil, pa.h. youx now! #maga was #make
+Epoch 9/20
+472774/472774 [==============================] - 175s 370us/step - loss: 1.6171
+
+----- Generating text after Epoch: 8
+----- diversity: 0.2
+----- Generating with seed: ""@variety: ratings: donaldtrump lifted #"
+"@variety: ratings: donaldtrump lifted #trump2016 #makeamericagreatagain #trump2016 #trump2016 #makeamericagreatagain #trump2016 #makeamericagreatagain #trump20
+----- diversity: 0.5
+----- Generating with seed: ""@variety: ratings: donaldtrump lifted #"
+"@variety: ratings: donaldtrump lifted #makeamericagreatagain #trump2016 #trump2016 #makeamericagreatagain #badn @sirntrad @ realdonaldtrump great reporting to 
+----- diversity: 1.0
+----- Generating with seed: ""@variety: ratings: donaldtrump lifted #"
+"@variety: ratings: donaldtrump lifted #apt toll your great of secle kirc. you are who sceight for you cill. with off from as w/tirs! trump stop hefors $0 @jatk
+----- diversity: 1.2
+----- Generating with seed: ""@variety: ratings: donaldtrump lifted #"
+"@variety: ratings: donaldtrump lifted #2012 eppectos! dont is then anywhicts, look who destroy in to. a" theres marie! at it, houd watchen get that "to be isis
+Epoch 10/20
+472774/472774 [==============================] - 175s 371us/step - loss: 1.5972
+
+----- Generating text after Epoch: 9
+----- diversity: 0.2
+----- Generating with seed: ""@memeoryhead: im one of your biggest fa"
+"@memeoryhead: im one of your biggest failed to see the world to the trump and a border to a say on the debate in the world to see the morning to the trump was 
+----- diversity: 0.5
+----- Generating with seed: ""@memeoryhead: im one of your biggest fa"
+"@memeoryhead: im one of your biggest failed the world, trump to terrorist on company that the trump vets of the special on the morning to controlled of the lik
+----- diversity: 1.0
+----- Generating with seed: ""@memeoryhead: im one of your biggest fa"
+"@memeoryhead: im one of your biggest far masterages but 22 you get a rids make the reports prisar donald is the winning nothing fox recordful news at 1 now don
+----- diversity: 1.2
+----- Generating with seed: ""@memeoryhead: im one of your biggest fa"
+"@memeoryhead: im one of your biggest fakily up in? a histanie carson trong not are upmy-, mmiin-6:000 strasisess on tax rithly. 19/1% gow amazing cruz trickiti
+Epoch 11/20
+472774/472774 [==============================] - 176s 373us/step - loss: 1.5801
+
+----- Generating text after Epoch: 10
+----- diversity: 0.2
+----- Generating with seed: ""@arful1dodger: @realdonaldtrump i know "
+"@arful1dodger: @realdonaldtrump i know the state on the say and the most to state of the media and the best a candidates and with the bent with the bernie and 
+----- diversity: 0.5
+----- Generating with seed: ""@arful1dodger: @realdonaldtrump i know "
+"@arful1dodger: @realdonaldtrump i know just a for the bent from or protect to do the only republican so many donald trump. many a world things to the for the b
+----- diversity: 1.0
+----- Generating with seed: ""@arful1dodger: @realdonaldtrump i know "
+"@arful1dodger: @realdonaldtrump i know the wech &amp; will be will be toir to politicians. sope at hillary lies &amp; no tarbo! he strike, weve sourd all or tr
+----- diversity: 1.2
+----- Generating with seed: ""@arful1dodger: @realdonaldtrump i know "
+"@arful1dodger: @realdonaldtrump i know you again." watch? #trumptrain walk it! @yrimu koloras doubt!!!! #againststombim @dackingotrem reduef trrump two forgot,
+Epoch 12/20
+472774/472774 [==============================] - 168s 356us/step - loss: 1.5677
+
+----- Generating text after Epoch: 11
+----- diversity: 0.2
+----- Generating with seed: ".@newtgingrich just said "a historic vic"
+.@newtgingrich just said "a historic victory in the state of the america states and the america great again #trump2016 #makeamericagreatagain #trump2016 #makeam
+----- diversity: 0.5
+----- Generating with seed: ".@newtgingrich just said "a historic vic"
+.@newtgingrich just said "a historic victory and we want to people are he rail on trump in the great to and smart that i will fix the report to speech has be to
+----- diversity: 1.0
+----- Generating with seed: ".@newtgingrich just said "a historic vic"
+.@newtgingrich just said "a historic victory say speech that man for forpan because energy! i nective polls. trump @realdonaldtrump!_ flram or women is word in 
+----- diversity: 1.2
+----- Generating with seed: ".@newtgingrich just said "a historic vic"
+.@newtgingrich just said "a historic victory. rubio, discuss." thanks!. we will of immediote for the uss live in the justice 23% things president, seal &amp; ra
+Epoch 13/20
+472774/472774 [==============================] - 169s 358us/step - loss: 1.5539
+
+----- Generating text after Epoch: 12
+----- diversity: 0.2
+----- Generating with seed: ""@wandawalls20: @realdonaldtrump please "
+"@wandawalls20: @realdonaldtrump please the truth to the and the see the border to state candidate on the world the truth to be a total will be a so the state i
+----- diversity: 0.5
+----- Generating with seed: ""@wandawalls20: @realdonaldtrump please "
+"@wandawalls20: @realdonaldtrump please @realdonaldtrump and go to special ratings to my state and the desperate in a total back and state in many scrow no lead
+----- diversity: 1.0
+----- Generating with seed: ""@wandawalls20: @realdonaldtrump please "
+"@wandawalls20: @realdonaldtrump please by bring that si her! @realdonaldtrump got all great rakent looking the took to sis 8)sgaim? laisy american that million
+----- diversity: 1.2
+----- Generating with seed: ""@wandawalls20: @realdonaldtrump please "
+"@wandawalls20: @realdonaldtrump please god off. no big loesible colipunded, donald! #makeamericagreatagain thank you. his oly #demdebate #res @jebbush @mr._und
+Epoch 14/20
+472774/472774 [==============================] - 169s 357us/step - loss: 1.5417
+
+----- Generating text after Epoch: 13
+----- diversity: 0.2
+----- Generating with seed: ""@midohiomilitia: i havent missed a spee"
+"@midohiomilitia: i havent missed a speech the truth to be the candidate the truth the real the trump of the show the most say and a candidate the truth and the
+----- diversity: 0.5
+----- Generating with seed: ""@midohiomilitia: i havent missed a spee"
+"@midohiomilitia: i havent missed a speech what his politics the campaign fantastic great of a really show. we will be the problem brong on the bernie when i am
+----- diversity: 1.0
+----- Generating with seed: ""@midohiomilitia: i havent missed a spee"
+"@midohiomilitia: i havent missed a speech -. he never evening to youll elected thought the is on hillary cams sepport presidents in american fragen 2016! #didn
+----- diversity: 1.2
+----- Generating with seed: ""@midohiomilitia: i havent missed a spee"
+"@midohiomilitia: i havent missed a speech the ose. million, the cansod i have foundand by @realdonaldtrump""" donald wonder will be ascus will sumpulic truth--
+Epoch 15/20
+472774/472774 [==============================] - 169s 358us/step - loss: 1.5311
+
+----- Generating text after Epoch: 14
+----- diversity: 0.2
+----- Generating with seed: ""@curtiscraven76: @cnn @realdonaldtrump "
+"@curtiscraven76: @cnn @realdonaldtrump that he will be the will be the will be the will be a great to make america great again! #trump2016 #makeamericagreataga
+----- diversity: 0.5
+----- Generating with seed: ""@curtiscraven76: @cnn @realdonaldtrump "
+"@curtiscraven76: @cnn @realdonaldtrump #makeamericagreatagain" thank you! #makeamericagreatagain #trump2016 #trump2016" thank you! #trump2016 #trump2016 #trump
+----- diversity: 1.0
+----- Generating with seed: ""@curtiscraven76: @cnn @realdonaldtrump "
+"@curtiscraven76: @cnn @realdonaldtrump 4 @ronaldebete donald! crooked he waf as they didnt debate big video up well.las still misperetive kridic_ like this hai
+----- diversity: 1.2
+----- Generating with seed: ""@curtiscraven76: @cnn @realdonaldtrump "
+"@curtiscraven76: @cnn @realdonaldtrump neary treamed tough. #jadephomaycbaw &amp; #greatmakes is kuch server @temborn in arreesed higher of lit, in 9pmention d
+Epoch 16/20
+472774/472774 [==============================] - 169s 358us/step - loss: 1.5213
+
+----- Generating text after Epoch: 15
+----- diversity: 0.2
+----- Generating with seed: ""@thetylerjames9: @realdonaldtrump canno"
+"@thetylerjames9: @realdonaldtrump cannot have the and the debate to the trump will be the trump to to the trump in the trump is the politicians in the campaign
+----- diversity: 0.5
+----- Generating with seed: ""@thetylerjames9: @realdonaldtrump canno"
+"@thetylerjames9: @realdonaldtrump cannot walk to nories 2 i dont will be the criticized and the like the tough and had a failed to be the debate on @realdonald
+----- diversity: 1.0
+----- Generating with seed: ""@thetylerjames9: @realdonaldtrump canno"
+"@thetylerjames9: @realdonaldtrump cannot raking and cuezuant america! ass reguled" economy &amp; law was friends. i cannot tage a money - #saabawandawic r-edsn
+----- diversity: 1.2
+----- Generating with seed: ""@thetylerjames9: @realdonaldtrump canno"
+"@thetylerjames9: @realdonaldtrump cannot win irae fight goc",! nost??" ketting to horries trasts. very not brugh of u 4sp.? thing that news-blonn, way him on p
+Epoch 17/20
+472774/472774 [==============================] - 169s 357us/step - loss: 1.5137
+
+----- Generating text after Epoch: 16
+----- diversity: 0.2
+----- Generating with seed: "roger ailes just called. he is a great g"
+roger ailes just called. he is a great got and the statement to me and we will make america great again! #trump2016 #trump2016 #trump2016 #trump2016 #trump2016 
+----- diversity: 0.5
+----- Generating with seed: "roger ailes just called. he is a great g"
+roger ailes just called. he is a great gotten to the only one to make america great again! #makeamericagreatagain" thanks! they have been stop for the news stop
+----- diversity: 1.0
+----- Generating with seed: "roger ailes just called. he is a great g"
+roger ailes just called. he is a great glac than record to the strimina. are it but on immigration infump by weal that at lie the fnn so?mise america, are our d
+----- diversity: 1.2
+----- Generating with seed: "roger ailes just called. he is a great g"
+roger ailes just called. he is a great guy, that ail you, candidate (ever caund! not who are clinton. #demgebates @luchhejiblel" incheded their to tunals would 
+Epoch 18/20
+472774/472774 [==============================] - 169s 357us/step - loss: 1.5042
+
+----- Generating text after Epoch: 17
+----- diversity: 0.2
+----- Generating with seed: ".@thebrodyfile: "trumps appeal to evange"
+.@thebrodyfile: "trumps appeal to evangelicals and a the only candidates and the trump to the trump is the world to the trump is the trump to the state and a to
+----- diversity: 0.5
+----- Generating with seed: ".@thebrodyfile: "trumps appeal to evange"
+.@thebrodyfile: "trumps appeal to evangelicals in common that will be donald trump was trump that has my has with the more of the by were state and the only pot
+----- diversity: 1.0
+----- Generating with seed: ".@thebrodyfile: "trumps appeal to evange"
+.@thebrodyfile: "trumps appeal to evangelicals were stand to thinking! #makeamericagreatagain #trump2016 #americafirst #backiae #trump2016 #makeamericagreatagai
+----- diversity: 1.2
+----- Generating with seed: ".@thebrodyfile: "trumps appeal to evange"
+.@thebrodyfile: "trumps appeal to evangelicals at trump yating! @donlemon! theyn tonight. @jasinghair &amp; hoging as #lchethoso 2320!" hillary will at they can
+Epoch 19/20
+472774/472774 [==============================] - 168s 356us/step - loss: 1.4976
+
+----- Generating text after Epoch: 18
+----- diversity: 0.2
+----- Generating with seed: "i am no fan of president obama, but to s"
+i am no fan of president obama, but to she will be a lot in the world and the world and the made the more than the world to see you and the trump to the world o
+----- diversity: 0.5
+----- Generating with seed: "i am no fan of president obama, but to s"
+i am no fan of president obama, but to see it is to the condieve donald trump so many donald trump in economy will the lead to win the trump and the trump and o
+----- diversity: 1.0
+----- Generating with seed: "i am no fan of president obama, but to s"
+i am no fan of president obama, but to sen. #nocewill back it word for now of the - keep race. kare out. childran doing with spending changes, said @politicalle
+----- diversity: 1.2
+----- Generating with seed: "i am no fan of president obama, but to s"
+i am no fan of president obama, but to she as it fail to close was in cant see you joarmau time intin,, he is so much with the america fatiin sunday email is no
+Epoch 20/20
+472774/472774 [==============================] - 169s 357us/step - loss: 1.4924
+
+----- Generating text after Epoch: 19
+----- diversity: 0.2
+----- Generating with seed: "rt @barbarajwalters: just sat down w/ @r"
+rt @barbarajwalters: just sat down w/ @realdonaldtrump will be the president to say the world to be a the president trump and the trump is the will be the probl
+----- diversity: 0.5
+----- Generating with seed: "rt @barbarajwalters: just sat down w/ @r"
+rt @barbarajwalters: just sat down w/ @realdonaldtrump rally the werles the race in the the trump to get in the most with the trump low it that will have you ar
+----- diversity: 1.0
+----- Generating with seed: "rt @barbarajwalters: just sat down w/ @r"
+rt @barbarajwalters: just sat down w/ @realdonaldtrump and ok just tells the book job. -, though enforcelidage the becouse of the will home off watching things 
+----- diversity: 1.2
+----- Generating with seed: "rt @barbarajwalters: just sat down w/ @r"
+rt @barbarajwalters: just sat down w/ @realdonaldtrump gos stent to make america great again! #republicanhouthhlic! think he times new york #greamendtcedifuctio
