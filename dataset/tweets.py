@@ -9,9 +9,16 @@ import tensorflow as tf
 
 class Tweetdataset:
     def get_text(self, maxlen=40, step=1, future_target=1):
-       
+        '''path_to_file = tf.keras.utils.get_file(
+            origin='https://www.kaggle.com/kingburrito666/better-donald-trump-tweets/download',
+            fname='better-donald-trump-tweets.zip',
+            extract=True)
+        csv_path, _ = os.path.splitext(path_to_file)'''
+
+
+
         # read dataframe from csv file
-        df = pd.read_csv('/home/Sina/TwitterBot/TwitterBot/dataset/Donald-Tweets!.csv')
+        df = pd.read_csv('./Donald-Tweets!.csv')
         # print the head of dataset
         print(df.shape)
         print(df.head())
@@ -76,6 +83,8 @@ class Tweetdataset:
         print(x)
         print("Y: ")
         print(y)
-        character=len(chars)
-        
-        return text, x, y, character, char_indices, indices_char
+
+        train_data = x
+        val_data = y
+        ...
+        return text,  (maxlen, len(chars))

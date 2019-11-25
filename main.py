@@ -6,10 +6,8 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--batch_size', type=int, default=128)
     parser.add_argument('--epochs', type=int, default=10)
+    parser.add_argument('--steps_per_epoch', type=int, default=200)
     parser.add_argument('--val_steps', type=int, default=50)
-    parser.add_argument('--maxlen', type=int, default=40)
-    parser.add_argument('--future_target', type=int, default=128)
-
     config = parser.parse_args()
 
     trainer = Trainer(config)
@@ -19,4 +17,3 @@ def main():
 
 if __name__ == "__main__":
     main()
- 

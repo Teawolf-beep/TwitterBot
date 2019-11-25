@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-import tensorflow as tf
+
 import os
 #print(os.listdir("./datasets"))
 
@@ -17,7 +17,7 @@ import sys
 import io
 import matplotlib.pyplot as plt
 
-df = pd.read_csv("/home/Sina/TwitterBot/TwitterBot/LSTM/datasets/Donald-Tweets.csv")
+df = pd.read_csv("./datasets/Donald-Tweets.csv")
 print(df.shape)
 print(df.head())
 
