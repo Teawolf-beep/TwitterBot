@@ -18,7 +18,7 @@ class Tweetdataset:
 
 
         # read dataframe from csv file
-        df = pd.read_csv('./Donald-Tweets!.csv')
+        df = pd.read_csv('/home/Sina/TwitterBot/TwitterBot/dataset/Donald-Tweets!.csv')
         # print the head of dataset
         print(df.shape)
         print(df.head())
@@ -84,7 +84,5 @@ class Tweetdataset:
         print("Y: ")
         print(y)
 
-        train_data = x
-        val_data = y
-        ...
-        return text,  (maxlen, len(chars))
+        character=len(chars)
+        return text, x, y, character, char_indices, indices_char
