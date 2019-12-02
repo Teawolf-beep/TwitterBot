@@ -4,9 +4,14 @@ from keras.callbacks import TensorBoard
 import matplotlib.pyplot as plt
 import random
 import sys
+import logging
 import io
+import os
+import pandas as pd
+from utils import mk_dir
 from Sources.plt import show_plot, multi_step_plot
 import numpy as np
+logging.basicConfig(level=logging.DEBUG)
 # models
 from model.lstm_model import MultiStepLSTM as Mdl
 # datasets
@@ -25,6 +30,8 @@ class Trainer:
         future_target = 128
         maxlen = 40
         step = 1
+
+        FINAL_WEIGHTS_PATH = 'final_weights.hdf5'
 
         text, x, y, character, char_indices, indices_char= self.data.get_text(self.maxlen)
 
@@ -73,11 +80,18 @@ class Trainer:
                     sys.stdout.flush()
                 print()
 
-        epochs = 20
+        epochs = 5
 
         print_callback = LambdaCallback(on_epoch_end=on_epoch_end)
 
-        model.fit(x, y,
+        hist = model.fit(x, y,
                  batch_size=128,
                  epochs=epochs,
                  callbacks=[print_callback])
+
+      
+        mk_dir("trained_models")
+        logging.debug("Saving weights...")
+        model.save(os.path.join("trained_models", "MobileNet_model.h5"))
+        model.save_weights(os.path.join("trained_models", FINAL_WEIGHTS_PATH), overwrite=True)
+        pd.DataFrame(hist.history).to_hdf(os.path.join("trained_models", "history.h5"), "history")
