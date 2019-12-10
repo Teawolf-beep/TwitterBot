@@ -1,5 +1,5 @@
 # utils for plotting
-from keras.callbacks import LambdaCallback
+from keras.callbacks import LambdaCallback, ModelCheckpoint,ReduceLROnPlateau, EarlyStopping
 from keras.callbacks import TensorBoard
 import matplotlib.pyplot as plt
 import random
@@ -30,6 +30,7 @@ class Trainer:
         future_target = 128
         maxlen = 40
         step = 1
+        patience = 4        
 
         FINAL_WEIGHTS_PATH = 'final_weights.hdf5'
 
@@ -82,12 +83,27 @@ class Trainer:
 
         epochs = 5
 
-        print_callback = LambdaCallback(on_epoch_end=on_epoch_end)
+        #model callback
+        early_stop = EarlyStopping('val_loss', patience=patience)
+        reduce_lr = ReduceLROnPlateau(verbose=1, epsilon=0.001,
+                                     patience=int(patience/2))
+
+        mk_dir(checkpoints)
+        model_checkpoint = ModelCheckpoint(
+            os.path.join('checkpoints', 'weights.{epoch:02d}-{val_loss:.2f}.hdf5'),
+            monitor="val_loss",
+            verbose=1,
+            save_best_only=True,
+            mode="auto")
+
+        callbacks = LambdaCallback(model_checkpoint, on_epoch_end=on_epoch_end,
+                                   early_stop, reduce_lr)
 
         hist = model.fit(x, y,
                  batch_size=128,
                  epochs=epochs,
-                 callbacks=[print_callback])
+                 verbose=1,
+                 callbacks=callbacks)
 
       
         mk_dir("trained_models")
@@ -95,3 +111,31 @@ class Trainer:
         model.save(os.path.join("trained_models", "MobileNet_model.h5"))
         model.save_weights(os.path.join("trained_models", FINAL_WEIGHTS_PATH), overwrite=True)
         pd.DataFrame(hist.history).to_hdf(os.path.join("trained_models", "history.h5"), "history")
+
+        logging.debug("plot the results...")
+    
+        df = pd.read_hdf(input_path, "history")
+        input_dir = os.path.dirname(input_path)
+        plt.plot(df["gender_loss"], label="loss (gender)")
+        #plt.plot(df["age_loss"], label="loss (age)")
+        plt.plot(df["val_gender_loss"], label="val_loss (gender)")
+        #plt.plot(df["val_age_loss"], label="val_loss (age)")
+        plt.xlabel("number of epochs")
+        plt.ylabel("loss")
+        plt.legend()
+        plt.savefig(os.path.join(input_dir, "loss.png"))
+        plt.cla()
+
+        plt.plot(df["gender_acc"], label="accuracy (gender)")
+        #plt.plot(df["age_acc"], label="accuracy (age)")
+        plt.plot(df["val_gender_acc"], label="val_accuracy (gender)")
+        #plt.plot(df["val_age_acc"], label="val_accuracy (age)")
+        plt.xlabel("number of epochs")
+        plt.ylabel("accuracy")
+        plt.legend()
+        plt.savefig(os.path.join(input_dir, "accuracy.png"))
+
+
+            
+if __name__ == '__main__':
+    main()
