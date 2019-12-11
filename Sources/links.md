@@ -10,6 +10,9 @@ https://arxiv.org/pdf/1507.01526v1.pdf
 
 https://arxiv.org/pdf/1503.04069.pdf
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> dev
+=======
+>>>>>>> 5a0898f4beefd0bd266c4cb015f88daf15d1f033

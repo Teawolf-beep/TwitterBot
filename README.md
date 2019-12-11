@@ -1,7 +1,13 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # TwitterBot
 =======
 # TwitterBot
+=======
+# TwitterBot
+<<<<<<< HEAD
+=======
+>>>>>>> 5a0898f4beefd0bd266c4cb015f88daf15d1f033
 
 Github erlaubt nur 100MB im Repository, wir laden also nur den Code usw hoch und jeder verwaltet virtualenv, conda, whatever selbst.
 Um das Skript zu benutzen, müsst ihr tweepy (pip install tweepy) installieren.
@@ -72,4 +78,8 @@ optional arguments:
   
   ## Viel Spaß Kinder!
   
+<<<<<<< HEAD
 >>>>>>> dev
+=======
+>>>>>>> Update README.md
+>>>>>>> 5a0898f4beefd0bd266c4cb015f88daf15d1f033
