@@ -23,7 +23,7 @@ class Loader:
     @staticmethod
     def clean_file(doc):
         # Pad punctuation with whitespaces
-        doc = re.sub('([.,!?():#])', r' \1 ', doc)
+        doc = re.sub('([.,!?])', r' \1 ', doc)
         # Collapse multiple whitespaces
         doc = re.sub('[ ]{2,}', ' ', doc)
         # Split the string at each whitespace

@@ -42,9 +42,9 @@ def get_arguments():
                         'If not passed, 2000 Tweets will be fetched.')
 
     # Define command-line argument "translator" (watch out for characters that have to be escaped!!)
-    parser.add_argument('-t', type=str, dest='translator', default='\';“”’‘"\n',
+    parser.add_argument('-t', type=str, dest='translator', default='\';“”’‘"\n\\/()',
                         help='A list of characters that will be removed from the Tweets. No separation needed. '
-                             'If not passed, \";“”’‘\\n will be removed by default.')
+                             'If not passed, \";“”’‘\\n\\/() will be removed by default.')
 
     # Define command-line argument "delimiter
     parser.add_argument('-d', type=str, dest='delimiter', default=';',
