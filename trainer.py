@@ -5,7 +5,10 @@ from tensorflow.keras.utils import to_categorical
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
 from tensorflow.keras.layers import LSTM
-from tensorflow.keras.layers import Embedding
+from tensorflow.keras.layers import Embedding, Dropout
+from utils import mk_dir
+from keras.callbacks import ModelCheckpoint
+import os
 
 from loader import Loader
 
@@ -49,6 +52,7 @@ class Trainer:
         model.add(Embedding(vocab_size, 50, input_length=seq_length))
         model.add(LSTM(100, return_sequences=True))
         model.add(LSTM(100))
+        model.add(Dropout(0.2))
         model.add(Dense(100, activation='relu'))
         model.add(Dense(vocab_size, activation='softmax'))
         print(model.summary())
@@ -57,8 +61,14 @@ class Trainer:
     @staticmethod
     def train_model(x, y, model, batch_size, epochs):
         model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+        # define the checkpoint
+        mk_dir(checkpoints)
+        filepath=os.path.join('checkpoints', 'weights-improvement-{epoch:02d}-{loss:.4f}.hdf5')
+        checkpoint = ModelCheckpoint(filepath, monitor='val_loss', verbose=1, save_best_only=True, mode='min')
+        callbacks_list = [checkpoint]
+        
         # fit model
-        model.fit(x, y, batch_size=batch_size, epochs=epochs)
+        model.fit(x, y, batch_size=batch_size, epochs=epochs, callbacks=callbacks_list)
         return model
 
     @staticmethod
