@@ -29,7 +29,6 @@ class Trainer:
     def tokenize(lines):
         tokenizer = Tokenizer(filters='')
         tokenizer.fit_on_texts(lines)
-        print(tokenizer.word_index)
         # Get vocabulary size
         vocab_size = len(tokenizer.word_index) + 1
         return tokenizer, vocab_size

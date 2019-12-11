@@ -5,14 +5,18 @@ import re
 
 class Loader:
     @staticmethod
-    def open_file(name, delimiter):
+    def open_file(name, delimiter, lines, termination):
+        counter = 0
         with open(name) as csv_file:
             csv_reader = csv.reader(csv_file, delimiter=delimiter)
             ret = ''
             iter_rows = iter(csv_reader)
             next(iter_rows)
             for row in iter_rows:
-                ret += row[1] + ' '
+                if counter == lines:
+                    break
+                ret += row[1] + ' ' + termination + ' '
+                counter += 1
 
         return ret
 
