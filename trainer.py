@@ -1,6 +1,7 @@
 from numpy import array
-from pickle import dump
+import numpy as np
 from tensorflow.keras.preprocessing.text import Tokenizer
+from pickle import dump
 from tensorflow.keras.utils import to_categorical
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
@@ -38,29 +39,49 @@ class Trainer:
 
     @staticmethod
     def sequence_data(tokenizer, lines, vocab_size):
+        seq_length = 100
         sequences = tokenizer.texts_to_sequences(lines)
         sequences = array(sequences)
         print(sequences.shape)
-        x, y = sequences[:, :-1], sequences[:, -1]
-        y = to_categorical(y, num_classes=vocab_size)
-        seq_length = x.shape[1]
+        X, Y = sequences[:, :-1], sequences[:, -1]
+        y = to_categorical(Y, num_classes=vocab_size)
+        n_patterns = len(x)
+        # reshape X to be [samples, time steps, features]
+        x = np.reshape(X, (n_patterns, seq_length, 1))
+        # normalize
+        x = x / float(vocab_size)
+
+        #seq_length = x.shape[1]
         return x, y, seq_length
 
     @staticmethod
-    def build_model(vocab_size, seq_length):
+    def build_model(x, y):
+        print("building the model...")
         model = Sequential()
-        model.add(Embedding(vocab_size, 50, input_length=seq_length))
-        model.add(LSTM(100, return_sequences=True))
-        model.add(LSTM(100))
+        model.add(LSTM(256, input_shape=(x.shape[1], x.shape[2]), return_sequences=True))
         model.add(Dropout(0.2))
-        model.add(Dense(100, activation='relu'))
-        model.add(Dense(vocab_size, activation='softmax'))
+        model.add(LSTM(256))
+        model.add(Dropout(0.2))
+        model.add(Dense(y.shape[1], activation='softmax'))
         print(model.summary())
         return model
+    
+    '''@staticmethod
+    def get_model(dropout=0.2):
+    print('Build model...')
+        model = Sequential()
+        model.add(Embedding(input_dim=len(words), output_dim=1024))
+        model.add(Bidirectional(LSTM(128)))
+        if dropout > 0:
+            model.add(Dropout(dropout))
+        model.add(Dense(len(words)))
+        model.add(Activation('softmax'))
+        return model'''
 
     @staticmethod
     def train_model(x, y, model, batch_size, epochs):
         model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+        
         # define the checkpoint
         mk_dir(checkpoints)
         filepath=os.path.join('checkpoints', 'weights-improvement-{epoch:02d}-{loss:.4f}.hdf5')
@@ -68,7 +89,10 @@ class Trainer:
         callbacks_list = [checkpoint]
         
         # fit model
-        model.fit(x, y, batch_size=batch_size, epochs=epochs, callbacks=callbacks_list)
+        model.fit_generator(x, y, batch_size=batch_size, epochs=epochs,
+                            callbacks=callbacks_list)
+                            validation_data=generator(sentences_test, labels_test, BATCH_SIZE),
+                            validation_steps=int(len(sentences_test)/BATCH_SIZE) + 1))
         return model
 
     @staticmethod
