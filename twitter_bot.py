@@ -1,5 +1,7 @@
 from random import randint
-
+import logging
+from keras import Input
+from keras import backend as K
 from loader import Loader
 from trainer import Trainer
 from generator import Generator
@@ -8,7 +10,7 @@ from generator import Generator
 doc = Loader.open_file('trumpDataset.csv', ';', 5000, ';')
 # # Manipulate the csv-file
 tokens = Loader.clean_file(doc)
-lines = Loader.sequence_file(tokens, 50)
+lines = Loader.sequence_file(tokens, 100)
 # # Save the sequenced and clean data
 Loader.store_file(lines, 'sequenced_trump_data.txt')
 #
@@ -22,13 +24,28 @@ tokenizer, vocab_size = Trainer.tokenize(lines)
 x, y, seq_length = Trainer.sequence_data(tokenizer, lines, vocab_size)
 #Build model(two LSTM hidden layer with 100 neurons,
 # # a dense fully connected layer with 100 neurons (relu), output layer (softmax)
-model = Trainer.build_model(vocab_size, seq_length)
+rnn_size = 256 # size of RNN
+learning_rate = 0.001 #learning rate
+input_shape=Input(shape=(seq_length, vocab_size))
+print(input_shape)
+model = Trainer.bidirectional_lstm_model(seq_length, vocab_size)
+model.summary()
+'''embedding_dim=256,
+rnn_units=1024,
+batch_size=64
+model = Trainer.build_model(vocab_size=vocab_size,
+                            embedding_dim=embedding_dim,
+                            rnn_units=rnn_units,
+                            batch_size=batch_size)'''
+#model = Trainer.build_model(vocab_size, seq_length)
 # # Train the model with a batch size of 128 and 150 epochs (takes a while)
-model = Trainer.train_model(x, y, model, 64, 50)
+
+model, history = Trainer.train_model(x, y, model, batch_size=64, epochs=50)
 
 # Save trained model and tokenizer for later usage
 Trainer.save_model(model, 'trump_5000.h5')
 Trainer.save_tokenizer(tokenizer, 'tokenizer_5000.pkl')
+Trainer.plot(history, plot=True)
 
 # Second step: Generate Tweets with the trained model
 # Open the sequenced data (if not open already)
