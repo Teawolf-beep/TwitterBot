@@ -18,7 +18,7 @@ class Tweetdataset:
 
 
         # read dataframe from csv file
-        df = pd.read_csv('/home/Sina/TwitterBot/TwitterBot/dataset/Donald-Tweets!.csv')
+        df = pd.read_csv('dataset/Donald-Tweets!.csv')
         # print the head of dataset
         print(df.shape)
         print(df.head())

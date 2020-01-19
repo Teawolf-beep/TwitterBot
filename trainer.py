@@ -84,26 +84,27 @@ class Trainer:
         epochs = 5
 
         #model callback
-        early_stop = EarlyStopping('val_loss', patience=patience)
+        early_stop = EarlyStopping('loss', patience=patience)
         reduce_lr = ReduceLROnPlateau(verbose=1, epsilon=0.001,
                                      patience=int(patience/2))
 
-        mk_dir(checkpoints)
-        model_checkpoint = ModelCheckpoint(
-            os.path.join('checkpoints', 'weights.{epoch:02d}-{val_loss:.2f}.hdf5'),
-            monitor="val_loss",
+        mk_dir("checkpoints")
+        model_checkpoint =[ModelCheckpoint(
+            os.path.join('checkpoints', 'weights.{epoch:02d}-{loss:.4f}.hdf5'),
+            monitor='loss',
             verbose=1,
             save_best_only=True,
-            mode="auto")
+            mode="min")]
 
-        callbacks = LambdaCallback(model_checkpoint, on_epoch_end=on_epoch_end,
-                                   early_stop, reduce_lr)
+        #callbacks = [model_checkpoint]
+        #callbacks = LambdaCallback(model_checkpoint, on_epoch_end=on_epoch_end,
+        #                          early_stop, reduce_lr)
 
         hist = model.fit(x, y,
                  batch_size=128,
                  epochs=epochs,
                  verbose=1,
-                 callbacks=callbacks)
+                 callbacks=model_checkpoint)
 
       
         mk_dir("trained_models")
@@ -113,12 +114,12 @@ class Trainer:
         pd.DataFrame(hist.history).to_hdf(os.path.join("trained_models", "history.h5"), "history")
 
         logging.debug("plot the results...")
-    
+        input_path = "trained_models/history.h5"
         df = pd.read_hdf(input_path, "history")
-        input_dir = os.path.dirname(input_path)
-        plt.plot(df["gender_loss"], label="loss (gender)")
+        input_dir = os.path.dirname(input_path) 
+        plt.plot(df["loss"], label="loss (gender)")
         #plt.plot(df["age_loss"], label="loss (age)")
-        plt.plot(df["val_gender_loss"], label="val_loss (gender)")
+        plt.plot(df["val_loss"], label="val_loss")
         #plt.plot(df["val_age_loss"], label="val_loss (age)")
         plt.xlabel("number of epochs")
         plt.ylabel("loss")
@@ -126,9 +127,9 @@ class Trainer:
         plt.savefig(os.path.join(input_dir, "loss.png"))
         plt.cla()
 
-        plt.plot(df["gender_acc"], label="accuracy (gender)")
+        plt.plot(df["acc"], label="accuracy (gender)")
         #plt.plot(df["age_acc"], label="accuracy (age)")
-        plt.plot(df["val_gender_acc"], label="val_accuracy (gender)")
+        plt.plot(df["val_acc"], label="val_accuracy")
         #plt.plot(df["val_age_acc"], label="val_accuracy (age)")
         plt.xlabel("number of epochs")
         plt.ylabel("accuracy")
@@ -137,5 +138,4 @@ class Trainer:
 
 
             
-if __name__ == '__main__':
-    main()
+
