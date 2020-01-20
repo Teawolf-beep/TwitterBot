@@ -7,6 +7,7 @@ import sys
 import logging
 import io
 import os
+from keras import backend as K
 import pandas as pd
 from utils import mk_dir
 from Sources.plt import show_plot, multi_step_plot
@@ -27,6 +28,7 @@ class Trainer:
         self.mdl = Mdl()
 
     def train(self, plot=True):
+        K.clear_session()
         future_target = 128
         maxlen = 40
         step = 1
@@ -101,7 +103,7 @@ class Trainer:
         #                          early_stop, reduce_lr)
 
         hist = model.fit(x, y,
-                 batch_size=128,
+                 batch_size=32,
                  epochs=epochs,
                  verbose=1,
                  callbacks=model_checkpoint)
