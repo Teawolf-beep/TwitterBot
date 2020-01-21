@@ -17,7 +17,7 @@ import sys
 import io
 import matplotlib.pyplot as plt
 
-df = pd.read_csv("./datasets/Donald-Tweets.csv")
+df = pd.read_csv("./dataset/Donald-Tweets!.csv")
 print(df.shape)
 print(df.head())
 
@@ -88,8 +88,8 @@ model.add(Dropout(0.5))
 model.add(Dense(len(chars), activation='softmax'))
 
 # optimizer = RMSprop(lr=0.01)
-optimizer = Adam()
-model.compile(loss='categorical_crossentropy', optimizer=optimizer)
+optimizer = Adam(lr=0.01)
+model.compile(loss='categorical_crossentropy', optimizer=optimizer, metrics=['accuracy'])
 
 model.summary()
 
@@ -109,7 +109,7 @@ def on_epoch_end(epoch, _):
     print()
     print('----- Generating text after Epoch: %d' % epoch)
     
-#     start_index = random.randint(0, len(text) - maxlen - 1)
+    #start_index = random.randint(0, len(text) - maxlen - 1)
     tweet = np.random.choice(text) # select random tweet
     start_index = 0
 

@@ -16,9 +16,9 @@ class MultiStepLSTM:
         tweet_generator_model.add(Dropout(0.5))
         tweet_generator_model.add(Dense(character, activation='softmax'))
 
-        # optimizer = RMSprop(lr=0.01)
-        optimizer=Adam()
-        tweet_generator_model.compile(loss='categorical_crossentropy', optimizer=optimizer)
+        #optimizer = RMSprop(lr=0.01)
+        #optimizer=Adam()
+        tweet_generator_model.compile(loss='mse', optimizer='adam', metrics=['accuracy'])
 
         if summary:
             tweet_generator_model.summary()

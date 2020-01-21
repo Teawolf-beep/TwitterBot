@@ -83,7 +83,7 @@ class Trainer:
                     sys.stdout.flush()
                 print()
 
-        epochs = 5
+        epochs = 1
 
         #model callback
         early_stop = EarlyStopping('loss', patience=patience)
@@ -93,17 +93,17 @@ class Trainer:
         mk_dir("checkpoints")
         model_checkpoint =[ModelCheckpoint(
             os.path.join('checkpoints', 'weights.{epoch:02d}-{loss:.4f}.hdf5'),
-            monitor='loss',
+            monitor='val_loss',
             verbose=1,
             save_best_only=True,
-            mode="min")]
+            mode="auto")]
 
         #callbacks = [model_checkpoint]
         #callbacks = LambdaCallback(model_checkpoint, on_epoch_end=on_epoch_end,
         #                          early_stop, reduce_lr)
 
-        hist = model.fit(x, y,
-                 batch_size=32,
+        history = model.fit(x, y,
+                 batch_size=512,
                  epochs=epochs,
                  verbose=1,
                  callbacks=model_checkpoint)
@@ -113,31 +113,38 @@ class Trainer:
         logging.debug("Saving weights...")
         model.save(os.path.join("trained_models", "MobileNet_model.h5"))
         model.save_weights(os.path.join("trained_models", FINAL_WEIGHTS_PATH), overwrite=True)
-        pd.DataFrame(hist.history).to_hdf(os.path.join("trained_models", "history.h5"), "history")
+        pd.DataFrame(history.history).to_hdf(os.path.join("trained_models", "history.h5"), "history")
 
         logging.debug("plot the results...")
         input_path = "trained_models/history.h5"
         df = pd.read_hdf(input_path, "history")
         input_dir = os.path.dirname(input_path) 
-        plt.plot(df["loss"], label="loss (gender)")
+        # plot train and validation loss
+        plt.plot(history.history['loss'])
+        plt.plot(history.history['val_loss'])
+        plt.title('model train vs validation loss')
+        plt.ylabel('loss')
+        plt.xlabel('epoch')
+        plt.legend(['train', 'validation'], loc='upper right')
+        plt.show()
+
+        '''
+        #plt.plot(df["loss"], label="loss (gender)")
         #plt.plot(df["age_loss"], label="loss (age)")
-        plt.plot(df["val_loss"], label="val_loss")
+        plt.plot(df["loss"], label="loss")
+        plt.plot(df["accuracy"], label="accuracy")
         #plt.plot(df["val_age_loss"], label="val_loss (age)")
-        plt.xlabel("number of epochs")
+        plt.xlabel("accuracy")
         plt.ylabel("loss")
         plt.legend()
-        plt.savefig(os.path.join(input_dir, "loss.png"))
+        plt.savefig(os.path.join(input_dir, "loss_acc.png"))
         plt.cla()
 
-        plt.plot(df["acc"], label="accuracy (gender)")
+        #plt.plot(df["acc"], label="accuracy (gender)")
         #plt.plot(df["age_acc"], label="accuracy (age)")
-        plt.plot(df["val_acc"], label="val_accuracy")
+        #plt.plot(df["val_acc"], label="val_accuracy")
         #plt.plot(df["val_age_acc"], label="val_accuracy (age)")
-        plt.xlabel("number of epochs")
-        plt.ylabel("accuracy")
-        plt.legend()
-        plt.savefig(os.path.join(input_dir, "accuracy.png"))
-
-
-            
-
+        #plt.xlabel("number of epochs")
+        #plt.ylabel("accuracy")
+        #plt.legend()
+        #plt.savefig(os.path.join(input_dir, "accuracy.png"))'''
