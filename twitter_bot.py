@@ -17,18 +17,18 @@ doc = Trainer.load_file('sequenced_trump_data.txt')
 lines = doc.split('\n')
 #
 # # Create a tokenizer and one-hot encode the words
-# tokenizer, vocab_size = Trainer.tokenize(lines)
+tokenizer, vocab_size = Trainer.tokenize(lines)
 # # separate into input and output
-# x, y, seq_length = Trainer.sequence_data(tokenizer, lines, vocab_size)
+x, y, seq_length = Trainer.sequence_data(tokenizer, lines, vocab_size)
 # # Build model(two LSTM hidden layer with 100 neurons,
 # # a dense fully connected layer with 100 neurons (relu), output layer (softmax)
-# model = Trainer.build_model(vocab_size, seq_length)
+model = Trainer.build_model(vocab_size, seq_length)
 # # Train the model with a batch size of 128 and 150 epochs (takes a while)
-# model = Trainer.train_model(x, y, model, 128, 150)
+model = Trainer.train_model(x, y, model, 128, 50)
 
 # Save trained model and tokenizer for later usage
-# Trainer.save_model(model, 'trump_5000.h5')
-# Trainer.save_tokenizer(tokenizer, 'tokenizer_5000.pkl')
+Trainer.save_model(model, 'trump_5000.h5')
+Trainer.save_tokenizer(tokenizer, 'tokenizer_5000.pkl')
 
 # Second step: Generate Tweets with the trained model
 # Open the sequenced data (if not open already)

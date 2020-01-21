@@ -1,11 +1,13 @@
 from numpy import array
 from pickle import dump
-from tensorflow.keras.preprocessing.text import Tokenizer
-from tensorflow.keras.utils import to_categorical
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense
-from tensorflow.keras.layers import LSTM
-from tensorflow.keras.layers import Embedding
+from keras.optimizers import Adam
+from tensorflow import keras
+from keras.preprocessing.text import Tokenizer
+from keras.utils import to_categorical
+from keras.models import Sequential
+from keras.layers import Dense
+from keras.layers import LSTM
+from keras.layers import Embedding
 
 from loader import Loader
 
@@ -56,7 +58,7 @@ class Trainer:
 
     @staticmethod
     def train_model(x, y, model, batch_size, epochs):
-        model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+        model.compile(loss='categorical_crossentropy', optimizer=Adam(lr=0.01), metrics=['accuracy'])
         # fit model
         model.fit(x, y, batch_size=batch_size, epochs=epochs)
         return model
