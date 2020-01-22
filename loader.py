@@ -7,7 +7,7 @@ class Loader:
     @staticmethod
     def open_file(name, delimiter, lines, termination):
         counter = 0
-        with open(name, encoding="utf8") as csv_file:
+        with open(name) as csv_file:
             csv_reader = csv.reader(csv_file, delimiter=delimiter)
             ret = ''
             iter_rows = iter(csv_reader)
@@ -50,6 +50,6 @@ class Loader:
     @staticmethod
     def store_file(text, filename):
         data = '\n'.join(text)
-        file = open(filename, 'w', encoding="utf8")
+        file = open(filename, 'w')
         file.write(data)
         file.close()

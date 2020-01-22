@@ -56,10 +56,10 @@ class Trainer:
     def build_model(vocab_size, seq_length):
         model = Sequential()
         model.add(Embedding(vocab_size, 50, input_length=seq_length))
-        model.add(Bidirectional(LSTM(64, return_sequences=True)))
-        model.add(LSTM(128, return_sequences=True))
+        model.add(Bidirectional(LSTM(128, return_sequences=True)))
+        model.add(Bidirectional(LSTM(128)))
         #model.add(Dropout(0.5))
-        model.add(LSTM(128))
+        #model.add(LSTM(128))
         #model.add(Dropout(0.5))
         model.add(Dense(100, activation='relu'))
         model.add(Dense(vocab_size, activation='softmax'))
@@ -69,7 +69,7 @@ class Trainer:
     @staticmethod
     def train_model(x, y, model, batch_size, epochs, patience=10):
         # learning rate in adam ändern und vllt mal sgd ausprobieren
-        opt = Adam(lr=0.001)
+        opt = Adam(lr=0.01)
         model.compile(loss='categorical_crossentropy', optimizer=opt, metrics=['accuracy'])
 
         early_stop = EarlyStopping('val_loss', patience=patience)
