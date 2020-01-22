@@ -1,7 +1,6 @@
 from numpy import array
 from matplotlib import pyplot
 from pickle import dump
-<<<<<<< HEAD
 from keras.callbacks import LearningRateScheduler, ModelCheckpoint, TensorBoard, EarlyStopping, ReduceLROnPlateau, LambdaCallback
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.utils import to_categorical
@@ -15,16 +14,6 @@ from tensorflow.keras.optimizers import Adam
 
 from utils import mk_dir
 import os
-=======
-from keras.optimizers import Adam
-from tensorflow import keras
-from keras.preprocessing.text import Tokenizer
-from keras.utils import to_categorical
-from keras.models import Sequential
-from keras.layers import Dense
-from keras.layers import LSTM
-from keras.layers import Embedding
->>>>>>> 5e21a27d6aef0d8dba70bc710dabccc2f367122a
 
 from loader import Loader
 
@@ -76,7 +65,6 @@ class Trainer:
         return model
 
     @staticmethod
-<<<<<<< HEAD
     def train_model(x, y, model, batch_size, epochs, patience=10):
         # learning rate in adam ändern und vllt mal sgd ausprobieren
         opt = Adam(lr=0.01)
@@ -97,10 +85,6 @@ class Trainer:
 
         callbacks = [reduce_lr, early_stop, model_checkpoint]
 
-=======
-    def train_model(x, y, model, batch_size, epochs):
-        model.compile(loss='categorical_crossentropy', optimizer=Adam(lr=0.01), metrics=['accuracy'])
->>>>>>> 5e21a27d6aef0d8dba70bc710dabccc2f367122a
         # fit model
         history = model.fit(x, y, 
             batch_size=batch_size, 
