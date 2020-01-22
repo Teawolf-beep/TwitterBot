@@ -1,0 +1,21 @@
+\BOOKMARK [1][]{section.1}{I Introduction}{}% 1
+\BOOKMARK [1][]{section.2}{II Data Acquisition}{}% 2
+\BOOKMARK [2][]{subsection.4}{II-A Twitter developer platform}{section.2}% 3
+\BOOKMARK [3][]{subsubsection.5}{II-A1 Tweepy}{subsection.4}% 4
+\BOOKMARK [3][]{subsubsection.6}{II-A2 Limitations}{subsection.4}% 5
+\BOOKMARK [3][]{subsubsection.8}{II-A3 Findings}{subsection.4}% 6
+\BOOKMARK [2][]{subsection.9}{II-B GetOldTweets}{section.2}% 7
+\BOOKMARK [3][]{subsubsection.10}{II-B1 Limitations}{subsection.9}% 8
+\BOOKMARK [3][]{subsubsection.12}{II-B2 Findings}{subsection.9}% 9
+\BOOKMARK [2][]{subsection.13}{II-C Implementation}{section.2}% 10
+\BOOKMARK [1][]{section.15}{III Data Preparation}{}% 11
+\BOOKMARK [2][]{subsection.16}{III-A Particular Content}{section.15}% 12
+\BOOKMARK [2][]{subsection.19}{III-B Space characters}{section.15}% 13
+\BOOKMARK [2][]{subsection.20}{III-C Data preparation flow}{section.15}% 14
+\BOOKMARK [1][]{section.22}{IV Post Processing}{}% 15
+\BOOKMARK [1][]{section.23}{V Experiments}{}% 16
+\BOOKMARK [2][]{subsection.27}{V-A Result}{section.23}% 17
+\BOOKMARK [2][]{subsection.28}{V-B Result}{section.23}% 18
+\BOOKMARK [1][]{section.29}{VI Results}{}% 19
+\BOOKMARK [1][]{section.30}{VII Conclusion}{}% 20
+\BOOKMARK [1][]{section*.31}{References}{}% 21
