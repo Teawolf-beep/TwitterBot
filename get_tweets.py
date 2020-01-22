@@ -156,7 +156,7 @@ def get_arguments():
     parser = argparse.ArgumentParser(description='Get Twitter Tweets from the passed target '
                                                  'person and store the attributes of interest to a CSV file.')
     # Define command-line argument "target"
-    parser.add_argument('target', type=str,
+    parser.add_argument('--target', type=str,
                         help='The user from which the tweets will be fetched.')
 
     # Define command-line argument "since"

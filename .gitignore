@@ -1,1 +1,12 @@
 sequenced_*.txt/
+checkpoints/
+clinton_11_12_19.h5
+clinton_2bi_1d_100.h5
+sequenced_clinton_data.txt
+tokenizer_clinton.pkl
+tokenizer_trump.pkl
+tokenizer_trump_22_01_20.pkl
+trump_22_01_20.h5
+trump_2bi_100_drop.h5
+trump_2bi_100_drop03.h5
+utils.py
