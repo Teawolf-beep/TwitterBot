@@ -34,7 +34,7 @@ class GeneratorGUI:
     def generate_command(self):
         seed = self.seed_text.get('1.0', 'end-1c')
         # seq_length = len(seed.split())
-        generated = Generator.generate_seq(self.model, self.tokenizer, 50, seed, 10)
+        generated = Generator.generate_seq(self.model, self.tokenizer, 100, seed, 10)
         self.generated_text.configure(state='normal')
         self.generated_text.delete('1.0', 'end')
         self.generated_text.insert('end', Generator.postprocess(generated))
