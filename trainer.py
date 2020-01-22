@@ -1,16 +1,17 @@
 from numpy import array
 from matplotlib import pyplot
+from tensorflow import keras
 from pickle import dump
 from keras.callbacks import LearningRateScheduler, ModelCheckpoint, TensorBoard, EarlyStopping, ReduceLROnPlateau, LambdaCallback
-from tensorflow.keras.preprocessing.text import Tokenizer
-from tensorflow.keras.utils import to_categorical
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense
-from tensorflow.keras.layers import LSTM
-from tensorflow.keras.layers import Embedding
-from tensorflow.keras.layers import Bidirectional
-from tensorflow.keras.layers import Dropout
-from tensorflow.keras.optimizers import Adam
+from keras.preprocessing.text import Tokenizer
+from keras.utils import to_categorical
+from keras.models import Sequential
+from keras.layers import Dense
+from keras.layers import LSTM
+from keras.layers import Embedding
+from keras.layers import Bidirectional
+from keras.layers import Dropout
+from keras.optimizers import Adam
 
 from utils import mk_dir
 import os
@@ -28,7 +29,7 @@ class Trainer:
 
     @staticmethod
     def load_file(filename):
-        file = open(filename, 'r', encoding="utf8")
+        file = open(filename, 'r')
         text = file.read()
         file.close()
         return text
@@ -55,10 +56,11 @@ class Trainer:
     def build_model(vocab_size, seq_length):
         model = Sequential()
         model.add(Embedding(vocab_size, 50, input_length=seq_length))
-        model.add(LSTM(100, return_sequences=True))
-        model.add(Dropout(0.5))
-        model.add(LSTM(100))
-        model.add(Dropout(0.5))
+        model.add(Bidirectional(LSTM(64, return_sequences=True)))
+        model.add(LSTM(128, return_sequences=True))
+        #model.add(Dropout(0.5))
+        model.add(LSTM(128))
+        #model.add(Dropout(0.5))
         model.add(Dense(100, activation='relu'))
         model.add(Dense(vocab_size, activation='softmax'))
         print(model.summary())
@@ -67,11 +69,11 @@ class Trainer:
     @staticmethod
     def train_model(x, y, model, batch_size, epochs, patience=10):
         # learning rate in adam ändern und vllt mal sgd ausprobieren
-        opt = Adam(lr=0.01)
+        opt = Adam(lr=0.001)
         model.compile(loss='categorical_crossentropy', optimizer=opt, metrics=['accuracy'])
 
         early_stop = EarlyStopping('val_loss', patience=patience)
-        reduce_lr = ReduceLROnPlateau(verbose=1, min_delta=0.001,
+        reduce_lr = ReduceLROnPlateau(verbose=1, min_delta=0.01,
                                     patience=int(patience/2))
 
         mk_dir("checkpoints")
@@ -90,8 +92,8 @@ class Trainer:
             batch_size=batch_size, 
             epochs=epochs, 
             callbacks=callbacks, 
-            shuffle=True, 
-            validation_split=0.1)
+            shuffle=False, 
+            validation_split=0.2)
 
         pyplot.plot(history.history['loss'])
         pyplot.plot(history.history['val_loss'])

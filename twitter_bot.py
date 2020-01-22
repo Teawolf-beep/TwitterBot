@@ -5,7 +5,7 @@ from trainer import Trainer
 from generator import Generator
 
 # Open csv-file
-doc = Loader.open_file('trumpDataset.csv', ';', 8000, ';')
+doc = Loader.open_file('trumpDataset.csv', ';', 5000, ';')
 # Manipulate the csv-file
 tokens = Loader.clean_file(doc)
 lines = Loader.sequence_file(tokens, 50)
@@ -24,11 +24,11 @@ x, y, seq_length = Trainer.sequence_data(tokenizer, lines, vocab_size)
 # a dense fully connected layer with 100 neurons (relu), output layer (softmax)
 model = Trainer.build_model(vocab_size, seq_length)
 # Train the model with a batch size of 128 and 150 epochs (takes a while)
-model = Trainer.train_model(x, y, model, 128, 10)
+model = Trainer.train_model(x, y, model, 128, 20)
 print("training done")
 #Save trained model and tokenizer for later usage
-Trainer.save_model(model, 'trump_22_01_20.h5')
-Trainer.save_tokenizer(tokenizer, 'tokenizer_trump_22_01_20.pkl')
+Trainer.save_model(model, 'trump_220120.h5')
+Trainer.save_tokenizer(tokenizer, 'tokenizer_trump_220120.pkl')
 
 # # Second step: Generate Tweets with the trained model
 # # Open the sequenced data (if not open already)
