@@ -1,7 +1,5 @@
 import tkinter as tk
 
-from loader import Loader
-from trainer import Trainer
 from generator import Generator
 
 
@@ -75,11 +73,14 @@ class GeneratorGUI:
                     break
 
             if found_trump and found_hillary:
+                self.seed_text.tag_remove('orange', pos_start, pos_end)
                 self.seed_text.tag_remove('red', pos_start, pos_end)
                 self.seed_text.tag_add('green', pos_start, pos_end)
             elif not found_hillary and not found_trump:
+                self.seed_text.tag_remove('orange', pos_start, pos_end)
                 self.seed_text.tag_add('red', pos_start, pos_end)
             else:
+                self.seed_text.tag_remove('red', pos_start, pos_end)
                 self.seed_text.tag_add('orange', pos_start, pos_end)
 
 
