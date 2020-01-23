@@ -1,5 +1,4 @@
 # TwitterBot
-=======
 
 The objective of this research project is to design and develop a neural network that is able to create and publish short text messages, further named Tweets, on the social networking service Twitter. The content of these tweets will be based on the tweets of a public personality. Since there is a steady increase of machines and algorithms in our everyday life, researches are looking for ways to facilitate human machine interaction. The most natural way for humans to communicate with other beings is spoken and written language. Therefore, on the one side, it is essential to develop algorithms, which are able to extract information from human language. On the other side it is not less important that these algorithms can form sentences, which are understandable for human beings. In this project we propose a LSTM long short-term memory architecture, that is capable of extracting features with long term dependencies. The prediction will be based on a  starting seed with a word-level approach, so that complete words will be predicted. The data will be scraped from Twitter profiles and can be of arbitrary language. 
 
@@ -7,7 +6,7 @@ The objective of this research project is to design and develop a neural network
 
 The tweet_dumpre.py script allows to fetch Tweets from a passed username (target). Consequently unwanted content will be removed and the data is written to a csv file.
 
-Please type `python tweet_dumper -h` for information about possible arguments.
+Please type `python tweet_dumper -h` for information about accepted arguments.
 
 ```
 usage: tweet_dumper.py [-h] [-s SINCE] [-u UNTIL] [-f FILENAME] [-l LIMIT]
@@ -39,7 +38,7 @@ optional arguments:
                  is False
 ```
 
-## Train a model
+## Train a model an generate text
 
 Data preparation, training and verification are done via static method calls of the Loader, Trainer and Generator calls. In the twitter_bot.py script is a complete example which should work out of the box. You can alter the Defines on top in order to change parameters.
 
