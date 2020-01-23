@@ -29,7 +29,7 @@ robert.rose@th-koeln.de}
 
 \begin{abstract}
 %This article describes the development of a text generating neural network. It is trained on sets of short text messages extracted from the social networking service Twitter. The network creates a model with the ability of newly-creating texts which adopt the syntax of the training set.
-The objective of this research project is to design and develop a neural network that is able to create and publish short text messages, further named tweets, on the social networking service Twitter. The content of these tweets will be based on the tweets of a public personality. Since there is a steady increase of machines and algorithms in our everyday life, researches are looking for ways to facilitate human machine interaction. The most natural way for humans to communicate with other beings is spoken and written language. Therefore, on the one side, it is essential to develop algorithms, which are able to extract information from human language. On the other side it is not less important that these algorithms can form sentences, which are understandable for human beings. In this project we propose a LSTM long short-term memory architecture, that is capable of extracting features with long term dependencies. The prediction will be based on a  starting seed with a word-level approach, so that complete words will be predicted. The data will be scraped from Twitter profiles and can be of arbitrary language. 
+The objective of this research project is to design and develop a neural network that is able to create and publish short text messages, further named Tweets, on the social networking service Twitter. The content of these tweets will be based on the tweets of a public personality. Since there is a steady increase of machines and algorithms in our everyday life, researches are looking for ways to facilitate human machine interaction. The most natural way for humans to communicate with other beings is spoken and written language. Therefore, on the one side, it is essential to develop algorithms, which are able to extract information from human language. On the other side it is not less important that these algorithms can form sentences, which are understandable for human beings. In this project we propose a LSTM long short-term memory architecture, that is capable of extracting features with long term dependencies. The prediction will be based on a  starting seed with a word-level approach, so that complete words will be predicted. The data will be scraped from Twitter profiles and can be of arbitrary language. 
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -139,7 +139,7 @@ The GetOldTweets package does not offer the possibility of publishing Tweets or 
 
 \subsubsection{Findings}
 
-As in this stage of the project it is most important to gather large data sets, GetOldTweets is the preferred tool. The handling is simpler than that of the official Twitter API and it allows to fetch more Tweets in shorter time. Besides it is able to extract Tweets independent of the datum it was published. 
+As in this stage of the project it is most important to gather large data sets, GetOldTweets is the preferred tool. The handling is simpler than that of the official Twitter API and it allows to fetch more Tweets in shorter time. Besides it is able to extract Tweets independent of the datum of publication. 
 
 %\subsection{Implementation}
 %
@@ -164,7 +164,7 @@ Tweets can contain particular contents as weblinks, picture or video links, punc
 \item Username references comply with the same considerations as hashtags.
 \end{itemize}
 
-With respect to the considerations only selected punctuation symbols\footnote{point, comma, exclamation mark, interrogation mark, parenthesis colon and hash},  hashtags and references to usernames are fed into the neural network. The remaining particular contents will be filtered out before saving the data to the csv file. Therefore regular expressions are used to search all gathered Tweets for outstanding patterns and remove unwanted content.
+With respect to the considerations only selected punctuation symbols\footnote{point, comma, exclamation mark, interrogation mark, colon and hash.},  hashtags and references to usernames are fed into the neural network. The remaining particular contents will be filtered out before saving the data to the csv file. Therefore regular expressions are used to search all gathered Tweets for outstanding patterns and remove unwanted content.
 
 \subsection{Space characters}\label{subsec_space_characters}
 
@@ -173,8 +173,8 @@ Besides multiple consequent space characters, which possibly exist because of pr
 
 \subsection{Termination symbol}
 
-The trained model does typically not know when to stop generating new words. A simple approach to stop generation is to abort it after a specific amount of generated words. This has the poor effect of interrupting at an arbitrary point. The resulting output conveys a choppy feeling as it stops in the middle of generation.\\
-A more advanced technique is to place a unique termination symbol on the end of each Tweet which will be interpreted as an independent word by the network. The trained models will generate the termination symbol on positions where stopping the model will look less artificial, e.g. the ending of a sentence. When a termination symbol is noticed in the text generation loop, the model will be stopped.
+The trained model does typically not know when to stop generating new words. A simple approach to stop the generation of text is to abort it after a specific amount of generated words. This has the poor effect of interrupting at an arbitrary point. The resulting output conveys a choppy feeling as it stops in the middle of generation.\\
+A more advanced technique is to place a unique termination symbol on the end of each Tweet. It will be interpreted as an independent word by the network. The trained models will learn to generate the termination symbol on positions where stopping the model will look less artificial, e.g. the ending of a sentence. When a termination symbol is noticed in the text generation loop, the model will be stopped.
 
 %\subsection{Data preparation flow}
 %
@@ -186,47 +186,47 @@ A more advanced technique is to place a unique termination symbol on the end of 
 
 \section{Software Structure}
 
-The software for fetching data and training the model is written purely in python. The code is mostly inspired by a tutorial on machine learning \cite{tutrob}. It ranges over four different scripts, which all contain object oriented code. This facilitates tuning and experimenting with different models by interchangeable parameters of each method. Each script is described by an explanatory text and a simplified flowchart diagram. The flowchart diagrams only contain the most important points and do not completely display the whole content of the respecting script. Please note, that the flowcharts only show an advisable workflow and combine multiple method calls. The decision symbols are used to illustrate optional methods. The ``Loader'', ``Trainer'' and ``Generator'' classes are designed to be called coherent.
+The software for fetching data and training the model is written purely in python. It is mostly inspired by a tutorial on machine learning \cite{tutrob}. The code ranges over four different scripts, which all contain object oriented code. This facilitates tuning and experimenting with different settings by interchangeable parameters of each method. Each script is described by an explanatory text and a simplified flowchart diagram. The flowchart diagrams only contain the most important points and do not completely display the whole content of the respecting script. Please note, that the flowcharts only show an advisable workflow and combine multiple method calls. The decision symbols are used to illustrate optional methods. The ``Loader'', ``Trainer'' and ``Generator'' classes are designed to be called coherent from a higher-level script.
 
 \subsection{Script tweet\_dumper.py}
 
-This script can be run from the command-line and is responsible for fetching Tweets from Twitter. It imports the GetOldTweets package directly and accepts obligatory, as well as optional, arguments from the command-line to keep the usage as generic as possible. After checking the passed arguments, The script implements the class ``TweetDumper'' and will pass all command-line arguments to its constructor. Consequently the class starts to fetch Tweets from the passed person until a defined limit is reached. Afterwards it pre-processes the text of each Tweet by removing unwanted content as described in \ref{subsec_particular_content}. As a final step the fetched data gets saved in a csv\footnote{CSV means comma-separated values. It is a delimited text file that uses a comma to separate values.} file. Please see figure \ref{fig:flowchart_tweet_dumper} for a graphical representation.
+This script can be run from the command-line and is responsible for fetching Tweets from Twitter. It imports the GetOldTweets package directly and accepts obligatory, as well as optional, arguments from the command-line to keep the usage as generic as possible. After checking the passed arguments, the script implements the class ``TweetDumper'' and will pass all command-line arguments to its constructor. Consequently the class starts to fetch Tweets from the desired username until a defined limit is reached. Afterwards it pre-processes the text of each Tweet by removing unwanted content as described in section \ref{subsec_particular_content}. As a final step the fetched data gets saved in a csv\footnote{CSV means comma-separated values. It is a delimited text file that uses a comma or different delimiter to separate values.} file. Please see figure \ref{fig:flowchart_tweet_dumper} for a graphical representation.
 
-%\begin{figure}[htbp]
-%\centerline{\includegraphics[scale=0.65]{pictures/flowchart_tweet_dumper.png}}
-%\caption{Flowchart tweet\_dumper.}
-%\label{fig:flowchart_tweet_dumper}
-%\end{figure}
+\begin{figure}[htbp]
+\centerline{\includegraphics[scale=0.61]{pictures/flowchart_tweet_dumper.png}}
+\caption{Flowchart tweet\_dumper.}
+\label{fig:flowchart_tweet_dumper}
+\end{figure}
 
 \subsection{Script loader.py}\label{subsec_loader}
 
-The ``Loader'' class is defined in this script. It can not be run directly and needs to be imported in an executable script. The Loader class implements static methods for loading a saved csv file, preparing the data for being passed to the neural network and saving the prepared data. Besides multiple space characters are collapsed and punctuation symbols are padded as described in \ref{subsec_space_characters}. Not all of the methods are obligatory, although it is advisable to call them in a specific order as seen in figure \ref{fig:flowchart_loader}. 
+The ``Loader'' class is defined in this script. It can not be run directly and needs to be imported in an executable script. The Loader class implements static methods for loading a saved csv file, preparing the data for being passed to the neural network and saving the prepared data. Besides multiple space characters are collapsed and punctuation symbols are padded as described in section \ref{subsec_space_characters}. Not all of the methods are obligatory, although it is advisable to call them in a specific order as in figure \ref{fig:flowchart_loader}. 
 
-%\begin{figure}[htbp]
-%\centerline{\includegraphics[scale=0.65]{pictures/flowchart_loader.png}}
-%\caption{Advised Flowchart Loader Class.}
-%\label{fig:flowchart_loader}
-%\end{figure}
+\begin{figure}[htbp]
+\centerline{\includegraphics[scale=0.65]{pictures/flowchart_loader.png}}
+\caption{Advised Flowchart Loader Class.}
+\label{fig:flowchart_loader}
+\end{figure}
 
 \subsection{Script trainer.py}\label{subsec_trainer}
 
-The ``Trainer'' class cannot be run directly and is consecutive to the Loader class. It offers only static methods and can either open a saved file, call methods from the Loader class or be passed the cleaned and sequenced text directly. It creates the tokenizer which the neural network will use as well. Moreover it offers methods to separate the data into input and output as well as to build, compile and fit the model. Hence it forms the heart of this project. The tokenizer and the trained model can be saved afterwards in order to use them multiple times. It is strongly recommended to save model and tokenizer, as they have to be used together and the training is very time intensive. Please refer to figure \ref{fig:flowchart_trainer} for further information.
+The ``Trainer'' class cannot be run directly and is consecutive to the Loader class. It offers only static methods and can open a saved file, which is prepared by method calls of the Loader class, or be passed cleaned and sequenced text data directly. It creates the tokenizer which the neural network will use. Moreover it methods can be used for separating the data into input and output as well as for building, compiling and fitting the model. Hence it forms the heart of this project. The tokenizer and the trained model can be saved afterwards in order to use them multiple times. It is strongly recommended to save model and tokenizer, as they have to be used together and the training of the model is very time intensive. Figure \ref{fig:flowchart_trainer} displays the preferred flow sequence.
 
-%\begin{figure}[htbp]
-%\centerline{\includegraphics[scale=0.65]{pictures/flowchart_trainer.png}}
-%\caption{Advised Flowchart Trainer Class.}
-%\label{fig:flowchart_trainer}
-%\end{figure}
+\begin{figure}[htbp]
+\centerline{\includegraphics[scale=0.65]{pictures/flowchart_trainer.png}}
+\caption{Advised Flowchart Trainer Class.}
+\label{fig:flowchart_trainer}
+\end{figure}
 
 \subsection{Script generator.py}\label{subsec_generator}
 
-As a final step the ``Generator'' class should be invoked. It is defined in this script and cannot be run directly. Instead it implements static methods which load a saved model or a saved tokenizer, generate an output text based on a seed text and post-process the generated text to make it more human readable. The advised flowchart is displayed in figure \ref{fig:flowchart_generator}.
+As a final step the ``Generator'' class should be invoked. It is defined in this script and cannot be run directly. The Generator class offers static methods to load a saved model and tokenizer which are needed to generate output text. The text generation needs a starting point in form of a ``seed text''. The words contained in the seed text need to be known to the tokenizer. Additionally the Generator class post-processes the generated text to make it more human readable. The advised flowchart is displayed in figure \ref{fig:flowchart_generator}.
 
-%\begin{figure}[htbp]
-%\centerline{\includegraphics[scale=0.65]{pictures/flowchart_generator.png}}
-%\caption{Advised Flowchart Generator Class.}
-%\label{fig:flowchart_generator}
-%\end{figure}
+\begin{figure}[htbp]
+\centerline{\includegraphics[scale=0.65]{pictures/flowchart_generator.png}}
+\caption{Advised Flowchart Generator Class.}
+\label{fig:flowchart_generator}
+\end{figure}
 
 \section{Experiments}
 

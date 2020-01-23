@@ -24,18 +24,18 @@
 \BOOKMARK [2][]{subsection.32}{V-C Termination symbol}{section.26}% 24
 \BOOKMARK [1][]{section.33}{VI Software Structure}{}% 25
 \BOOKMARK [2][]{subsection.34}{VI-A Script tweet\137dumper.py}{section.33}% 26
-\BOOKMARK [2][]{subsection.36}{VI-B Script loader.py}{section.33}% 27
-\BOOKMARK [2][]{subsection.37}{VI-C Script trainer.py}{section.33}% 28
-\BOOKMARK [2][]{subsection.38}{VI-D Script generator.py}{section.33}% 29
-\BOOKMARK [1][]{section.39}{VII Experiments}{}% 30
-\BOOKMARK [2][]{subsection.40}{VII-A Character Level}{section.39}% 31
-\BOOKMARK [2][]{subsection.41}{VII-B Word Level}{section.39}% 32
-\BOOKMARK [2][]{subsection.42}{VII-C Consisting Embedding Layer}{section.39}% 33
-\BOOKMARK [3][]{subsubsection.43}{VII-C1 Result}{subsection.42}% 34
-\BOOKMARK [2][]{subsection.44}{VII-D Without Embedding Layer}{section.39}% 35
-\BOOKMARK [3][]{subsubsection.45}{VII-D1 Result}{subsection.44}% 36
-\BOOKMARK [2][]{subsection.46}{VII-E Bidirectional LSTM}{section.39}% 37
-\BOOKMARK [3][]{subsubsection.47}{VII-E1 Result}{subsection.46}% 38
-\BOOKMARK [1][]{section.48}{VIII Post Processing}{}% 39
-\BOOKMARK [1][]{section.49}{IX Conclusion}{}% 40
-\BOOKMARK [1][]{section*.50}{References}{}% 41
+\BOOKMARK [2][]{subsection.37}{VI-B Script loader.py}{section.33}% 27
+\BOOKMARK [2][]{subsection.39}{VI-C Script trainer.py}{section.33}% 28
+\BOOKMARK [2][]{subsection.41}{VI-D Script generator.py}{section.33}% 29
+\BOOKMARK [1][]{section.43}{VII Experiments}{}% 30
+\BOOKMARK [2][]{subsection.44}{VII-A Character Level}{section.43}% 31
+\BOOKMARK [2][]{subsection.45}{VII-B Word Level}{section.43}% 32
+\BOOKMARK [2][]{subsection.46}{VII-C Consisting Embedding Layer}{section.43}% 33
+\BOOKMARK [3][]{subsubsection.47}{VII-C1 Result}{subsection.46}% 34
+\BOOKMARK [2][]{subsection.48}{VII-D Without Embedding Layer}{section.43}% 35
+\BOOKMARK [3][]{subsubsection.49}{VII-D1 Result}{subsection.48}% 36
+\BOOKMARK [2][]{subsection.50}{VII-E Bidirectional LSTM}{section.43}% 37
+\BOOKMARK [3][]{subsubsection.51}{VII-E1 Result}{subsection.50}% 38
+\BOOKMARK [1][]{section.52}{VIII Post Processing}{}% 39
+\BOOKMARK [1][]{section.53}{IX Conclusion}{}% 40
+\BOOKMARK [1][]{section*.54}{References}{}% 41
