@@ -43,8 +43,8 @@ class GeneratorGUI:
     def generate_command(self):
         seed = self.seed_text.get('1.0', 'end-1c')
         # seq_length = len(seed.split())
-        generated_trump = Generator.generate_seq(self.model_trump, self.tokenizer_trump, 50, seed, 10)
-        generated_hillary = Generator.generate_seq(self.model_hillary, self.tokenizer_hillary, 50, seed, 10)
+        generated_trump = Generator.generate_seq(self.model_trump, self.tokenizer_trump, 50, seed, 10, 30)
+        generated_hillary = Generator.generate_seq(self.model_hillary, self.tokenizer_hillary, 50, seed, 10, 30)
         self.trump_text.configure(state='normal')
         self.trump_text.delete('1.0', 'end')
         self.trump_text.insert('end', Generator.postprocess(generated_trump))
@@ -90,3 +90,4 @@ if __name__ == '__main__':
     tokenizer_hillary_5000 = Generator.load_tokenizer('tokenizer_5000.pkl')
     master = tk.Tk()
     GeneratorGUI(master, tokenizer_trump_5000, tokenizer_hillary_5000, model_trump_5000, model_hillary_5000)
+
