@@ -1,0 +1,41 @@
+\BOOKMARK [1][]{section.1}{I Introduction}{}% 1
+\BOOKMARK [1][]{section.2}{II Related Papers}{}% 2
+\BOOKMARK [1][]{section.3}{III Methods}{}% 3
+\BOOKMARK [2][]{subsection.4}{III-A Architecture}{section.3}% 4
+\BOOKMARK [3][]{subsubsection.7}{III-A1 Forget Gate}{subsection.4}% 5
+\BOOKMARK [3][]{subsubsection.8}{III-A2 Input Gate}{subsection.4}% 6
+\BOOKMARK [3][]{subsubsection.9}{III-A3 Output Gate}{subsection.4}% 7
+\BOOKMARK [2][]{subsection.10}{III-B Optimizations}{section.3}% 8
+\BOOKMARK [3][]{subsubsection.11}{III-B1 Embedding}{subsection.10}% 9
+\BOOKMARK [3][]{subsubsection.12}{III-B2 Dropout}{subsection.10}% 10
+\BOOKMARK [3][]{subsubsection.13}{III-B3 Word Level Approach}{subsection.10}% 11
+\BOOKMARK [2][]{subsection.14}{III-C Final Network}{section.3}% 12
+\BOOKMARK [1][]{section.15}{IV Data Acquisition}{}% 13
+\BOOKMARK [2][]{subsection.17}{IV-A Twitter developer platform}{section.15}% 14
+\BOOKMARK [3][]{subsubsection.18}{IV-A1 Tweepy}{subsection.17}% 15
+\BOOKMARK [3][]{subsubsection.19}{IV-A2 Limitations}{subsection.17}% 16
+\BOOKMARK [3][]{subsubsection.21}{IV-A3 Findings}{subsection.17}% 17
+\BOOKMARK [2][]{subsection.22}{IV-B GetOldTweets}{section.15}% 18
+\BOOKMARK [3][]{subsubsection.23}{IV-B1 Limitations}{subsection.22}% 19
+\BOOKMARK [3][]{subsubsection.25}{IV-B2 Findings}{subsection.22}% 20
+\BOOKMARK [1][]{section.26}{V Data Preparation}{}% 21
+\BOOKMARK [2][]{subsection.27}{V-A Particular Content}{section.26}% 22
+\BOOKMARK [2][]{subsection.31}{V-B Space characters}{section.26}% 23
+\BOOKMARK [2][]{subsection.32}{V-C Termination symbol}{section.26}% 24
+\BOOKMARK [1][]{section.33}{VI Software Structure}{}% 25
+\BOOKMARK [2][]{subsection.34}{VI-A Script tweet\137dumper.py}{section.33}% 26
+\BOOKMARK [2][]{subsection.36}{VI-B Script loader.py}{section.33}% 27
+\BOOKMARK [2][]{subsection.37}{VI-C Script trainer.py}{section.33}% 28
+\BOOKMARK [2][]{subsection.38}{VI-D Script generator.py}{section.33}% 29
+\BOOKMARK [1][]{section.39}{VII Experiments}{}% 30
+\BOOKMARK [2][]{subsection.40}{VII-A Character Level}{section.39}% 31
+\BOOKMARK [2][]{subsection.41}{VII-B Word Level}{section.39}% 32
+\BOOKMARK [2][]{subsection.42}{VII-C Consisting Embedding Layer}{section.39}% 33
+\BOOKMARK [3][]{subsubsection.43}{VII-C1 Result}{subsection.42}% 34
+\BOOKMARK [2][]{subsection.44}{VII-D Without Embedding Layer}{section.39}% 35
+\BOOKMARK [3][]{subsubsection.45}{VII-D1 Result}{subsection.44}% 36
+\BOOKMARK [2][]{subsection.46}{VII-E Bidirectional LSTM}{section.39}% 37
+\BOOKMARK [3][]{subsubsection.47}{VII-E1 Result}{subsection.46}% 38
+\BOOKMARK [1][]{section.48}{VIII Post Processing}{}% 39
+\BOOKMARK [1][]{section.49}{IX Conclusion}{}% 40
+\BOOKMARK [1][]{section*.50}{References}{}% 41
