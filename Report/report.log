@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2020.1.8)  24 JAN 2020 18:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2020.1.8)  24 JAN 2020 19:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -409,7 +409,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 59--61
 
  []
 
-<pictures/structure_rnn.png, id=174, 244.0755pt x 90.9945pt>
+<pictures/structure_rnn.png, id=162, 244.0755pt x 90.9945pt>
 File: pictures/structure_rnn.png Graphic file (type png)
 <use pictures/structure_rnn.png>
 Package pdftex.def Info: pictures/structure_rnn.png  used on input line 63.
@@ -418,7 +418,7 @@ Package pdftex.def Info: pictures/structure_rnn.png  used on input line 63.
 
 
 ]
-<pictures/structure_lstm.png, id=187, 490.08093pt x 383.18156pt>
+<pictures/structure_lstm.png, id=175, 490.08093pt x 383.18156pt>
 File: pictures/structure_lstm.png Graphic file (type png)
 <use pictures/structure_lstm.png>
 Package pdftex.def Info: pictures/structure_lstm.png  used on input line 74.
@@ -453,26 +453,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 151--152
  []
 
 [3]
-<pictures/flowchart_tweet_dumper.png, id=234, 363.3575pt x 523.9575pt>
+<pictures/flowchart_tweet_dumper.png, id=222, 363.3575pt x 523.9575pt>
 File: pictures/flowchart_tweet_dumper.png Graphic file (type png)
 <use pictures/flowchart_tweet_dumper.png>
 Package pdftex.def Info: pictures/flowchart_tweet_dumper.png  used on input lin
 e 184.
 (pdftex.def)             Requested size: 221.64774pt x 319.6136pt.
  [4 <./pictures/flowchart_tweet_dumper.png>]
-<pictures/flowchart_loader.png, id=246, 251.94125pt x 573.14125pt>
+<pictures/flowchart_loader.png, id=234, 251.94125pt x 573.14125pt>
 File: pictures/flowchart_loader.png Graphic file (type png)
 <use pictures/flowchart_loader.png>
 Package pdftex.def Info: pictures/flowchart_loader.png  used on input line 194.
 
 (pdftex.def)             Requested size: 163.75986pt x 372.5374pt.
-<pictures/flowchart_trainer.png, id=248, 362.35374pt x 723.70375pt>
+<pictures/flowchart_trainer.png, id=236, 362.35374pt x 723.70375pt>
 File: pictures/flowchart_trainer.png Graphic file (type png)
 <use pictures/flowchart_trainer.png>
 Package pdftex.def Info: pictures/flowchart_trainer.png  used on input line 204
 .
 (pdftex.def)             Requested size: 235.52715pt x 470.40186pt.
-<pictures/flowchart_generator.png, id=250, 362.35374pt x 482.80376pt>
+<pictures/flowchart_generator.png, id=238, 362.35374pt x 482.80376pt>
 File: pictures/flowchart_generator.png Graphic file (type png)
 <use pictures/flowchart_generator.png>
 Package pdftex.def Info: pictures/flowchart_generator.png  used on input line 2
@@ -484,141 +484,131 @@ Underfull \hbox (badness 10000) in paragraph at lines 232--233
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 234--236
+Underfull \hbox (badness 10000) in paragraph at lines 234--235
 
  []
 
 
-Underfull \hbox (badness 2057) in paragraph at lines 241--249
+Underfull \hbox (badness 10000) in paragraph at lines 236--237
+
+ []
+
+
+Underfull \hbox (badness 2057) in paragraph at lines 242--250
 \OT1/ptm/m/n/10 The lan-guage model is sta-tis-ti-cal and will pre-dict the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 241--249
+Underfull \hbox (badness 10000) in paragraph at lines 242--250
 
  []
 
 [6 <./pictures/flowchart_generator.png>]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 298.
+(caption)                particular \caption on input line 299.
 See the caption package documentation for explanation.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 303--304
+Underfull \hbox (badness 10000) in paragraph at lines 304--305
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 307--308
+Underfull \hbox (badness 10000) in paragraph at lines 308--309
 
  []
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 340.
+(caption)                particular \caption on input line 341.
 See the caption package documentation for explanation.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 345--346
+Underfull \hbox (badness 10000) in paragraph at lines 346--347
 
  []
 
 
-Underfull \hbox (badness 1983) in paragraph at lines 347--348
-\OT1/ptm/m/n/10 con , and the il-le-gal meet-ings with a highly par-ti-san
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 347--348
+Underfull \hbox (badness 10000) in paragraph at lines 350--351
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 349--350
+Underfull \hbox (badness 10000) in paragraph at lines 356--358
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 355--357
+Underfull \hbox (badness 10000) in paragraph at lines 356--358
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 355--357
-
- []
-
-
-Underfull \vbox (badness 1400) has occurred while \output is active []
+Underfull \vbox (badness 3679) has occurred while \output is active []
 
  [7]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 383.
+(caption)                particular \caption on input line 384.
 See the caption package documentation for explanation.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 388--389
+Underfull \hbox (badness 10000) in paragraph at lines 389--390
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 390--391
+Underfull \hbox (badness 10000) in paragraph at lines 393--394
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 392--393
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 414--415
+Underfull \hbox (badness 10000) in paragraph at lines 415--416
 []\OT1/ptm/m/n/8 N. Michael, ``To-wards-data-science'', 2018 [On-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 414--415
+Underfull \hbox (badness 10000) in paragraph at lines 415--416
 \OT1/ptm/m/n/8 line]. Avail-able: []$https : / / towardsdatascience . com /
  []
 
 
-Overfull \hbox (24.82144pt too wide) in paragraph at lines 414--415
+Overfull \hbox (24.82144pt too wide) in paragraph at lines 415--416
 \OT1/ptm/m/n/8 illustrated-[]guide-[]to-[]lstms-[]and-[]gru-[]s-[]a-[]step-[]by
 -[]step-[]explanation-[]44e9eb85bf21$[].
  []
 
 
-Underfull \hbox (badness 6032) in paragraph at lines 415--416
+Underfull \hbox (badness 6032) in paragraph at lines 416--417
 []\OT1/ptm/m/n/8 Tensorflow, 2020 [On-line]. Avail-able: []$https : / / www . t
 ensor^^Mow . org /
  []
 
 
-Underfull \hbox (badness 3557) in paragraph at lines 416--417
+Underfull \hbox (badness 3557) in paragraph at lines 417--418
 \OT1/ptm/m/n/8 gitbooks . io / arti^^Lcial-[]inteligence / content / dropout[]l
 ayer . html$[]. [Ac-cessed
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 421--422
+Underfull \hbox (badness 10000) in paragraph at lines 422--423
 []\OT1/ptm/m/n/8 Jason Brown-lee, ``How to De-velop a Word-Level Neu-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 421--422
+Underfull \hbox (badness 10000) in paragraph at lines 422--423
 \OT1/ptm/m/n/8 ral Lan-guage Model and Use it to Gen-er-ate Text''
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 421--422
+Underfull \hbox (badness 10000) in paragraph at lines 422--423
 \OT1/ptm/m/n/8 [On-line]. Avail-able: []$https : / / machinelearningmastery . c
 om /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 421--422
+Underfull \hbox (badness 10000) in paragraph at lines 422--423
 \OT1/ptm/m/n/8 how-[]to-[]develop-[]a-[]word-[]level-[]neural-[]language-[]mode
 l-[]in-[]keras/$[].
  []
@@ -634,25 +624,21 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 424.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 425.
 [8]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 424.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 425.
  (./report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 424.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 424.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 425.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 425.
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 57BA6C0136990C732C4CECAA0672B2F8;2801.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 424.
+(rerunfilecheck)             Checksum: 1173412ED94D812F2A6070D26F56BE8F;2611.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 425.
  ) 
 Here is how much of TeX's memory you used:
- 7139 strings out of 494467
- 114987 string characters out of 6174031
+ 7133 strings out of 494467
+ 114897 string characters out of 6174031
  205631 words of memory out of 5000000
- 10706 multiletter control sequences out of 15000+600000
+ 10703 multiletter control sequences out of 15000+600000
  39736 words of font info for 73 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  36i,8n,43p,1140b,391s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -661,10 +647,10 @@ e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/u
 tmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on report.pdf (8 pages, 241786 bytes).
+Output written on report.pdf (8 pages, 241391 bytes).
 PDF statistics:
- 343 PDF objects out of 1000 (max. 8388607)
- 312 compressed objects within 4 object streams
- 77 named destinations out of 1000 (max. 500000)
- 367 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 330 PDF objects out of 1000 (max. 8388607)
+ 300 compressed objects within 3 object streams
+ 74 named destinations out of 1000 (max. 500000)
+ 343 words of extra memory for PDF output out of 10000 (max. 10000000)
 

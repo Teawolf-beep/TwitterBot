@@ -48,7 +48,7 @@ This could also include errors made by the person, which will be adapted by the 
 Tweets are sequential data of a determined length. For this reason, it is appropriate to use a RNN network structure as the main architecture. Further LSTMs proved themselves to be a well thought choice to include long-term memory capabilities in the learning process.\\
 Another important part is the preprocessing of the gathered data. Users on Twitter can not only post tweets, there is also the possibility to repost other users. These tweets need to be filtered. Also emojis or hashtags need to be considered.\\
 
-\section{Related Papers}
+\section{Related papers}
 
 A related project found is a deep neural network used for bot detection. It also uses a LSTM approach but also additional meta data of the targeted user. It uses semantic analysis of the tweets to extract the contextual features. But it doesn’t generate text, the semantic analysis only assists the classification \cite{tim2}.
 
@@ -78,16 +78,16 @@ The LSTM modifies the inner structure of a cell by adding different gates to the
 
 In figure \ref{fig:structure_lstm} the different gates can be seen. The blue symbol marks a tanh activation and the red symbols a sigmoid activation. Converging lines mark a vector concatenation and the “x”/”+” marks a pointwise multiplication/addition. These three gates determine, which information shall be kept or thrown away. 
 
-\subsubsection{Forget Gate}
+\subsubsection{Forget gate}
 
 The forget gate determines whether information is relevant enough to be kept or should be thrown away. This is achieved by the sigmoid activation, which maps the values to a range of 0 – 1. Values near to 0 will be forgotten due to the low impact of the parameter.
 
-\subsubsection{Input Gate}
+\subsubsection{Input gate}
 
 The input gate determines, which values should be updated and kept in memory. Again the effect of the sigmoid activation determines which parameter will be kept and the tanh activation will keep the values in the range of -1 to 1.\\
 With these two gates calculated, the new cell state can be updated, which is the top line of the diagram. Through the pointwise multiplication with the forget gate, the dropping of values will be applied.
 
-\subsubsection{Output Gate}
+\subsubsection{Output gate}
 
 The output gate is the last station of the data flow inside the LSTM cell. It calculates the hidden state, which will be forwarded to the next cell. Therefore the concatenated input and earlier hidden state will be activated by the sigmoid function. After this it will be pointwise multiplicated with the cell state.\\
 To increase the performance of our architecture we decided to use a Bidirectional LSTM, which not only depends on the previous time steps but considers future timesteps. In our example this means, the network considers both directions of the sentence. This is achieved by splitting the state neurons into two parts. One is responsible for the positive time direction and one for the negative direction.
@@ -102,12 +102,12 @@ Embedding is a layer, which represents the words as dense vectors. The weights o
 
 Because of the high probability to overfit from training data, we decided to add Dropout layers between the LSTM layers. This results in randomly deactivated neurons during the training. It enhances the capability of networks to develop different ways to learn the same concept. During the prediction phase the Dropout will be deactivated \cite{tim5}.
 
-\subsubsection{Word Level Approach}
+\subsubsection{Word level approach}
 
 For the text generation there are two different approaches to build up a Tokenizer. The first one consists of characters. This results in a small Tokenizer, because there are limited amounts of characters. But it adds complexity to the learning process, because the network needs to learn to build words and in the next step bring them in a meaningful order.\\
 The other approach creates a Tokenizer on word level. With growing datasets, the Tokenizer will be getting bigger and bigger. This increases the memory load and to a great amount of neurons in the fully connected layer at the end.
 
-\section{Data Acquisition}
+\section{Data acquisition}
 
 In order to train the neural network it is necessary to fetch data sets of existing Tweets\footnote{Tweets are short text messages limited to a specific count of characters. Initially only 140 characters were allowed, since 2017 the length of a Tweet was increased to 280 characters.}. Therefore two different tools are tested and compared with regard to the resulting data sets. The tested tools are the Twitter developer platform \cite{twidev} (\ref{subsec_twitter}) and GetOldTweets \cite{got} (\ref{subsec_got}). Especially the amount of fetched text messages  is a crucial factor, as the neural network is expected to adapt better on bigger data sets. A requirement of obtaining at least 5000 Tweets for a valid data set is made.\\
 
@@ -142,11 +142,11 @@ The GetOldTweets package does not offer the possibility of publishing Tweets or 
 
 As in this stage of the project it is most important to gather large data sets, GetOldTweets is the preferred tool. The handling is simpler than that of the official Twitter API and it allows to fetch more Tweets in shorter time. Besides it is able to extract Tweets independent of the datum of publication. 
 
-\section{Pre-Processing}
+\section{Pre-processing}
 
 In order to archive good results with the trained models, the fetched Tweets will be prepared before starting the training. This includes filtering unwanted content and manipulating punctuation of the Tweets. 
 
-\subsection{Particular Content}\label{subsec_particular_content}
+\subsection{Particular content}\label{subsec_particular_content}
 
 Tweets can contain particular contents as weblinks, picture or video links, punctuation symbols, arbitrary special characters, retweets, hashtags\footnote{A hashtag, written with a \# symbol, is used to index keywords or topics on Twitter.} and references to Twitter usernames\footnote{A username appears in the respecting profile URL and is unique to the user.}. In order to make the newly-created Tweets as authentic as possible, some of these contents need to be filtered out before passing the data set to the neural network. Therefore the following cosiderations are made.\\
 
@@ -172,7 +172,7 @@ Besides multiple consequent space characters, which possibly exist because of pr
 The trained model does typically not know when to stop generating new words. A simple approach to stop the generation of text is to abort it after a specific amount of generated words. This has the poor effect of interrupting at an arbitrary point. The resulting output conveys a choppy feeling as it stops in the middle of generation.\\
 A more advanced technique is to place a unique termination symbol on the end of each Tweet. It will be interpreted as an independent word by the network. The trained models will learn to generate the termination symbol on positions where stopping the model will look less artificial, e.g. the ending of a sentence. When a termination symbol is noticed in the text generation loop, the model will be stopped.
 
-\section{Software Structure}
+\section{Software structure}
 
 The software for fetching data and training the model is written purely in python. It is mostly inspired by a tutorial on machine learning \cite{tutrob}. The code ranges over four different scripts, which all contain object oriented code. This facilitates tuning and experimenting with different settings by interchangeable parameters of each method. Each script is described by an explanatory text and a simplified flowchart diagram. The flowchart diagrams only contain the most important points and do not completely display the whole content of the respecting script. Please note, that the flowcharts only show an advisable workflow and combine multiple method calls. The decision symbols are used to illustrate optional methods. The ``Loader'', ``Trainer'' and ``Generator'' classes are designed to be called coherent from a higher-level script.
 
@@ -232,6 +232,7 @@ The results of this method was sometimes not understandable words, or even not a
 The following shows the seed text passed to the model and the generated character sequence:\\
 
 \textbf{Seed}: ``i just realized that if you listen to ca''\\
+
 \textbf{Generated sequence}: ``nt beloels like scobous dveb ! vote selffiending up. \#fitn graham of his tonight dominater wsa an ands. comfuntstaheos,''\\
 
 There is no understandable sense in the generated sequence as most of the generated words do not exist. With this unsatisfying results the character level text generation will not be further considered for the final model.
@@ -256,7 +257,7 @@ We create two lists:
 
 To create the first sequence of words, we take the 30th first words in the \textbf{wordlist} list. The word number 31 is the next word of this first sequence, and is added to the \textbf{next\_words} list.
 
-\subsection{Multiple unidirectional LSTM}\label{subsec_embedding_layer}
+\subsubsection{Multiple unidirectional LSTM}\label{subsec_embedding_layer}
 
 The model we trained is a neural language model. It has a few unique characteristics:
 
@@ -298,7 +299,7 @@ Non-trainable params: 0
 \captionof{table}{Model architecture of the first model\label{tab:model_architecture_first}}
 \end{center}
 
-\subsubsection{Result}
+\textbf{Result}:
 
 The following shows the seed text passed to the model and consequently the generated word sequence.\\
 
@@ -308,7 +309,7 @@ The following shows the seed text passed to the model and consequently the gener
 
 The generated sequence connects well to the seed and one could find at least some sense in it. This result is much more satisfying than the character level try in section \ref{subsubsec_result_character}. Further improvement on the model may result in an even better output.
 
-\subsection{Multiple bidirectional LSTM}\label{subsec_multi_bi_lstm}
+\subsubsection{Multiple bidirectional LSTM}\label{subsec_multi_bi_lstm}
 
 This model has the same characteristics as the one described in section \ref{subsec_embedding_layer} with the exception of exchanging both regular LSTM layer with bidirectional LSTM layer and introducing a dropout layer in between. It is expected, that the model will adapt better to the content of the input sequences with this modifications. Please refer to table \ref{tab:model_architecture_second} for an overview of the model.
 
@@ -340,11 +341,11 @@ Non-trainable params: 0
 \captionof{table}{Model architecture of the second model\label{tab:model_architecture_second}}
 \end{center}
 
-\subsubsection{Result}
+\textbf{Result}:
 
 The following shows the seed text passed to the model and consequently the generated word sequence.\\
 
-\textbf{Seed}:``fraudulent speech knowingly delivered as a ruthless con , and the illegal meetings with a highly partisan whistleblower \& lawyer . @60minutes forgot to report that we are helping the great farmers of the usa to the tune of 28 billion dollars , for the last two years , paid for''\\
+\textbf{Seed}:``fraudulent speech knowingly delivered as a ruthless con , and the illegal meetings with a highly partisan whistleblower \& lawyer . @60minutes forgot to report that we are helping the great farmers of the usa to the tune of 28 billion dollars , for the last two years , paid for''
 
 \textbf{Generated}: ``the democrats . the democrats are a very good of the democrats . the democrats are a very good of the democrats . the democrats are a very good of''\\
 
@@ -383,11 +384,11 @@ Non-trainable params: 0
 \captionof{table}{Model architecture of the third model\label{tab:model_architecture_third}}
 \end{center}
 
-\subsubsection{Result}
+\textbf{Result}:
 
 The following shows the seed text passed to the model and consequently the generated word sequence.\\
 
-\textbf{Seed}: ``co-founder of greenpeace: the whole climate crisis is not only fake news , its fake science . there is no climate crisis , theres weather and climate all around the world , and in fact carbon dioxide is the main building block of all life . @foxandfriends wow ! ; jewish''\\
+\textbf{Seed}: ``co-founder of greenpeace: the whole climate crisis is not only fake news , its fake science . there is no climate crisis , theres weather and climate all around the world , and in fact carbon dioxide is the main building block of all life . @foxandfriends wow ! ; jewish''
 
 \textbf{Generated sequence:} ``people are leaving the democratic party. The fires lost in favor of our seniors. Presidential world''\\
 
