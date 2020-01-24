@@ -1,12 +1,14 @@
 from numpy import array
 from pickle import dump
-from tensorflow.keras.preprocessing.text import Tokenizer
-from tensorflow.keras.utils import to_categorical
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense
-from tensorflow.keras.layers import LSTM
-from tensorflow.keras.layers import Embedding
-from tensorflow.keras.layers import Dropout
+from matplotlib import pyplot 
+from keras.preprocessing.text import Tokenizer
+from keras.utils import to_categorical
+from keras.models import Sequential
+from keras.layers import Dense
+from keras.layers import LSTM, GRU, Flatten
+from keras.layers import Embedding, Bidirectional
+from keras.layers import Dropout
+from keras.callbacks import EarlyStopping
 
 from loader import Loader
 
@@ -57,8 +59,8 @@ class Trainer:
         # Embedding layer
         model.add(Embedding(vocab_size, 50, input_length=seq_length))
         # Two LSTM hidden layer with 100 memory cells each
-        model.add(LSTM(100, return_sequences=True))
-        model.add(LSTM(100))
+        model.add(Bidirectional(LSTM(100)))
+        model.add(Dropout(0.5))
         model.add(Dense(100, activation='relu'))
         model.add(Dense(vocab_size, activation='softmax'))
         # Print some information about the model
@@ -67,11 +69,23 @@ class Trainer:
 
     @staticmethod
     def train_model(x, y, model, batch_size, epochs):
-        # Compile model
         model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
-        # Fit model
-        model.fit(x, y, batch_size=batch_size, epochs=epochs)
+        
+        early_stop = EarlyStopping('loss', patience=80)
+
+        # fit model
+        history = model.fit(x, y, batch_size=batch_size,
+                           callbacks=[early_stop], epochs=epochs,
+                           validation_split=0.1, verbose=1)
+        pyplot.plot(history.history['loss'])
+        pyplot.plot(history.history['val_loss'])
+        pyplot.title('model train vs validation loss')
+        pyplot.ylabel('loss')
+        pyplot.xlabel('epoch')
+        pyplot.legend(['train', 'validation'], loc='upper right')
+        pyplot.show()
         return model
+
 
     @staticmethod
     def save_model(model, filename):

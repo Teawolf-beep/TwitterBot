@@ -1,5 +1,5 @@
 import tkinter as tk
-
+from keras import backend as K
 from loader import Loader
 from trainer import Trainer
 from generator import Generator
@@ -84,10 +84,10 @@ class GeneratorGUI:
 
 
 if __name__ == '__main__':
-    model_trump_5000 = Generator.load_trained_model('trump_5000.h5')
-    tokenizer_trump_5000 = Generator.load_tokenizer('tokenizer_5000.pkl')
-    model_hillary_5000 = Generator.load_trained_model('trump_5000.h5')
-    tokenizer_hillary_5000 = Generator.load_tokenizer('tokenizer_5000.pkl')
+    model_trump_5000 = Generator.load_trained_model('model_trump_final.h5')
+    tokenizer_trump_5000 = Generator.load_tokenizer('tok_trump_final.pkl')
+    model_hillary_5000 = Generator.load_trained_model('model_hilary_final.h5')
+    tokenizer_hillary_5000 = Generator.load_tokenizer('tok_hilary_final.pkl')
     master = tk.Tk()
     GeneratorGUI(master, tokenizer_trump_5000, tokenizer_hillary_5000, model_trump_5000, model_hillary_5000)
 
