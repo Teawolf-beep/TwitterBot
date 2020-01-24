@@ -1,0 +1,52 @@
+\documentclass[a4paper,11pt,oneside]{article}
+\usepackage[english]{babel}
+\usepackage[left=2cm,right=2cm,top=0cm,bottom=1cm,
+textheight=245mm,textwidth=160mm,includeheadfoot,headsep=1cm,
+footskip=1cm,headheight=14.599pt]{geometry}
+\usepackage{fancyhdr} % Für Kopf- und Fußzeilen
+\usepackage{graphicx} % Zum Laden von Graphiken
+\usepackage{setspace}
+\usepackage{wrapfig}
+
+\setlength{\parindent}{0em}
+\singlespacing
+
+\begin{document}
+  \pagestyle{fancy} % Kopf- und Fußzeilen aktivieren (=> Paket "fancyhdr")
+  \fancyhead{}
+  \fancyhf{}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0.4pt}
+  \fancyfoot[L]{Research Project - Abstract}
+  \fancyfoot[R] {}
+  \pagenumbering{arabic}
+  \begin{wrapfigure}{L}{0.3\textwidth}
+    \includegraphics[width=0.2\textwidth]{sources/logo_TH-Koeln_CMYK_22pt}
+  \end{wrapfigure}
+  \Large
+  \textbf{University of Applied Sciences Cologne}\\
+  Deep Learning Algorithms\\
+  \\
+  \large
+  Research Project - Abstract\\
+
+  \section*{TwitterBot abstract}
+  The objective of this research project is to design and develop a neural network that is able to newly-create short text messages with the phrasing of a public personality. In order to archive this, a large set of text messages written by a single person are fed into a neural network. With the right settings, the network is expected to create a model which adapts the phrasing of the input messages. A successful termination of this project means, that the model is able to newly-create text messages which are as similar as possible as the real input messages. In the most desirable scenario one cannot distinguish newly-created and real messages.\\
+  Finally, the work in this project accomplished a working model, whose output will be detected as fake by most human beings, but is satisfactory close to the writing style of the respecting target person.\\
+  
+  The stages of this project can be roughly separated in three main parts of different complexity:
+
+  \subsection*{Data acquisition and pre-processing}
+  
+  The social networking platform ``Twitter'' seems to be a convenient source for short text messages. Those are called ``Tweets'' in the twitter universe. Tweets are limited to a specific size of characters they will not exceed. Those character limit was raised from 140 to 280 in 2017, but most the Tweets still stick to a brief content. Furthermore there are various public personalities, which offer a sufficient amount of Tweets for this project.\\
+  The challenges for this part is to fetch a data set which is big enough to train a model, to store it in a convenient format and to cut out unwanted content which could disturb the training process.
+  
+  \subsection*{Training of the model}
+  
+  Making an algorithm understand the semantic meaning and the grammatical rules of human language is a challenging task. Instead the algorithm learns the probability of a word following a preceding sequence of words. In this fashion it is able to newly create a text with an initial parameter, i.e. a sequence of words, the so called seed. Nevertheless, there is a variety of settings which can be adjusted in order to modify the style of text generation. In addition, there is a technique which works with the same principle of probability on character, instead of word level. The advantage of this approach is, that the neural network has less trainable parameters because of the limited existence of characters in one language. But a not negligible disadvantage is the generation of non-existent words, which declines the authenticity of the output drastically.
+  
+  \subsection*{Post-processing and comparison of results}
+  
+  In order to make the output look as authentic as possible, various modifications, e.g. correct case sensitivity, usage of space characters as well as punctuation symbols and termination on well suited spots, have to be made. Hereinafter, the output sequences of different models can be compared with each other. Once again there is no satisfactory way to archive this in a reliable manner with algorithms. Even for humans the different outputs are hard to compare, as human language offers a variety of possibilities.
+    
+\end{document}
