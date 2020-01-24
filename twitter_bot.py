@@ -19,8 +19,8 @@ BATCH_SIZE = 128
 EPOCH_COUNT = 100
 
 # Defines regarding model and tokenizer
-MODEL_FILENAME = 'trump_5000.h5'
-TOKENIZER_FILENAME = 'tokenizer_trump.pkl'
+MODEL_FILENAME = 'model_trump_final.h5'
+TOKENIZER_FILENAME = 'tok_trump_final.pkl'
 
 # Defines regarding output generation
 MIN_OUTPUT_WORD_COUNT = 10

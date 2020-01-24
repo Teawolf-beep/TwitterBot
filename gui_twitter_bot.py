@@ -89,8 +89,8 @@ class GeneratorGUI:
 
 if __name__ == '__main__':
     model_trump_5000 = Generator.load_trained_model('model_trump_final.h5')
-    tokenizer_trump_5000 = Generator.load_tokenizer('tok_trump_final.pkl')
-    model_hillary_5000 = Generator.load_trained_model('model_hilary_final.h5')
+    tokenizer_trump_5000 = Generator.load_tokenizer('tok_hilary_final.pkl')
+    model_hillary_5000 = Generator.load_trained_model('model_trump_final.h5')
     tokenizer_hillary_5000 = Generator.load_tokenizer('tok_hilary_final.pkl')
     master = tk.Tk()
     GeneratorGUI(master, tokenizer_trump_5000, tokenizer_hillary_5000, model_trump_5000, model_hillary_5000)
