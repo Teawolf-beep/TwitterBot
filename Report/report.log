@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2020.1.8)  23 JAN 2020 15:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2020.1.8)  24 JAN 2020 13:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -112,13 +112,69 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
 \IEEEPARstartletwidth=\dimen125
 \c@IEEEbiography=\count94
 \@IEEEtranrubishbin=\box28
-) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+) (/usr/share/texlive/texmf-dist/tex/latex/ms/ragged2e.sty
+Package: ragged2e 2009/05/21 v2.1 ragged2e Package (MS)
+
+(/usr/share/texlive/texmf-dist/tex/latex/ms/everysel.sty
+Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
+)
+\CenteringLeftskip=\skip44
+\RaggedLeftLeftskip=\skip45
+\RaggedRightLeftskip=\skip46
+\CenteringRightskip=\skip47
+\RaggedLeftRightskip=\skip48
+\RaggedRightRightskip=\skip49
+\CenteringParfillskip=\skip50
+\RaggedLeftParfillskip=\skip51
+\RaggedRightParfillskip=\skip52
+\JustifyingParfillskip=\skip53
+\CenteringParindent=\skip54
+\RaggedLeftParindent=\skip55
+\RaggedRightParindent=\skip56
+\JustifyingParindent=\skip57
+)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2018/10/06 v3.3-154 Customizing captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2018/09/12 v1.8c caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 64.
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks15
 )
+\captionmargin=\dimen126
+\captionmargin@=\dimen127
+\captionwidth=\dimen128
+\caption@tempdima=\dimen129
+\caption@indent=\dimen130
+\caption@parindent=\dimen131
+\caption@hangindent=\dimen132
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+)
+
+Package caption Warning: Unsupported document class (or package) detected,
+(caption)                usage of the caption package is not recommended.
+See the caption package documentation for explanation.
+
+Package caption Info: \@makecaption = \long macro:#1#2->\ifx \@captype \@IEEEta
+blestring \footnotesize \bgroup \par \centering \@IEEEtabletopskipstrut {\norma
+lfont \footnotesize #1}\\{\normalfont \footnotesize \scshape #2}\par \addvspace
+ {0.5\baselineskip }\egroup \@IEEEtablecaptionsepspace \else \@IEEEfigurecaptio
+nsepspace \setbox \@tempboxa \hbox {\normalfont \footnotesize {#1.}\nobreakspac
+e \nobreakspace #2}\ifdim \wd \@tempboxa >\hsize \setbox \@tempboxa \hbox {\nor
+malfont \footnotesize {#1.}\nobreakspace \nobreakspace }\parbox [t]{\hsize }{\n
+ormalfont \footnotesize \noindent \unhbox \@tempboxa #2}\else \ifCLASSOPTIONcon
+ference \hbox to\hsize {\normalfont \footnotesize \hfil \box \@tempboxa \hfil }
+\else \hbox to\hsize {\normalfont \footnotesize \box \@tempboxa \hfil }\fi \fi 
+\fi .
+\c@caption@flags=\count95
+\c@ContinuedFloat=\count96
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
 
@@ -133,8 +189,8 @@ Package graphics Info: Driver file: pdftex.def on input line 99.
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen126
-\Gin@req@width=\dimen127
+\Gin@req@height=\dimen133
+\Gin@req@width=\dimen134
 )
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2018/11/30 v6.88e Hypertext links for LaTeX
@@ -188,16 +244,16 @@ Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 )
-\@linkdim=\dimen128
-\Hy@linkcounter=\count95
-\Hy@pagecounter=\count96
+\@linkdim=\dimen135
+\Hy@linkcounter=\count97
+\Hy@pagecounter=\count98
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2018/11/30 v6.88e Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-\Hy@SavedSpaceFactor=\count97
+\Hy@SavedSpaceFactor=\count99
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
@@ -216,17 +272,17 @@ Package hyperref Info: Plain pages OFF on input line 4534.
 Package hyperref Info: Backreferencing OFF on input line 4539.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4772.
-\c@Hy@tempcnt=\count98
+\c@Hy@tempcnt=\count100
 
 (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5125.
-\XeTeXLinkMargin=\dimen129
-\Fld@menulength=\count99
-\Field@Width=\dimen130
-\Fld@charsize=\dimen131
+\XeTeXLinkMargin=\dimen136
+\Fld@menulength=\count101
+\Field@Width=\dimen137
+\Fld@charsize=\dimen138
 Package hyperref Info: Hyper figures OFF on input line 6380.
 Package hyperref Info: Link nesting OFF on input line 6385.
 Package hyperref Info: Hyper index ON on input line 6388.
@@ -236,55 +292,61 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6405.
 Package hyperref Info: PDF/A mode OFF on input line 6410.
 LaTeX Info: Redefining \ref on input line 6450.
 LaTeX Info: Redefining \pageref on input line 6454.
-\Hy@abspage=\count100
-\c@Item=\count101
-\c@Hfootnote=\count102
+\Hy@abspage=\count102
+\c@Item=\count103
+\c@Hfootnote=\count104
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2018/11/30 v6.88e Hyperref driver for pdfTeX
-\Fld@listcount=\count103
-\c@bookmark@seq@number=\count104
+\Fld@listcount=\count105
+\c@bookmark@seq@number=\count106
 
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
-\Hy@SectionHShift=\skip44
+\Hy@SectionHShift=\skip58
 )
 (./report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
 
 -- Lines per column: 56 (exact).
+ABD: EverySelectfont initializing macros
+LaTeX Info: Redefining \selectfont on input line 10.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: hyperref package is loaded.
+Package caption Info: End \AtBeginDocument code.
+
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count105
-\scratchdimen=\dimen132
+\scratchcounter=\count107
+\scratchdimen=\dimen139
 \scratchbox=\box29
-\nofMPsegments=\count106
-\nofMParguments=\count107
+\nofMPsegments=\count108
+\nofMParguments=\count109
 \everyMPshowfont=\toks16
-\MPscratchCnt=\count108
-\MPscratchDim=\dimen133
-\MPnumerator=\count109
-\makeMPintoPDFobject=\count110
+\MPscratchCnt=\count110
+\MPscratchDim=\dimen140
+\MPnumerator=\count111
+\makeMPintoPDFobject=\count112
 \everyMPtoPDFconversion=\toks17
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -304,7 +366,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box30
-Package hyperref Info: Link coloring OFF on input line 8.
+Package hyperref Info: Link coloring OFF on input line 10.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -312,115 +374,239 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count111
+\c@section@level=\count113
 )
-LaTeX Info: Redefining \ref on input line 8.
-LaTeX Info: Redefining \pageref on input line 8.
-LaTeX Info: Redefining \nameref on input line 8.
+LaTeX Info: Redefining \ref on input line 10.
+LaTeX Info: Redefining \pageref on input line 10.
+LaTeX Info: Redefining \nameref on input line 10.
 
 (./report.out) (./report.out)
 \@outlinefile=\write3
 \openout3 = `report.out'.
 
 
-Underfull \hbox (badness 4846) in paragraph at lines 41--48
+Underfull \hbox (badness 4846) in paragraph at lines 43--50
 \OT1/ptm/m/n/10 com-mu-ni-ca-tion stan-dard. Plat-forms like Twit-ter en-able
  []
 
 
-Underfull \hbox (badness 4954) in paragraph at lines 41--48
+Underfull \hbox (badness 4954) in paragraph at lines 43--50
 \OT1/ptm/m/n/10 ma-nip-u-la-tion is widely spread. Cases like Cam-bridge
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 41--48
+Underfull \hbox (badness 10000) in paragraph at lines 43--50
 
  []
 
-<pictures/structure_rnn.png, id=168, 244.0755pt x 90.9945pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 59--61
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 59--61
+
+ []
+
+<pictures/structure_rnn.png, id=174, 244.0755pt x 90.9945pt>
 File: pictures/structure_rnn.png Graphic file (type png)
 <use pictures/structure_rnn.png>
-Package pdftex.def Info: pictures/structure_rnn.png  used on input line 60.
+Package pdftex.def Info: pictures/structure_rnn.png  used on input line 63.
 (pdftex.def)             Requested size: 244.07489pt x 90.99428pt.
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
-<pictures/structure_lstm.png, id=179, 490.08093pt x 383.18156pt>
+<pictures/structure_lstm.png, id=187, 490.08093pt x 383.18156pt>
 File: pictures/structure_lstm.png Graphic file (type png)
 <use pictures/structure_lstm.png>
-Package pdftex.def Info: pictures/structure_lstm.png  used on input line 71.
+Package pdftex.def Info: pictures/structure_lstm.png  used on input line 74.
 (pdftex.def)             Requested size: 245.03987pt x 191.5903pt.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 112.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 112.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 112.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 112.
  [2 <./pictures/structure_rnn.png> <./pictures/structure_lstm.png>]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 113.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 113.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 113.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 113.
-
-Underfull \hbox (badness 4084) in paragraph at lines 155--156
+Underfull \hbox (badness 4084) in paragraph at lines 149--150
 []\OT1/ptm/m/n/10 Tweets can con-tain par-tic-u-lar con-tents as we-blinks,
  []
 
 
-Underfull \hbox (badness 1412) in paragraph at lines 155--156
+Underfull \hbox (badness 1412) in paragraph at lines 149--150
 \OT1/ptm/m/n/10 char-ac-ters, retweets, hash-tags[][][] and ref-er-ences to Twi
 t-ter
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 155--156
+Underfull \hbox (badness 10000) in paragraph at lines 149--150
 
  []
 
 [3]
-<pictures/flowchart_tweet_dumper.png, id=219, 363.3575pt x 523.9575pt>
+<pictures/flowchart_tweet_dumper.png, id=234, 363.3575pt x 523.9575pt>
 File: pictures/flowchart_tweet_dumper.png Graphic file (type png)
 <use pictures/flowchart_tweet_dumper.png>
 Package pdftex.def Info: pictures/flowchart_tweet_dumper.png  used on input lin
-e 196.
-(pdftex.def)             Requested size: 221.64774pt x 319.6136pt.
+e 182.
+(pdftex.def)             Requested size: 236.17957pt x 340.56834pt.
  [4 <./pictures/flowchart_tweet_dumper.png>]
-<pictures/flowchart_loader.png, id=231, 251.94125pt x 573.14125pt>
+<pictures/flowchart_loader.png, id=246, 251.94125pt x 573.14125pt>
 File: pictures/flowchart_loader.png Graphic file (type png)
 <use pictures/flowchart_loader.png>
-Package pdftex.def Info: pictures/flowchart_loader.png  used on input line 206.
+Package pdftex.def Info: pictures/flowchart_loader.png  used on input line 192.
 
 (pdftex.def)             Requested size: 163.75986pt x 372.5374pt.
-<pictures/flowchart_trainer.png, id=233, 362.35374pt x 723.70375pt>
+<pictures/flowchart_trainer.png, id=248, 362.35374pt x 723.70375pt>
 File: pictures/flowchart_trainer.png Graphic file (type png)
 <use pictures/flowchart_trainer.png>
-Package pdftex.def Info: pictures/flowchart_trainer.png  used on input line 216
+Package pdftex.def Info: pictures/flowchart_trainer.png  used on input line 202
 .
 (pdftex.def)             Requested size: 235.52715pt x 470.40186pt.
- [5 <./pictures/flowchart_loader.png> <./pictures/flowchart_trainer.png>]
-<pictures/flowchart_generator.png, id=243, 362.35374pt x 482.80376pt>
+<pictures/flowchart_generator.png, id=250, 362.35374pt x 482.80376pt>
 File: pictures/flowchart_generator.png Graphic file (type png)
 <use pictures/flowchart_generator.png>
 Package pdftex.def Info: pictures/flowchart_generator.png  used on input line 2
-26.
+12.
 (pdftex.def)             Requested size: 235.52715pt x 313.81873pt.
- [6 <./pictures/flowchart_generator.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 319--320
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5 <./pictures/flowchart_loader.png> <./pictures/flowchart_trainer.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 230--231
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--234
+
+ []
+
+
+Underfull \hbox (badness 2057) in paragraph at lines 239--247
+\OT1/ptm/m/n/10 The lan-guage model is sta-tis-ti-cal and will pre-dict the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 239--247
+
+ []
+
+[6 <./pictures/flowchart_generator.png>]
+Underfull \hbox (badness 1454) in paragraph at lines 267--272
+\OT1/ptm/m/n/10 for each word in the vo-cab-u-lary. A soft-max ac-ti-va-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 267--272
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 275--276
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 279--280
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 289--290
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 291--292
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 293--294
+
+ []
+
+
+Underfull \hbox (badness 2452) in paragraph at lines 299--300
+[]\OT1/ptm/m/n/10 As the bidi-rec-tional LSTM layer pro-vided sat-is-fy-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 299--300
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 303--304
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 305--306
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 307--308
+
+ []
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 340.
+See the caption package documentation for explanation.
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 357--358
+[]\OT1/ptm/m/n/8 N. Michael, ``To-wards-data-science'', 2018 [On-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 357--358
+\OT1/ptm/m/n/8 line]. Avail-able: []$https : / / towardsdatascience . com /
+ []
+
+
+Overfull \hbox (24.82144pt too wide) in paragraph at lines 357--358
+\OT1/ptm/m/n/8 illustrated-[]guide-[]to-[]lstms-[]and-[]gru-[]s-[]a-[]step-[]by
+-[]step-[]explanation-[]44e9eb85bf21$[].
+ []
+
+
+Underfull \hbox (badness 6032) in paragraph at lines 358--359
+[]\OT1/ptm/m/n/8 Tensorflow, 2020 [On-line]. Avail-able: []$https : / / www . t
+ensor^^Mow . org /
+ []
+
+
+Underfull \hbox (badness 3557) in paragraph at lines 359--360
+\OT1/ptm/m/n/8 gitbooks . io / arti^^Lcial-[]inteligence / content / dropout[]l
+ayer . html$[]. [Ac-cessed
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 364--365
 []\OT1/ptm/m/n/8 Jason Brown-lee, ``How to De-velop a Word-Level Neu-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 319--320
+Underfull \hbox (badness 10000) in paragraph at lines 364--365
 \OT1/ptm/m/n/8 ral Lan-guage Model and Use it to Gen-er-ate Text''
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 319--320
+Underfull \hbox (badness 10000) in paragraph at lines 364--365
 \OT1/ptm/m/n/8 [On-line]. Avail-able: []$https : / / machinelearningmastery . c
 om /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 319--320
+Underfull \hbox (badness 10000) in paragraph at lines 364--365
 \OT1/ptm/m/n/8 how-[]to-[]develop-[]a-[]word-[]level-[]neural-[]language-[]mode
 l-[]in-[]keras/$[].
  []
@@ -436,33 +622,35 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 322.
-[7]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 322.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 367.
+[8
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 367.
  (./report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 322.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 322.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 367.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 367.
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 3A8D93294935F0B1619C42C9662787C0;2709.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 322.
+(rerunfilecheck)             Checksum: B77C965309EAEF1C24A85949D5974B94;2792.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 367.
  ) 
 Here is how much of TeX's memory you used:
- 5965 strings out of 494467
- 93511 string characters out of 6174031
- 188946 words of memory out of 5000000
- 9556 multiletter control sequences out of 15000+600000
- 38600 words of font info for 72 fonts, out of 8000000 for 9000
+ 7134 strings out of 494467
+ 114882 string characters out of 6174031
+ 205631 words of memory out of 5000000
+ 10703 multiletter control sequences out of 15000+600000
+ 39736 words of font info for 73 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 28i,8n,29p,1140b,384s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,8n,43p,1140b,384s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/u
 tmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on report.pdf (7 pages, 233739 bytes).
+Output written on report.pdf (8 pages, 239348 bytes).
 PDF statistics:
- 302 PDF objects out of 1000 (max. 8388607)
- 274 compressed objects within 3 object streams
- 67 named destinations out of 1000 (max. 500000)
- 359 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 336 PDF objects out of 1000 (max. 8388607)
+ 305 compressed objects within 4 object streams
+ 75 named destinations out of 1000 (max. 500000)
+ 367 words of extra memory for PDF output out of 10000 (max. 10000000)
 

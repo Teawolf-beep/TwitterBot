@@ -1,5 +1,7 @@
 \documentclass[conference]{IEEEtran}
 
+\usepackage{ragged2e}
+\usepackage{caption}
 \usepackage{graphicx}
 \usepackage[colorlinks=false,pdfpagelabels,pdfstartview=FitH,
 bookmarksopen=true,bookmarksnumbered=true,linkcolor=black,
@@ -38,7 +40,7 @@ LSTM, neural network, Twitter
 
 \section{Introduction}
 
-The possibility of generating text based on deep learning algorithms exists since years. Also social media platforms established themselves in the last years as the real-time communication standard. Platforms like Twitter enable people to communicate at any time with people all over the world over a broad choice of topics. The effect of this is the democratization of political discussion. But with the possibility, the probability of misuse is also given. A study from March 2017 already proposed, that 9-17\% of all Twitter users are bots.\\
+The possibility of generating text based on deep learning algorithms exists since years. Also social media platforms established themselves in the last years as the real-time communication standard. Platforms like Twitter enable people to communicate at any time with people all over the world over a broad choice of topics. The effect of this is the democratization of political discussion. But with the possibility, the probability of misuse is also given. A study from March 2017 already proposed, that 9-17\% of all Twitter users are bots \cite{tim1}.\\
 Regarding the increase of bots used in social networks like Twitter, Facebook or Instagram, the risk of political manipulation is widely spread. Cases like Cambridge Analytica show, it is very likely to be victim of such a manipulation.\\
 Social bots are accounts which take actions controlled by a software either to establish interaction or generate content algorithmically. They don’t need to be necessarily political, there are also a lot of informative bots, which report on a specific genre of news. Unfortunately the number of bots, who contribute to the political disinformation, is growing rapidly. This project is dealing with the complexity to set up such a Twitter bot in an entertaining fashion. Already existing Twitter accounts shall be imitated with the goal to be as good as the real person.\\
 The difficulty regarding this project consists of the semantic understanding for the person to imitate. Therefore the program needs to extract features of the language. But not only it needs to understand the general grammar or spelling, but also the specific language features of the specific person.\\
@@ -48,13 +50,14 @@ Another important part is the preprocessing of the gathered data. Users on Twitt
 
 \section{Related Papers}
 
-A related project found is a deep neural network used for bot detection. It also uses a LSTM approach but also additional meta data of the targeted user. It uses semantic analysis of the tweets to extract the contextual features. But it doesn’t generate text, the semantic analysis only assists the classification.
+A related project found is a deep neural network used for bot detection. It also uses a LSTM approach but also additional meta data of the targeted user. It uses semantic analysis of the tweets to extract the contextual features. But it doesn’t generate text, the semantic analysis only assists the classification \cite{tim2}.
 
 \section{Methods}
 
 \subsection{Architecture}
 
-For the processing of sequential data, RNNs are a widely used approach. They are suited for a range of tasks in the field of Natural Language Processing. In comparison to traditional feedforward neural networks, they hold a hidden state which also holds information from previous inputs. This ability is added through looping the processed input to the next cell. This hidden state acts like the neural networks memory. This memory is passed onto the next cell, where it will be concatenated with the input and goes through a tanh activation. This activation implements non-linearity into the system and reduces the values to a range from -1 to 1. This cells can be stacked up onto each other, which can be unrolled for better representation. 
+For the processing of sequential data, RNNs are a widely used approach. They are suited for a range of tasks in the field of Natural Language Processing. In comparison to traditional feedforward neural networks, they hold a hidden state which also holds information from previous inputs. This ability is added through looping the processed input to the next cell. This hidden state acts like the neural networks memory. This memory is passed onto the next cell, where it will be concatenated with the input and goes through a tanh activation. This activation implements non-linearity into the system and reduces the values to a range from -1 to 1. This cells can be stacked up onto each other, which can be unrolled for better representation.\\
+\\
 
 \begin{figure}[htbp]
 \centerline{\includegraphics{pictures/structure_rnn.png}}
@@ -69,7 +72,7 @@ The LSTM modifies the inner structure of a cell by adding different gates to the
 
 \begin{figure}[htbp]
 \centerline{\includegraphics[scale=0.5]{pictures/structure_lstm.png}}
-\caption{Structure of an LSTM cell.}
+\caption{Structure of an LSTM cell \cite{tim3}.}
 \label{fig:structure_lstm}
 \end{figure}
 
@@ -93,20 +96,16 @@ To increase the performance of our architecture we decided to use a Bidirectiona
 
 \subsubsection{Embedding}
 
-Embedding is a layer, which represents the words as dense vectors. The weights of the layer will be initialized randomly and updated through backpropagation. After the training it will approximately show similarities of words and can detect connections between the words.
+Embedding is a layer, which represents the words as dense vectors. The weights of the layer will be initialized randomly and updated through backpropagation. After the training it will approximately show similarities of words and can detect connections between the words \cite{tim4}.
 
 \subsubsection{Dropout}
 
-Because of the high probability to overfit from training data, we decided to add Dropout layers between the LSTM layers. This results in randomly deactivated neurons during the training. It enhances the capability of networks to develop different ways to learn the same concept. During the prediction phase the Dropout will be deactivated.
+Because of the high probability to overfit from training data, we decided to add Dropout layers between the LSTM layers. This results in randomly deactivated neurons during the training. It enhances the capability of networks to develop different ways to learn the same concept. During the prediction phase the Dropout will be deactivated \cite{tim5}.
 
 \subsubsection{Word Level Approach}
 
 For the text generation there are two different approaches to build up a Tokenizer. The first one consists of characters. This results in a small Tokenizer, because there are limited amounts of characters. But it adds complexity to the learning process, because the network needs to learn to build words and in the next step bring them in a meaningful order.\\
 The other approach creates a Tokenizer on word level. With growing datasets, the Tokenizer will be getting bigger and bigger. This increases the memory load and to a great amount of neurons in the fully connected layer at the end.
-
-\subsection{Final Network}
-
-Our proposed network uses the standard Tokenizer from Tensorflow to embed the words into indexes. The model starts with an Embedding layer to detect similarities between words. Then two layer combination of Bidirectional LSTMs follow with a Dropout layer in between each of them. After this follows a Dense Layer and will be finished by the Fully Connected layer, which gives out the prediction for each possible word as a softmax output.
 
 \section{Data Acquisition}
 
@@ -141,12 +140,7 @@ The GetOldTweets package does not offer the possibility of publishing Tweets or 
 
 As in this stage of the project it is most important to gather large data sets, GetOldTweets is the preferred tool. The handling is simpler than that of the official Twitter API and it allows to fetch more Tweets in shorter time. Besides it is able to extract Tweets independent of the datum of publication. 
 
-%\subsection{Implementation}
-%
-%The GetOldTweets \cite{got} package will be implemented in a Python script. The script gets passed variable information, e.g. the username\footnote{A username appears in the respecting profile URL and is unique to the user.} of the person the Tweets will be fetched from, the amount of wanted Tweets, a period of time the Tweets were published and more via the command line. Please refer to the ``get\_tweets.py'' script for all possible command line arguments.\\
-%The script fetches the Tweets, modifies the content and saves the publication date and modified text of each Tweet. Please refer to figure \ref{fig:data_preparation} for a graphical illustration. 
-
-\section{Data Preparation}
+\section{Pre-Processing}
 
 In order to archive good results with the trained models, the fetched Tweets will be prepared before starting the training. This includes filtering unwanted content and manipulating punctuation of the Tweets. 
 
@@ -171,18 +165,10 @@ With respect to the considerations only selected punctuation symbols\footnote{po
 Before training, the neural network will separate the input data set at each space character to generate a list of tokens. Punctuation symbols that are directly behind words, will distort this process. For example would ``house'' and ``house.'' be interpreted as two different words by the network. To prevent punctuation symbols from causing errors, a space needs to be added before each punctuation symbol. This will cause the network to notice each punctuation symbol as a unique word.\\
 Besides multiple consequent space characters, which possibly exist because of previous string manipulation, are collapsed to one space character.
 
-\subsection{Termination symbol}
+\subsection{Termination symbol}\label{subsec_termination_symbol}
 
 The trained model does typically not know when to stop generating new words. A simple approach to stop the generation of text is to abort it after a specific amount of generated words. This has the poor effect of interrupting at an arbitrary point. The resulting output conveys a choppy feeling as it stops in the middle of generation.\\
 A more advanced technique is to place a unique termination symbol on the end of each Tweet. It will be interpreted as an independent word by the network. The trained models will learn to generate the termination symbol on positions where stopping the model will look less artificial, e.g. the ending of a sentence. When a termination symbol is noticed in the text generation loop, the model will be stopped.
-
-%\subsection{Data preparation flow}
-%
-%\begin{figure}[htbp]
-%\centerline{\includegraphics[scale=0.65]{pictures/data_flow_diagram.png}}
-%\caption{Data preparation sequence.}
-%\label{fig:data_preparation}
-%\end{figure}
 
 \section{Software Structure}
 
@@ -193,7 +179,7 @@ The software for fetching data and training the model is written purely in pytho
 This script can be run from the command-line and is responsible for fetching Tweets from Twitter. It imports the GetOldTweets package directly and accepts obligatory, as well as optional, arguments from the command-line to keep the usage as generic as possible. After checking the passed arguments, the script implements the class ``TweetDumper'' and will pass all command-line arguments to its constructor. Consequently the class starts to fetch Tweets from the desired username until a defined limit is reached. Afterwards it pre-processes the text of each Tweet by removing unwanted content as described in section \ref{subsec_particular_content}. As a final step the fetched data gets saved in a csv\footnote{CSV means comma-separated values. It is a delimited text file that uses a comma or different delimiter to separate values.} file. Please see figure \ref{fig:flowchart_tweet_dumper} for a graphical representation.
 
 \begin{figure}[htbp]
-\centerline{\includegraphics[scale=0.61]{pictures/flowchart_tweet_dumper.png}}
+\centerline{\includegraphics[scale=0.65]{pictures/flowchart_tweet_dumper.png}}
 \caption{Flowchart tweet\_dumper.}
 \label{fig:flowchart_tweet_dumper}
 \end{figure}
@@ -231,15 +217,24 @@ As a final step the ``Generator'' class should be invoked. It is defined in this
 \section{Experiments}
 
 In this step we tried to find a general approach, how it should be down as well. After analysing some articles we’ve choosed RNN against CNN models, because of the nature of our problem, which is about sequences data. The relationship between characters in a single word is also an important issue.\\
-Schematically, a RNN layer uses a for loop to iterate over the timesteps of a sequence, while maintaining an internal state that encodes information about the timesteps it has seen so far. RNN models helps to find the most related character / word regarding to existed dataset.
+Schematically, a RNN layer uses a for loop to iterate over the timesteps of a sequence, while maintaining an internal state that encodes information about the timesteps it has seen so far. RNN models helps to find the most related character/ word regarding to existed dataset.
 
-\subsection{Character Level}
+\subsection{Character level}
 
 First of all we ran the character level model. However promising they might sound, character level models do run against intuition. Words have semantic meaning, characters don't and apriori it's not obvious we can expect a model to learn anything about the semantic contents of a piece of text by going over the characters.\\
 However we built a single LSTM model at first to see how it will work. So that at the end of every epoch because of a for loop printed the results, while is predicting next character appropriate with the most recent character.\\
-The results of this method was sometimes not understandable words, or even not a word at all, which bring us to that point to give a try to word level model.
+The results of this method was sometimes not understandable words, or even not a word at all.
 
-\subsection{Word Level}
+\subsubsection{Demonstrative result}\label{subsubsec_result_character}
+
+The following shows the seed text passed to the model and the generated character sequence:\\
+
+\textbf{Seed}: ``i just realized that if you listen to ca''\\
+\textbf{Generated sequence}: ``nt beloels like scobous dveb ! vote selffiending up. \#fitn graham of his tonight dominater wsa an ands. comfuntstaheos,''\\
+
+There is no understandable sense in the generated sequence as most of the generated words do not exist. With this unsatisfying results the character level text generation will not be further considered for the final model.
+
+\subsection{Word level}
 
 Word level neural language model can predict next word based on words already seen on the sequences.\\
 Neural network models are a preferred method for developing statistical language models because they can use a distributed representation where different words with similar meanings have similar representation and because they can use a large context of recently observed words when making predictions.\\
@@ -249,11 +244,17 @@ There is no correct answer. With enough time and resources, we could explore the
 Instead, we will pick a length of 50 words for the length of the input sequences, somewhat arbitrarily.\\
 We could process the data so that the model only ever deals with self-contained sentences and pad or truncate the text to meet this requirement for each input sequence.\\
 Regarding to the model design, we are transforming the raw text into sequences of 50 input words to 1 output word.\\
-Consequently we trained three types of RNN models.
 
-%In this point we trained three types of RNN models:
+We create two lists:
 
-\subsection{Consisting Embedding Layer}
+\begin{itemize}
+\item \textbf{sequences}: This list contains the sequences of words (i.e. a list of words) used to train the model.
+\item \textbf{next\_words}: This list contains the next words for each sequences of the sequences list.
+\end{itemize}
+
+To create the first sequence of words, we take the 30th first words in the \textbf{wordlist} list. The word number 31 is the next word of this first sequence, and is added to the \textbf{next\_words} list.
+
+\subsection{Consisting embedding layer}\label{subsec_embedding_layer}
 
 The model we trained is a neural language model. It has a few unique characteristics:
 
@@ -267,52 +268,96 @@ Specifically, we will use an Embedding Layer to learn the representation of word
 We’ve used two LSTM hidden layers with 100 memory cells each. More memory cells and a deeper network may achieve better results.\\
 A dense fully connected layer with 100 neurons connects to the LSTM hidden layers to interpret the features extracted from the sequence. The output layer predicts the next word as a single vector the size of the vocabulary with a probability for each word in the vocabulary. A softmax activation function is used to ensure the outputs have the characteristics of normalized probabilities.\\
 Technically, the model is learning a multi-class classification and categorical cross\_entropy is the suitable loss function for this type of problem. The efficient Adam implementation to mini-batch gradient descent is used and accuracy is evaluated of the model.\\
-Finally, the model is fit on the data for 100 training epochs with a modest batch size of 128 to speed things up.
+Finally, the model is fit on the data for 100 training epochs with a modest batch size of 128 to speed things up.\\
 
 \subsubsection{Result}
 
-...
+The following shows the seed text passed to the model and consequently the generated word sequence.\\
 
-\subsection{Without Embedding Layer}
+\textbf{Seed}: ``and how innocent she is , ask her to read peters insurance policy text , to her , just in case hillary loses . also , why were the lovers text messages scrubbed after he left mueller . where are they lisa ? ; the republican party has never been so''
 
-We specify the kind of model we want to make (a sequential one), and then add our first layer. We'll do dropout to prevent overfitting, followed by another layer or two. Then we'll add the final layer, a densely connected layer that will output a probability about what the next character in the sequence will be.
+\textbf{Generated sequence}: ``easy to gain. They are entrapping people with china. They have gone bonkers, and I havent seen millions of americans!''\\
 
-\subsubsection{Result}
-
-...
+The generated sequence connects well to the seed and one could find at least some sense in it. This result is much more satisfying than the character level try in section \ref{subsubsec_result_character}. Further improvement on the model may result in an even better output.
 
 \subsection{Bidirectional LSTM}
 
-In this step  we have to create the training data for our LSTM. We create two lists:
-
-\begin{itemize}
-\item \textbf{sequences}: This list contains the sequences of words (i.e. a list of words) used to train the model.
-\item \textbf{next\_words}: This list contains the next words for each sequences of the sequences list.
-\end{itemize}
-
-To create the first sequence of words, we take the 30th first words in the \textbf{wordlist} list. The word number 31 is the next word of this first sequence, and is added to the \textbf{next\_words} list.
-
-%Then we jump by a step of 1 (sequences_step = 1 in our case) in the list of words, to create the second sequence of words and retrieve the second “next word”.\\
-%We iterate this job until the end of the list of words. Iterating over the whole list of words, we created 187646 sequences of words for training and 20850 for validation part, and retrieve, for each of them, the next word to be predicted.\\
-%However, we cannot only map a words to its index in the vocabulary, because this value does not "represent" the word. We have to reorganize a sequence of words as a matrix of booleans (1 or 0).
-%We created the following neural network:
+This model has the same characteristics as the one described in section \ref{subsec_embedding_layer} with the exception of exchanging one LSTM layer for one bidirectional LSTM layer.
 
 \subsubsection{Result}
 
-...
+The following shows the seed text passed to the model and consequently the generated word sequence.\\
 
-\section{Post Processing}
+\textbf{Seed}: ``co-founder of greenpeace: the whole climate crisis is not only fake news , its fake science . there is no climate crisis , theres weather and climate all around the world , and in fact carbon dioxide is the main building block of all life . @foxandfriends wow ! ; jewish''\\
 
-The generated Tweets will be modified slightly in order to increase authenticity and readability. Therefore space characters before punctuation symbols will be removed, as those were only needed in the training process. Furthermore all words are written lowercase, which is not desirable. The first words of all generated sentences are made uppercase with help of the natural language toolkit \cite{nltk}.
+\textbf{Generated sequence:} ``people are leaving the democratic party. The fires lost in favor of our seniors. Presidential world''\\
+
+At this point it is hard to compare the generated output appropriate. The bidirectional layer architecture seems to deliver slightly better results. Hence this model will be used as basis for further modification.
+
+\subsection{Multiple bidirectional LSTM}
+
+As the bidirectional LSTM layer provided satisfying results, this model will use two bidirectional LSTM layer with a dropout layer in between. Consequently follows a dense layer and finally a fully connected layer.\\
+
+\subsubsection{Result}
+
+The following shows the seed text passed to the model and consequently the generated word sequence.\\
+
+\textbf{Seed}:``...''\\
+
+\textbf{Generated}: ``...''\\
+
+.... This model will be used for the final implementation.
+
+\subsection{Final model}
+
+Our proposed network uses the standard Tokenizer from Tensorflow to embed the words into indexes. The model starts with an Embedding layer to detect similarities between words. Then two layer combination of Bidirectional LSTMs follow with a Dropout layer in between each of them. After this follows a Dense Layer and will be finished by the Fully Connected layer, which gives out the prediction for each possible word as a softmax output. Table \ref{tab:model_architecture} shows the model summary for the final model architecture.
+
+\begin{center}
+\begin{tabular}{l l l}
+\hline
+Layer (type) & Output Shape & Param \#\\
+\hline
+\hline
+embedding\_1 (Embedding) & (None, 50, 50) & 503500\\
+\hline
+bidirectional\_1 (Bidirection & (None, 50, 256) & 183296\\
+\hline
+dropout\_1 (Dropout) & (None, 50, 256) & 0\\
+\hline
+bidirectional\_2 (Bidirection & (None, 256) & 394240\\
+\hline
+dense\_1 (Dense) & (None, 100) & 25700\\
+\hline
+dense\_2 (Dense) & (None, 10070) & 1017170\\
+\hline
+\hline
+\end{tabular}
+\begin{flushleft}
+Total params: 2,123,806\\
+Trainable params: 2,123,806\\
+Non-trainable params: 0
+\end{flushleft}
+\captionof{table}{Model architecture final model\label{tab:model_architecture}}
+\end{center}
+
+\section{Post-Processing}
+
+The generated Tweets will be modified slightly in order to increase authenticity and readability. Therefore space characters before punctuation symbols are removed, as those were only needed in the training process. Furthermore all words are written lowercase, which is not desirable. The first words of all generated sentences are made uppercase with help of the natural language toolkit \cite{nltk}.\\
+Moreover the text generation method from the Generator class (see section \ref{subsec_generator}) expects arguments for the minimum and maximum word count. If the termination symbol as described in section \ref{subsec_termination_symbol} is generated in between those limits, the generation stops and the till then generated word sequence is returned as result.
 
 \section{Conclusion}
 
-We can probably have better results by increasing the size of the RNN, tuning the model to limit variance, etc.\\
-Applying these modifications could increase the capacity for the neural network to generate good phrases, less fuzzy.\\
-So, yes, LSTM can be use to generate not-so-bad text, without great instruction, bu we cannot say that it is a real text, with a global meaning. Regarding the sense of a paragraph (even with a network trained longer than what we did), we are far behind something readable. After few words, sentences does not mean anything, as a whole.
+The project shows, that even with a less complex architecture it is possible to reach readable results. The char-level approach offers a low resource intensive opportunity to
+build up a model, because the last layer has a fixed size. The word-level approach doesn’t scale well, because of the increasing Dense Layer size with increasing Word dictionary size. Therefore the results of the char-level are to inconsistent to build up good tweets. The word-level approach shows better results even without the modifications we have done. Further the optimizations brought the improvements we desired and deliver tweets, which are not perfect but are still readable. It is still easy to determine, which tweets are fake and which are real. For the future we propose to use a Transformer architecture, which introduces the attention-mechanism. This works by marking the keywords in a sequence and focus on that keywords. This improves the understanding of the sentence by giving keywords for the context.
+
 
 \begin{thebibliography}{00}
-\bibitem{twidev} Twitter, ``Twitter Developers'' [Online]. Available: \url{https://developer.twitter.com/en.html}. [Accessed: 21- Jan- 2020].
+\bibitem{tim1} O. Varol, ``Online Human-Bot Interactions: Detection, Estimation and Characterization''. \textit{ICWSM'17}, Montreal, 2017.
+\bibitem{tim2} S. Kudugunta and E. Ferrara, ``Deep Neural Network for Bot Detection''. \textit{Information Sciences}, vol. 467, pp. 312-322, 2018.
+\bibitem{tim3} N. Michael, ``Towardsdatascience'', 2018 [Online]. Available: \url{https://towardsdatascience.com/illustrated-guide-to-lstms-and-gru-s-a-step-by-step-explanation-44e9eb85bf21}. [Accessed 22- Jan- 2020].
+\bibitem{tim4} Tensorflow, 2020 [Online]. Available: \url{https://www.tensorflow.org/tutorials/text/word_embeddings#using_the_embedding_layer}. [Accessed 22- Jan- 2020].
+\bibitem{tim5} L.A. dos Santos, 2018 [online]. Available: \url{https://leonardoaraujosantos.gitbooks.io/artificial-inteligence/content/dropout_layer.html}. [Accessed 22- Jan- 2020].
+\bibitem{twidev} Twitter Developers, [Online]. Available: \url{https://developer.twitter.com/en.html}. [Accessed: 21- Jan- 2020].
 \bibitem{got} Jefferson Henrique, ``GetOldTweets-python - A project written in Python to get old tweets'' [Online]. Available: \url{https://github.com/Jefferson-Henrique/GetOldTweets-python}. [Accessed: 21- Jan- 2020].
 \bibitem{tweepy} Aaron Hill, Joshua Rosslein and Harmon, ``Tweepy - Twitter for Python'' [Online]. Available: \url{https://github.com/tweepy/tweepy}. [Accessed: 21- Jan- 2020].
 \bibitem{nltk} NLTK Project, ``Natural Language Toolkit 3.4.5'' [Online]. Available: \url{https://www.nltk.org/}. [Accessed: 21- Jan- 2020].

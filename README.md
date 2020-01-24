@@ -40,7 +40,7 @@ optional arguments:
 
 ## Train a model an generate text
 
-Data preparation, training and verification are done via static method calls of the Loader, Trainer and Generator calls. In the twitter_bot.py script is a complete example which should work out of the box. You can alter the Defines on top in order to change parameters.
+Data preparation, training and verification are done via static method calls of the Loader, Trainer and Generator calls. In the twitter_bot.py script is a complete example which should work out of the box. You can alter the variables on top in order to change parameters.
 
 ```python
 # Defines regarding the csv file
