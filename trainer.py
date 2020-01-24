@@ -10,17 +10,8 @@ from keras.layers import Embedding, Bidirectional
 from keras.layers import Dropout
 from keras.callbacks import EarlyStopping
 
-from loader import Loader
-
 
 class Trainer:
-    @staticmethod
-    def load_from_csv(name, delimiter, lines_count, termination_symbol, seq_size):
-        # Open, clean and sequence a csv file with passed parameters
-        doc = Loader.open_file(name, delimiter, lines_count, termination_symbol)
-        tokens = Loader.clean_file(doc)
-        lines = Loader.sequence_file(tokens, seq_size)
-        return lines
 
     @staticmethod
     def load_file(filename):

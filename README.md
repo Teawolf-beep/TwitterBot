@@ -1,85 +1,121 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 # TwitterBot
-=======
-# TwitterBot
-=======
-# TwitterBot
-<<<<<<< HEAD
-=======
->>>>>>> 5a0898f4beefd0bd266c4cb015f88daf15d1f033
 
-Github erlaubt nur 100MB im Repository, wir laden also nur den Code usw hoch und jeder verwaltet virtualenv, conda, whatever selbst.
-Um das Skript zu benutzen, müsst ihr tweepy (pip install tweepy) installieren.
+The objective of this research project is to design and develop a neural network that is able to create and publish short text messages, further named Tweets, on the social networking service Twitter. The content of these tweets will be based on the tweets of a public personality. Since there is a steady increase of machines and algorithms in our everyday life, researches are looking for ways to facilitate human machine interaction. The most natural way for humans to communicate with other beings is spoken and written language. Therefore, on the one side, it is essential to develop algorithms, which are able to extract information from human language. On the other side it is not less important that these algorithms can form sentences, which are understandable for human beings. In this project we propose a LSTM long short-term memory architecture, that is capable of extracting features with long term dependencies. The prediction will be based on a  starting seed with a word-level approach, so that complete words will be predicted. The data will be scraped from Twitter profiles and can be of arbitrary language. 
 
-## Usage
+## Get a data set
 
-python get_tweets.py -h gibt Hilfe zu allen command-line arguments, die das Skript versteht. Das ist die Ausgabe:
+The tweet_dumpre.py script allows to fetch Tweets from a passed username (target). Consequently unwanted content will be removed and the data is written to a csv file.
+
+Please type `python tweet_dumper -h` for information about accepted arguments.
+
 ```
-usage: get_tweets.py [-h] [-a ATTRIBUTES [ATTRIBUTES ...]] [-f FILENAME]
-                     [-l LIMIT] [-t TRANSLATOR] [-i TARGET_ID] [-d DELIMITER]
-                     [--force] [--overwrite]
-                     target
+usage: tweet_dumper.py [-h] [-s SINCE] [-u UNTIL] [-f FILENAME] [-l LIMIT]
+                       [-t TRANSLATOR] [-d DELIMITER] [--overwrite]
+                       target
 
-Get Twitter Tweets from the passed target person and store the attributes of
-interest to a CSV file.
+Get Twitter Tweets from the passed target person and stores the attributes of
+interest to a csv file.
 
 positional arguments:
-  target                The user from which the tweets will be fetched.
+  target         The user from which the tweets will be fetched.
 
 optional arguments:
-  -h, --help            show this help message and exit
-  -a ATTRIBUTES [ATTRIBUTES ...]
-                        The attributes of the Tweets that will be stored in
-                        the output file. Please enter the wished attributes of
-                        interest separated by spaces. If no attributes are
-                        passed, default values will be stored. The default
-                        values are: created_at, id_str, full_text,
-                        retweet_count, favorite_count; For further information
-                        please visit:
-                        https://developer.twitter.com/en/docs/tweets/data-
-                        dictionary/overview/tweet-object
-  -f FILENAME           The filename where the fetched Tweets will be stored.
-                        If the file already exists,new Tweets will be
-                        appended. Check the --overwrite flag for further
-                        informationIf not passed, the output file will be
-                        called "[target]_tweets.csv"
-  -l LIMIT              The maximal number of Tweets that will be fetched. If
-                        not passed, 2000 Tweets will be fetched.
-  -t TRANSLATOR         A list of characters that will be removed from the
-                        Tweets. No separation needed. If not passed,
-                        "$%&'()*+-/:;<=>[\]^_`{|}~“”’‘\n will be removed by
-                        default.
-  -i TARGET_ID          The target ID. Only Tweets with an older ID will be
-                        fetched.If not passed, the newest available ID will be
-                        used instead.
-  -d DELIMITER          The delimiter for the CSV file. If not passed, the
-                        default delimiter (;) will be used.
-  --force               Force to fetch all Tweets until the limit.
-  --overwrite           Overwrite the given file, if it exists already
-  ```
-  ## Take care
+  -h, --help     show this help message and exit
+  -s SINCE       A lower bound date to restrict search. "yyyy-mm-dd"
+  -u UNTIL       An upper bound date to restrict search. "yyyy-mm-dd". If not
+                 passed and a file FILENAME exists in the working directory,
+                 the date in the last line will be set as default value.
+  -f FILENAME    The filename where the fetched Tweets will be stored. If the
+                 file already exists, new Tweets will be appended. Check the
+                 --overwrite flag for further information. Default value is
+                 "[target]_tweets.csv"
+  -l LIMIT       The maximal number of Tweets that will be fetched. Default
+                 value is 2000.
+  -t TRANSLATOR  A list of characters that will be removed from the Tweets. No
+                 separation needed. Default value is ";“”’‘\n\/() .
+  -d DELIMITER   The delimiter for the CSV file. Default value is ; .
+  --overwrite    Overwrite the given file, if it exists already. Default value
+                 is False
+```
+
+## Train a model an generate text
+
+Data preparation, training and verification are done via static method calls of the Loader, Trainer and Generator calls. In the twitter_bot.py script is a complete example which should work out of the box. You can alter the variables on top in order to change parameters.
+
+```python
+# Defines regarding the csv file
+CSV_FILENAME = 'trumpDataset.csv'
+CSV_DELIMITER_SYMBOL = ';'
+MAX_LINE_COUNT = 5000
+TERMINATION_SYMBOL = ';'
+
+# Defines regarding sequencing
+SEQUENCE_SIZE = 50
+SEQUENCE_FILENAME = 'sequenced_trump_data.txt'
+
+# Defines regarding the training
+BATCH_SIZE = 128
+EPOCH_COUNT = 100
+
+# Defines regarding model and tokenizer
+MODEL_FILENAME = 'trump_5000.h5'
+TOKENIZER_FILENAME = 'tokenizer_trump.pkl'
+
+# Defines regarding output generation
+MIN_OUTPUT_WORD_COUNT = 10
+MAX_OUTPUT_WORD_COUNT = 30
+
+
+# Open a csv-file
+doc = Loader.open_file(CSV_FILENAME, CSV_DELIMITER_SYMBOL, MAX_LINE_COUNT, TERMINATION_SYMBOL)
+# Manipulate the csv-file
+tokens = Loader.clean_file(doc)
+lines = Loader.sequence_file(tokens, SEQUENCE_SIZE)
+# Save the sequenced and clean data
+Loader.store_file(lines, SEQUENCE_FILENAME)
+
+# # Alternatively load prepared file:
+# doc = Trainer.load_file('sequenced_trump_data.txt')
+# lines = doc.split('\n')
+
+# Create a tokenizer and one-hot encode the words
+tokenizer, vocab_size = Trainer.tokenize(lines)
+# separate into input and output
+x, y, seq_length = Trainer.sequence_data(tokenizer, lines, vocab_size)
+# Build model
+model = Trainer.build_model(vocab_size, seq_length)
+# Train the model with a batch size of 128 and 100 epochs (takes a while)
+model = Trainer.train_model(x, y, model, BATCH_SIZE, EPOCH_COUNT)
+
+# Save trained model and tokenizer for later usage
+Trainer.save_model(model, MODEL_FILENAME)
+Trainer.save_tokenizer(tokenizer, TOKENIZER_FILENAME)
+
+
+# Second step: Generate Tweets with the trained model
+
+# # Open the sequenced data (if not open already)
+# doc = Trainer.load_file(SEQUENCE_FILENAME)
+# lines = doc.split('\n')
+# # Make all letters lower case
+# lines = [word.lower() for word in lines]
+
+# Get sequence length (50 in this case)
+seq_length = len(lines[0].split()) - 1
+
+# Load model and tokenizer
+model = Generator.load_trained_model(MODEL_FILENAME)
+tokenizer = Generator.load_tokenizer(TOKENIZER_FILENAME)
+
+# Select and print a random seed text (we can make up our own seed text as well,
+# better results are expected with this approach tho. The tokenizer ignores word that are not known to him)
+seed_text = lines[randint(0, len(lines))]
+print(seed_text + '\n')
+
+# Generate and print a sequence with a word length of minimum 10 and maximum 30
+generated = Generator.generate_seq(model, tokenizer, seq_length, seed_text,
+                                   MIN_OUTPUT_WORD_COUNT, MAX_OUTPUT_WORD_COUNT)
+# Post-process and print generated text
+print(Generator.postprocess(generated))
+```
   
-  Das Limit liegt default bei 2000, mehr gibt die API in einem Aufruf eh nicht her. Wollt ihr mehr Tweets haben, 
-  müsst ihr den letzten Identifier kopieren und das Skript mit der -i Option aufrufen. Ist der Name der Datei der gleiche,
-  werden die neuen Tweets default ans Ende angehängt. Wenn die --overwrite flag gesetzt ist, wird die Datei überschrieben.
-  Ich würde immer die --force flag setzen (sollen wir das als default nehmen??), weil der sonst eine beliebige Anzahl Tweets
-  holt. Mit dem default Translator werden nur #.,@ übernommen. Andere Sonderzeichen (Außer Emojis) werden entfernt.
-  
-  Beispiel: `python get_tweets.py -f tweets.csv -l 500 -i 1189592785311223815 --force`
-  
-  Holt die letzten 500 Tweets, die vor dem Tweet mit der ID 1189592785311223815 getweetet wurden und speichert sie in tweets.csv.
-  Existiert die Datei, werden die Tweets angehängt, existiert sie nicht, wird eine neue Datei erstellt.
-  
-  ## Get limit
-  
-  Wenn ihr mehrere Tweets holen wollt, lasst dazwischen immer eine Pause von ca. ner halben Stunde und übertreibt nicht,
-  keine Anhnug, ab wann die uns den Account sperren...
-  
-  ## Viel Spaß Kinder!
-  
-<<<<<<< HEAD
->>>>>>> dev
-=======
->>>>>>> Update README.md
->>>>>>> 5a0898f4beefd0bd266c4cb015f88daf15d1f033

@@ -9,33 +9,34 @@
 \BOOKMARK [3][]{subsubsection.11}{III-B1 Embedding}{subsection.10}% 9
 \BOOKMARK [3][]{subsubsection.12}{III-B2 Dropout}{subsection.10}% 10
 \BOOKMARK [3][]{subsubsection.13}{III-B3 Word Level Approach}{subsection.10}% 11
-\BOOKMARK [2][]{subsection.14}{III-C Final Network}{section.3}% 12
-\BOOKMARK [1][]{section.15}{IV Data Acquisition}{}% 13
-\BOOKMARK [2][]{subsection.17}{IV-A Twitter developer platform}{section.15}% 14
-\BOOKMARK [3][]{subsubsection.18}{IV-A1 Tweepy}{subsection.17}% 15
-\BOOKMARK [3][]{subsubsection.19}{IV-A2 Limitations}{subsection.17}% 16
-\BOOKMARK [3][]{subsubsection.21}{IV-A3 Findings}{subsection.17}% 17
-\BOOKMARK [2][]{subsection.22}{IV-B GetOldTweets}{section.15}% 18
-\BOOKMARK [3][]{subsubsection.23}{IV-B1 Limitations}{subsection.22}% 19
-\BOOKMARK [3][]{subsubsection.25}{IV-B2 Findings}{subsection.22}% 20
-\BOOKMARK [1][]{section.26}{V Data Preparation}{}% 21
-\BOOKMARK [2][]{subsection.27}{V-A Particular Content}{section.26}% 22
-\BOOKMARK [2][]{subsection.31}{V-B Space characters}{section.26}% 23
-\BOOKMARK [2][]{subsection.32}{V-C Termination symbol}{section.26}% 24
-\BOOKMARK [1][]{section.33}{VI Software Structure}{}% 25
-\BOOKMARK [2][]{subsection.34}{VI-A Script tweet\137dumper.py}{section.33}% 26
-\BOOKMARK [2][]{subsection.36}{VI-B Script loader.py}{section.33}% 27
-\BOOKMARK [2][]{subsection.37}{VI-C Script trainer.py}{section.33}% 28
-\BOOKMARK [2][]{subsection.38}{VI-D Script generator.py}{section.33}% 29
-\BOOKMARK [1][]{section.39}{VII Experiments}{}% 30
-\BOOKMARK [2][]{subsection.40}{VII-A Character Level}{section.39}% 31
-\BOOKMARK [2][]{subsection.41}{VII-B Word Level}{section.39}% 32
-\BOOKMARK [2][]{subsection.42}{VII-C Consisting Embedding Layer}{section.39}% 33
-\BOOKMARK [3][]{subsubsection.43}{VII-C1 Result}{subsection.42}% 34
-\BOOKMARK [2][]{subsection.44}{VII-D Without Embedding Layer}{section.39}% 35
-\BOOKMARK [3][]{subsubsection.45}{VII-D1 Result}{subsection.44}% 36
-\BOOKMARK [2][]{subsection.46}{VII-E Bidirectional LSTM}{section.39}% 37
-\BOOKMARK [3][]{subsubsection.47}{VII-E1 Result}{subsection.46}% 38
-\BOOKMARK [1][]{section.48}{VIII Post Processing}{}% 39
-\BOOKMARK [1][]{section.49}{IX Conclusion}{}% 40
-\BOOKMARK [1][]{section*.50}{References}{}% 41
+\BOOKMARK [1][]{section.14}{IV Data Acquisition}{}% 12
+\BOOKMARK [2][]{subsection.16}{IV-A Twitter developer platform}{section.14}% 13
+\BOOKMARK [3][]{subsubsection.17}{IV-A1 Tweepy}{subsection.16}% 14
+\BOOKMARK [3][]{subsubsection.18}{IV-A2 Limitations}{subsection.16}% 15
+\BOOKMARK [3][]{subsubsection.20}{IV-A3 Findings}{subsection.16}% 16
+\BOOKMARK [2][]{subsection.21}{IV-B GetOldTweets}{section.14}% 17
+\BOOKMARK [3][]{subsubsection.22}{IV-B1 Limitations}{subsection.21}% 18
+\BOOKMARK [3][]{subsubsection.24}{IV-B2 Findings}{subsection.21}% 19
+\BOOKMARK [1][]{section.25}{V Pre-Processing}{}% 20
+\BOOKMARK [2][]{subsection.26}{V-A Particular Content}{section.25}% 21
+\BOOKMARK [2][]{subsection.30}{V-B Space characters}{section.25}% 22
+\BOOKMARK [2][]{subsection.31}{V-C Termination symbol}{section.25}% 23
+\BOOKMARK [1][]{section.32}{VI Software Structure}{}% 24
+\BOOKMARK [2][]{subsection.33}{VI-A Script tweet\137dumper.py}{section.32}% 25
+\BOOKMARK [2][]{subsection.36}{VI-B Script loader.py}{section.32}% 26
+\BOOKMARK [2][]{subsection.38}{VI-C Script trainer.py}{section.32}% 27
+\BOOKMARK [2][]{subsection.40}{VI-D Script generator.py}{section.32}% 28
+\BOOKMARK [1][]{section.42}{VII Experiments}{}% 29
+\BOOKMARK [2][]{subsection.43}{VII-A Character level}{section.42}% 30
+\BOOKMARK [3][]{subsubsection.44}{VII-A1 Demonstrative result}{subsection.43}% 31
+\BOOKMARK [2][]{subsection.45}{VII-B Word level}{section.42}% 32
+\BOOKMARK [2][]{subsection.46}{VII-C Consisting embedding layer}{section.42}% 33
+\BOOKMARK [3][]{subsubsection.47}{VII-C1 Result}{subsection.46}% 34
+\BOOKMARK [2][]{subsection.48}{VII-D Bidirectional LSTM}{section.42}% 35
+\BOOKMARK [3][]{subsubsection.49}{VII-D1 Result}{subsection.48}% 36
+\BOOKMARK [2][]{subsection.50}{VII-E Multiple bidirectional LSTM}{section.42}% 37
+\BOOKMARK [3][]{subsubsection.51}{VII-E1 Result}{subsection.50}% 38
+\BOOKMARK [2][]{subsection.52}{VII-F Final model}{section.42}% 39
+\BOOKMARK [1][]{section.54}{VIII Post-Processing}{}% 40
+\BOOKMARK [1][]{section.55}{IX Conclusion}{}% 41
+\BOOKMARK [1][]{section*.56}{References}{}% 42

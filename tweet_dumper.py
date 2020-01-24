@@ -16,7 +16,7 @@ def add_filename(args):
 def get_arguments():
     # Define command-line description
     parser = argparse.ArgumentParser(description='Get Twitter Tweets from the passed target '
-                                                 'person and store the attributes of interest to a CSV file.')
+                                                 'person and stores the attributes of interest to a csv file.')
     # Define command-line argument "target"
     parser.add_argument('target', type=str,
                         help='The user from which the tweets will be fetched.')
@@ -27,31 +27,32 @@ def get_arguments():
 
     # Define command-line argument "until"
     parser.add_argument('-u', dest='until', type=str,
-                        help='An upper bound date to restrict search. "yyyy-mm-dd"')
+                        help='An upper bound date to restrict search. "yyyy-mm-dd". If not passed and a file FILENAME '
+                             'exists in the working directory, the date in the last line will be set as default value.')
 
     # Define command-line argument "filename"
     parser.add_argument('-f', type=str,  dest='filename', default='_tweets.csv',
-                        help='The filename where the fetched Tweets will be stored. If the file already exists,'
-                        'new Tweets will be appended. Check the --overwrite flag for further information'
-                        'If not passed, the output file will be called "[target]_tweets.csv"')
+                        help='The filename where the fetched Tweets will be stored. If the file already exists, '
+                        'new Tweets will be appended. Check the --overwrite flag for further information. '
+                        'Default value is "[target]_tweets.csv"')
 
     # Define command-line argument "limit"
     parser.add_argument('-l', type=int, dest='limit', default=2000,
                         help='The maximal number of Tweets that will be fetched. '
-                        'If not passed, 2000 Tweets will be fetched.')
+                        'Default value is 2000.')
 
     # Define command-line argument "translator" (watch out for characters that have to be escaped!!)
     parser.add_argument('-t', type=str, dest='translator', default='\';“”’‘"\n\\/()',
                         help='A list of characters that will be removed from the Tweets. No separation needed. '
-                             'If not passed, \";“”’‘\\n\\/() will be removed by default.')
+                             'Default value is \";“”’‘\\n\\/() .')
 
     # Define command-line argument "delimiter
     parser.add_argument('-d', type=str, dest='delimiter', default=';',
-                        help='The delimiter for the CSV file. If not passed, the default delimiter (;) will be used.')
+                        help='The delimiter for the CSV file. Default value is ; .')
 
     # Define command-line argument "overwrite"
     parser.add_argument('--overwrite', action='store_const', const=True, default=False,
-                        help='Overwrite the given file, if it exists already')
+                        help='Overwrite the given file, if it exists already. Default value is False')
 
     # Get command-line arguments
     arguments = parser.parse_args()
