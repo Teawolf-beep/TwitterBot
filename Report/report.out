@@ -30,13 +30,13 @@
 \BOOKMARK [2][]{subsection.43}{VII-A Character level}{section.42}% 30
 \BOOKMARK [3][]{subsubsection.44}{VII-A1 Demonstrative result}{subsection.43}% 31
 \BOOKMARK [2][]{subsection.45}{VII-B Word level}{section.42}% 32
-\BOOKMARK [2][]{subsection.46}{VII-C Consisting embedding layer}{section.42}% 33
-\BOOKMARK [3][]{subsubsection.47}{VII-C1 Result}{subsection.46}% 34
-\BOOKMARK [2][]{subsection.48}{VII-D Bidirectional LSTM}{section.42}% 35
-\BOOKMARK [3][]{subsubsection.49}{VII-D1 Result}{subsection.48}% 36
-\BOOKMARK [2][]{subsection.50}{VII-E Multiple bidirectional LSTM}{section.42}% 37
-\BOOKMARK [3][]{subsubsection.51}{VII-E1 Result}{subsection.50}% 38
-\BOOKMARK [2][]{subsection.52}{VII-F Final model}{section.42}% 39
-\BOOKMARK [1][]{section.54}{VIII Post-Processing}{}% 40
-\BOOKMARK [1][]{section.55}{IX Conclusion}{}% 41
-\BOOKMARK [1][]{section*.56}{References}{}% 42
+\BOOKMARK [2][]{subsection.46}{VII-C Multiple unidirectional LSTM}{section.42}% 33
+\BOOKMARK [3][]{subsubsection.48}{VII-C1 Result}{subsection.46}% 34
+\BOOKMARK [2][]{subsection.49}{VII-D Multiple bidirectional LSTM}{section.42}% 35
+\BOOKMARK [3][]{subsubsection.51}{VII-D1 Result}{subsection.49}% 36
+\BOOKMARK [2][]{subsection.52}{VII-E Single bidirectional LSTM}{section.42}% 37
+\BOOKMARK [3][]{subsubsection.54}{VII-E1 Result}{subsection.52}% 38
+\BOOKMARK [2][]{subsection.55}{VII-F Final model}{section.42}% 39
+\BOOKMARK [1][]{section.56}{VIII Post-Processing}{}% 40
+\BOOKMARK [1][]{section.57}{IX Conclusion}{}% 41
+\BOOKMARK [1][]{section*.58}{References}{}% 42

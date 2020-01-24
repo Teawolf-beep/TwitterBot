@@ -109,7 +109,9 @@ The other approach creates a Tokenizer on word level. With growing datasets, the
 
 \section{Data Acquisition}
 
-In order to train the neural network it is necessary to fetch data sets of existing Tweets\footnote{Tweets are short text messages limited to a specific count of characters. Initially only 140 characters were allowed, since 2017 the length of a Tweet was increased to 280 characters.}. Therefore two different tools are tested and compared with regard to the resulting data sets. The tested tools are the Twitter developer platform \cite{twidev} (\ref{subsec_twitter}) and GetOldTweets \cite{got} (\ref{subsec_got}). Especially the amount of fetched text messages  is a crucial factor, as the neural network is expected to adapt better on bigger data sets. A requirement of obtaining at least 5000 Tweets for a valid data set is made.
+In order to train the neural network it is necessary to fetch data sets of existing Tweets\footnote{Tweets are short text messages limited to a specific count of characters. Initially only 140 characters were allowed, since 2017 the length of a Tweet was increased to 280 characters.}. Therefore two different tools are tested and compared with regard to the resulting data sets. The tested tools are the Twitter developer platform \cite{twidev} (\ref{subsec_twitter}) and GetOldTweets \cite{got} (\ref{subsec_got}). Especially the amount of fetched text messages  is a crucial factor, as the neural network is expected to adapt better on bigger data sets. A requirement of obtaining at least 5000 Tweets for a valid data set is made.\\
+
+In the following experiments, the input data is obtained by the account of Donald Trump, 45th president of the United States of America.
 
 \subsection{Twitter developer platform}\label{subsec_twitter}
 
@@ -179,7 +181,7 @@ The software for fetching data and training the model is written purely in pytho
 This script can be run from the command-line and is responsible for fetching Tweets from Twitter. It imports the GetOldTweets package directly and accepts obligatory, as well as optional, arguments from the command-line to keep the usage as generic as possible. After checking the passed arguments, the script implements the class ``TweetDumper'' and will pass all command-line arguments to its constructor. Consequently the class starts to fetch Tweets from the desired username until a defined limit is reached. Afterwards it pre-processes the text of each Tweet by removing unwanted content as described in section \ref{subsec_particular_content}. As a final step the fetched data gets saved in a csv\footnote{CSV means comma-separated values. It is a delimited text file that uses a comma or different delimiter to separate values.} file. Please see figure \ref{fig:flowchart_tweet_dumper} for a graphical representation.
 
 \begin{figure}[htbp]
-\centerline{\includegraphics[scale=0.65]{pictures/flowchart_tweet_dumper.png}}
+\centerline{\includegraphics[scale=0.61]{pictures/flowchart_tweet_dumper.png}}
 \caption{Flowchart tweet\_dumper.}
 \label{fig:flowchart_tweet_dumper}
 \end{figure}
@@ -254,7 +256,7 @@ We create two lists:
 
 To create the first sequence of words, we take the 30th first words in the \textbf{wordlist} list. The word number 31 is the next word of this first sequence, and is added to the \textbf{next\_words} list.
 
-\subsection{Consisting embedding layer}\label{subsec_embedding_layer}
+\subsection{Multiple unidirectional LSTM}\label{subsec_embedding_layer}
 
 The model we trained is a neural language model. It has a few unique characteristics:
 
@@ -268,7 +270,33 @@ Specifically, we will use an Embedding Layer to learn the representation of word
 We’ve used two LSTM hidden layers with 100 memory cells each. More memory cells and a deeper network may achieve better results.\\
 A dense fully connected layer with 100 neurons connects to the LSTM hidden layers to interpret the features extracted from the sequence. The output layer predicts the next word as a single vector the size of the vocabulary with a probability for each word in the vocabulary. A softmax activation function is used to ensure the outputs have the characteristics of normalized probabilities.\\
 Technically, the model is learning a multi-class classification and categorical cross\_entropy is the suitable loss function for this type of problem. The efficient Adam implementation to mini-batch gradient descent is used and accuracy is evaluated of the model.\\
-Finally, the model is fit on the data for 100 training epochs with a modest batch size of 128 to speed things up.\\
+Finally, the model is fit on the data for 100 training epochs with a modest batch size of 128 to speed things up. Table \ref{tab:model_architecture_first} provides an overview of the outlined model.
+
+\begin{center}
+\begin{tabular}{l l l}
+\hline
+Layer (type) & Output Shape & Param \#\\
+\hline
+\hline
+embedding\_1 (Embedding) & (None, 50, 50) & 503500\\
+\hline
+lstm\_1 (LSTM) & (None, 50, 100) & 60400\\
+\hline
+lstm\_2 (LSTM) & (None, 100) & 80400\\
+\hline
+dense\_1 (Dense) & (None, 100) & 10100\\
+\hline
+dense\_2 (Dense) & (None, 10070) & 1017070\\
+\hline
+\hline
+\end{tabular}
+\begin{flushleft}
+Total params: 1,671,470\\
+Trainable params: 1,671,470\\
+Non-trainable params: 0
+\end{flushleft}
+\captionof{table}{Model architecture of the first model\label{tab:model_architecture_first}}
+\end{center}
 
 \subsubsection{Result}
 
@@ -280,37 +308,9 @@ The following shows the seed text passed to the model and consequently the gener
 
 The generated sequence connects well to the seed and one could find at least some sense in it. This result is much more satisfying than the character level try in section \ref{subsubsec_result_character}. Further improvement on the model may result in an even better output.
 
-\subsection{Bidirectional LSTM}
+\subsection{Multiple bidirectional LSTM}\label{subsec_multi_bi_lstm}
 
-This model has the same characteristics as the one described in section \ref{subsec_embedding_layer} with the exception of exchanging one LSTM layer for one bidirectional LSTM layer.
-
-\subsubsection{Result}
-
-The following shows the seed text passed to the model and consequently the generated word sequence.\\
-
-\textbf{Seed}: ``co-founder of greenpeace: the whole climate crisis is not only fake news , its fake science . there is no climate crisis , theres weather and climate all around the world , and in fact carbon dioxide is the main building block of all life . @foxandfriends wow ! ; jewish''\\
-
-\textbf{Generated sequence:} ``people are leaving the democratic party. The fires lost in favor of our seniors. Presidential world''\\
-
-At this point it is hard to compare the generated output appropriate. The bidirectional layer architecture seems to deliver slightly better results. Hence this model will be used as basis for further modification.
-
-\subsection{Multiple bidirectional LSTM}
-
-As the bidirectional LSTM layer provided satisfying results, this model will use two bidirectional LSTM layer with a dropout layer in between. Consequently follows a dense layer and finally a fully connected layer.\\
-
-\subsubsection{Result}
-
-The following shows the seed text passed to the model and consequently the generated word sequence.\\
-
-\textbf{Seed}:``...''\\
-
-\textbf{Generated}: ``...''\\
-
-.... This model will be used for the final implementation.
-
-\subsection{Final model}
-
-Our proposed network uses the standard Tokenizer from Tensorflow to embed the words into indexes. The model starts with an Embedding layer to detect similarities between words. Then two layer combination of Bidirectional LSTMs follow with a Dropout layer in between each of them. After this follows a Dense Layer and will be finished by the Fully Connected layer, which gives out the prediction for each possible word as a softmax output. Table \ref{tab:model_architecture} shows the model summary for the final model architecture.
+This model has the same characteristics as the one described in section \ref{subsec_embedding_layer} with the exception of exchanging both regular LSTM layer with bidirectional LSTM layer and introducing a dropout layer in between. It is expected, that the model will adapt better to the content of the input sequences with this modifications. Please refer to table \ref{tab:model_architecture_second} for an overview of the model.
 
 \begin{center}
 \begin{tabular}{l l l}
@@ -328,7 +328,7 @@ bidirectional\_2 (Bidirection & (None, 256) & 394240\\
 \hline
 dense\_1 (Dense) & (None, 100) & 25700\\
 \hline
-dense\_2 (Dense) & (None, 10070) & 1017170\\
+dense\_2 (Dense) & (None, 10070) & 1017070\\
 \hline
 \hline
 \end{tabular}
@@ -337,8 +337,65 @@ Total params: 2,123,806\\
 Trainable params: 2,123,806\\
 Non-trainable params: 0
 \end{flushleft}
-\captionof{table}{Model architecture final model\label{tab:model_architecture}}
+\captionof{table}{Model architecture of the second model\label{tab:model_architecture_second}}
 \end{center}
+
+\subsubsection{Result}
+
+The following shows the seed text passed to the model and consequently the generated word sequence.\\
+
+\textbf{Seed}:``fraudulent speech knowingly delivered as a ruthless con , and the illegal meetings with a highly partisan whistleblower \& lawyer . @60minutes forgot to report that we are helping the great farmers of the usa to the tune of 28 billion dollars , for the last two years , paid for''\\
+
+\textbf{Generated}: ``the democrats . the democrats are a very good of the democrats . the democrats are a very good of the democrats . the democrats are a very good of''\\
+
+Against the expectations the model endlessly repeats the same sequence of words. Hence a model consisting of only bidirectional LSTM layers is not further considered.
+
+\subsection{Single bidirectional LSTM}
+
+As in the theory bidirectional LSTM layer are expected to bring improvement to the model, another training with one bidirectional and one unidirectional LSTM layer is conducted. The use of a dropout layer will be continued in this this model. A detailed setup of this model is shown in table \ref{tab:model_architecture_third}.\\
+\\
+
+\begin{center}
+\begin{tabular}{l l l}
+\hline
+Layer (type) & Output Shape & Param \#\\
+\hline
+\hline
+embedding\_1 (Embedding) & (None, 50, 50) & 503500\\
+\hline
+lstm\_1 (LSTM) & (None, 50, 128) & 91648\\
+\hline
+dropout\_1 (Dropout) & (None, 50, 128) & 0\\
+\hline
+bidirectional\_1 (Bidirection & (None, 256) & 263168\\
+\hline
+dense\_1 (Dense) & (None, 100) & 25700\\
+\hline
+dense\_2 (Dense) & (None, 10070) & 1017070\\
+\hline
+\hline
+\end{tabular}
+\begin{flushleft}
+Total params: 1,901,086\\
+Trainable params: 1,901,086\\
+Non-trainable params: 0
+\end{flushleft}
+\captionof{table}{Model architecture of the third model\label{tab:model_architecture_third}}
+\end{center}
+
+\subsubsection{Result}
+
+The following shows the seed text passed to the model and consequently the generated word sequence.\\
+
+\textbf{Seed}: ``co-founder of greenpeace: the whole climate crisis is not only fake news , its fake science . there is no climate crisis , theres weather and climate all around the world , and in fact carbon dioxide is the main building block of all life . @foxandfriends wow ! ; jewish''\\
+
+\textbf{Generated sequence:} ``people are leaving the democratic party. The fires lost in favor of our seniors. Presidential world''\\
+
+The output is more diverse and authentic than the output of the second model in \ref{subsec_multi_bi_lstm}. Even though it is hard to compare the generated output of the first model in \ref{subsec_embedding_layer} and this model appropriate, the bidirectional layer seems to deliver slightly better results.
+
+\subsection{Final model}
+
+Our proposed network uses the standard Tokenizer from Tensorflow to embed the words into indexes. The model starts with an Embedding layer to detect similarities between words. Subsequent one unidirectional LSTM followed by a dropout layer is implemented. After this succeeds a bidirectional LSTM layer. Hereinafter the model implements a dense layer and will be finished by the fully connected layer, which gives out the prediction for each possible word as a softmax output. Table \ref{tab:model_architecture_third} shows the summary of the final model architecture.
 
 \section{Post-Processing}
 
