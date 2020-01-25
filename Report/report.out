@@ -19,21 +19,20 @@
 \BOOKMARK [3][]{subsubsection.24}{IV-B2 Findings}{subsection.21}% 19
 \BOOKMARK [1][]{section.25}{V Pre-processing}{}% 20
 \BOOKMARK [2][]{subsection.26}{V-A Particular content}{section.25}% 21
-\BOOKMARK [2][]{subsection.30}{V-B Space characters}{section.25}% 22
-\BOOKMARK [2][]{subsection.31}{V-C Termination symbol}{section.25}% 23
-\BOOKMARK [1][]{section.32}{VI Software structure}{}% 24
-\BOOKMARK [2][]{subsection.33}{VI-A Script tweet\137dumper.py}{section.32}% 25
-\BOOKMARK [2][]{subsection.36}{VI-B Script loader.py}{section.32}% 26
-\BOOKMARK [2][]{subsection.38}{VI-C Script trainer.py}{section.32}% 27
-\BOOKMARK [2][]{subsection.40}{VI-D Script generator.py}{section.32}% 28
-\BOOKMARK [1][]{section.42}{VII Experiments}{}% 29
-\BOOKMARK [2][]{subsection.43}{VII-A Character level}{section.42}% 30
-\BOOKMARK [3][]{subsubsection.44}{VII-A1 Demonstrative result}{subsection.43}% 31
-\BOOKMARK [2][]{subsection.45}{VII-B Word level}{section.42}% 32
-\BOOKMARK [3][]{subsubsection.46}{VII-B1 Multiple unidirectional LSTM}{subsection.45}% 33
-\BOOKMARK [3][]{subsubsection.48}{VII-B2 Multiple bidirectional LSTM}{subsection.45}% 34
-\BOOKMARK [2][]{subsection.50}{VII-C Single bidirectional LSTM}{section.42}% 35
-\BOOKMARK [2][]{subsection.52}{VII-D Final model}{section.42}% 36
-\BOOKMARK [1][]{section.53}{VIII Post-Processing}{}% 37
-\BOOKMARK [1][]{section.54}{IX Conclusion}{}% 38
-\BOOKMARK [1][]{section*.55}{References}{}% 39
+\BOOKMARK [2][]{subsection.31}{V-B Space characters}{section.25}% 22
+\BOOKMARK [2][]{subsection.32}{V-C Termination symbol}{section.25}% 23
+\BOOKMARK [1][]{section.33}{VI Software structure}{}% 24
+\BOOKMARK [2][]{subsection.34}{VI-A Script tweet\137dumper.py}{section.33}% 25
+\BOOKMARK [2][]{subsection.37}{VI-B Script loader.py}{section.33}% 26
+\BOOKMARK [2][]{subsection.39}{VI-C Script trainer.py}{section.33}% 27
+\BOOKMARK [2][]{subsection.41}{VI-D Script generator.py}{section.33}% 28
+\BOOKMARK [1][]{section.43}{VII Experiments}{}% 29
+\BOOKMARK [2][]{subsection.44}{VII-A Character level}{section.43}% 30
+\BOOKMARK [2][]{subsection.45}{VII-B Word level}{section.43}% 31
+\BOOKMARK [3][]{subsubsection.46}{VII-B1 Multiple unidirectional LSTM}{subsection.45}% 32
+\BOOKMARK [3][]{subsubsection.48}{VII-B2 Multiple bidirectional LSTM}{subsection.45}% 33
+\BOOKMARK [2][]{subsection.50}{VII-C Single bidirectional LSTM}{section.43}% 34
+\BOOKMARK [2][]{subsection.52}{VII-D Final model}{section.43}% 35
+\BOOKMARK [1][]{section.53}{VIII Post-Processing}{}% 36
+\BOOKMARK [1][]{section.54}{IX Conclusion}{}% 37
+\BOOKMARK [1][]{section*.55}{References}{}% 38
