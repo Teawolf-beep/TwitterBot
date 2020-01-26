@@ -66,7 +66,7 @@ For the processing of sequential data, RNNs are a widely used approach. They are
 \end{figure}
 
 Regarding our use case, we consider text as sequential data, which can be split up to feed it into the RNN. Before feeding them into the network, the data needs to be tokenized. This means to transform the characters or words of the text into a form the network can understand. For this purpose we use a Tokenizer, which turns the text into a sequence of integers. The integers are part of a token dictionary with the different elements of the text. In our project we use the Tensorflow Tokenizer class.\\
-The disadvantage of vanilla RNNs is the short-term memory, which is caused by the vanishing gradient problem. This problem is well known and does not only concern RNNs. It is caused by the nature of backpropagation. The gradient determines the affect of the corrections. But the gradient of each timestep is also dependent on the timestep before. So if the gradient in an earlier timestep was already small, it gets exponentially smaller with further backpropagation. So the corrections made by the network will shrink and lead to not impact in the learning process.\\
+The disadvantage of vanilla RNNs is the short-term memory, which is caused by the vanishing gradient problem. This problem is well known and does not only concern RNNs. It is caused by the nature of backpropagation. The gradient determines the affect of the corrections. But the gradient of each timestep is also dependent on the timestep before. So if the gradient in an earlier timestep was already small, it gets exponentially smaller with further backpropagation. So the corrections made by the network will shrink and lead to no impact in the learning process.\\
 For this reason we used a modification of the RNN, the Long Short-Term Memory or LSTM in short.\\
 The LSTM modifies the inner structure of a cell by adding different gates to the calculation of the output and inner state.
 
@@ -119,7 +119,7 @@ Twitter provides an official developer platform which provides API products, too
 
 \subsubsection{Tweepy}\label{subsubsec_tweepy}
 
-Tweepy is a Python wrapper for the Twitter API. It provides access to the entire Twitter RESTful API methods. After registration with the acquired API key and access token, Tweets can be fetched in form of Tweepy model class instances. Objects and method calls are named the same as the regarding instances of the Twitter API, i.e. one can use the terms of the official API reference.
+Tweepy is a Python wrapper for the Twitter API. It provides access to all relevant Twitter relevant features. After registration with the acquired API key and access token, Tweets can be fetched in form of Tweepy model class instances. Objects and method calls are named the same as the regarding instances of the Twitter API, i.e. one can use the terms of the official API reference.
 
 \subsubsection{Limitations}
 
@@ -151,7 +151,7 @@ In order to archive good results with the trained models, the fetched Tweets wil
 Tweets can contain particular contents as weblinks, picture or video links, punctuation symbols, arbitrary special characters, retweets, hashtags\footnote{A hashtag, written with a \# symbol, is used to index keywords or topics on Twitter.} and references to Twitter usernames\footnote{A username appears in the respecting profile URL and is unique to the user.}. In order to make the newly-created Tweets as authentic as possible, some of these contents need to be filtered out before passing the data set to the neural network. Therefore the following cosiderations are made.\\
 
 \begin{itemize}
-\item Weblinks are connected to the content of the regarding Tweet. The generated Tweets will, in best case scenarios, newly-create a statement. An improper weblink would impair the authenticity of the generated Tweet.
+\item Weblinks are connected to the content of the regarding Tweet. The generated Tweets will, in best case scenarios, create new content. An improper weblink would impair the authenticity of the generated Tweet.
 \item Picture and video links have the same connection to the content of the regarding Tweet as weblinks.
 \item Punctuation symbols are part of valid sentences. The neural network will not be taught the grammatical rules of punctuation symbols, rather it will learn to use punctuation based on frequency and position of appearance. Hence only the most common punctuation symbols will be adapted.
 \item Special characters e.g. emoticons can be widely interpreted. It is hard to make an algorithm understand the regarding statement and when to use them. 
@@ -174,11 +174,11 @@ A more advanced technique is to place a unique termination symbol on the end of 
 
 \section{Software structure}
 
-The software for fetching data and training the model is written purely in python. It is mostly inspired by a tutorial on machine learning \cite{tutrob}. The code ranges over four different scripts, which all contain object oriented code. This facilitates tuning and experimenting with different settings by interchangeable parameters of each method. Each script is described by an explanatory text and a simplified flowchart diagram. The flowchart diagrams only contain the most important points and do not completely display the whole content of the respecting script. Please note, that the flowcharts only show an advisable workflow and combine multiple method calls. The decision symbols are used to illustrate optional methods. The ``Loader'', ``Trainer'' and ``Generator'' classes are designed to be called coherent from a higher-level script.
+The software for fetching data and training the model is written purely in Python. It is mostly inspired by a tutorial on machine learning \cite{tutrob}. The code ranges over four different scripts, which all contain object oriented code. This facilitates tuning and experimenting with different settings by interchangeable parameters of each method. Each script is described by an explanatory text and a simplified flowchart diagram. The flowchart diagrams only contain the most important points and do not completely display the whole content of the respecting script. Please note, that the flowcharts only show an advisable workflow and combine multiple method calls. The decision symbols are used to illustrate optional methods. The ``Loader'', ``Trainer'' and ``Generator'' classes are designed to be called coherent from a higher-level script.
 
 \subsection{Script tweet\_dumper.py}
 
-This script can be run from the command-line and is responsible for fetching Tweets. It imports the GetOldTweets package directly and accepts obligatory, as well as optional, arguments from the command-line, to keep the usage as generic as possible. After checking the passed arguments, the script implements the class ``TweetDumper'' and will pass all command-line arguments to its constructor. Consequently the class starts to fetch Tweets from the desired username until a defined limit is reached. Afterwards it pre-processes the text of each Tweet by removing unwanted content as described in section \ref{subsec_particular_content}. As a final step the fetched data gets saved in a csv\footnote{CSV means comma-separated values. It is a delimited text file that uses a comma or different delimiter to separate values.} file. Please see figure \ref{fig:flowchart_tweet_dumper} for a graphical representation.
+This script can be run from the command-line and is responsible for fetching Tweets. It imports the GetOldTweets package directly and accepts obligatory, as well as optional, arguments from the command-line, to keep the usage as generic as possible. After checking the passed arguments, the script implements the class ``TweetDumper'' and will pass all command-line arguments to its constructor. Consequently the class starts to fetch Tweets from the desired username until a defined limit is reached. Afterwards it pre-processes the text of each Tweet by removing unwanted content as described in section \ref{subsec_particular_content}. As a final step the fetched data gets saved in a csv\footnote{CSV means comma-separated values. It is a delimited text file that uses commas or other delimiter to separate values.} file. Please see figure \ref{fig:flowchart_tweet_dumper} for a graphical representation.
 
 \begin{figure}[htbp]
 \centerline{\includegraphics[scale=0.61]{pictures/flowchart_tweet_dumper.png}}
@@ -218,12 +218,12 @@ As a final step for text generation the ``Generator'' class, which is defined in
 
 \section{Experiments}
 
-In this step we tried to find a general approach, how it should be down as well. After analysing some articles we’ve choosed RNN against CNN models, because of the nature of our problem, which is about sequences data. The relationship between characters in a single word is also an important issue.\\
+In this step we tried to find a general approach, how it should be done as well. After analysing some articles we have chosen RNN against CNN models, because of the nature of our problem, which is about sequenced data. The relationship between characters in a single word is also an important issue.\\
 Schematically, a RNN layer uses a for loop to iterate over the timesteps of a sequence, while maintaining an internal state that encodes information about the timesteps it has seen so far. RNN models helps to find the most related character/ word regarding to existed dataset.
 
 \subsection{Character level}\label{subsec_character_level}
 
-First of all we ran the character level model. However promising they might sound, character level models do run against intuition. Words have semantic meaning, characters don't and apriori it's not obvious we can expect a model to learn anything about the semantic contents of a piece of text by going over the characters.\\
+First of all we ran the character level model. However promising they might sound, character level models do run against intuition. Words have semantic meaning, characters don't and apriori it's not obvious we can expect a model to learn anything about the semantic contents of a piece of text by going over the characters. In this method we defined some helper functions i.e. sample, an index from an array of probabilities with some temperature, which is a scaling factor applied to the outputs of our dense layer before applying the softmax activation function. In a nutshell, it defines how conservative or "creative" the model's guesses are for the next character in a sequence. Lower values of temperature (e.g., 0.2) will generate "safe" guesses whereas values of temperature above 1.0 will start to generate "riskier" guesses. When temperature is high, things get more unpredictable.\\
 However we built a single LSTM model at first to see how it will work. So that at the end of every epoch because of a for loop printed the results, while is predicting next character appropriate with the most recent character.\\
 The results of this method was sometimes not understandable words, or even not a word at all.
 
@@ -231,11 +231,11 @@ The results of this method was sometimes not understandable words, or even not a
 
 The following shows the seed text passed to the model and the generated character sequence:\\
 
-\textbf{Seed}: ``i just realized that if you listen to ca''\\
+\textbf{Seed}: ``i just realized that if you listen to ca''
 
 \textbf{Generated sequence}: ``nt beloels like scobous dveb ! vote selffiending up. \#fitn graham of his tonight dominater wsa an ands. comfuntstaheos,''\\
 
-There is no understandable sense in the generated sequence, as most of the generated words do not exist. With this unsatisfying result a character level text generation will not be further considered for the final model.
+There is no understandable sense in the generated sequence, as most of the words do not exist. With this unsatisfying result a character level text generation will not be further considered for the final model.
 
 \subsection{Word level}
 
@@ -307,7 +307,7 @@ The following shows the seed text passed to the model and consequently the gener
 
 \textbf{Generated sequence}: ``easy to gain. They are entrapping people with china. They have gone bonkers, and I havent seen millions of americans!''\\
 
-The generated sequence connects well to the seed and one could find at least some sense in it. This result is much more satisfying than the character level try in section \ref{subsec_character_level}. Further improvement on the model may result in an even better output.
+The generated sequence connects well to the seed and one could find at least some sense in it. This result is more satisfying than the character level try in section \ref{subsec_character_level}. Further improvement on the model may result in an even better output.
 
 \subsubsection{Multiple bidirectional LSTM}\label{subsec_multi_bi_lstm}
 
@@ -406,7 +406,7 @@ Moreover the text generation method from the Generator class (see section \ref{s
 \section{Conclusion}
 
 The project shows, that even with a less complex architecture it is possible to reach readable results. The character level approach offers a low resource intensive opportunity to
-build up a model, because the last layer has a fixed size. The word-level approach doesn’t scale well, because of the increasing dense Layer size with increasing word dictionary size. Therefore the results of the character level are to inconsistent to build up good Tweets. The word-level approach shows better results even without the modifications we have done. Further the optimizations brought the improvements we desired and generate Tweets, which are not perfect but are still readable. It is still easy to determine, which tweets are fake and which are real. For the future we propose to use a Transformer architecture, which introduces the attention-mechanism. This works by marking the keywords in a sequence and focus on that keywords. This improves the understanding of the sentence by giving keywords for the context.
+build up a model, because the last layer has a fixed size. The word-level approach doesn’t scale well, because of the increasing dense Layer size with increasing word dictionary size. Therefore the results of the character level are to inconsistent to build up good Tweets. The word-level approach shows better results even without the modifications we have done. Further the optimizations brought the improvements we desired and generate Tweets, which are not perfect but are still readable. It is still easy to determine, which tweets are fake and which are real. To improve the performance of the generator, an easy approach would be to gather more tweets as training data. Another approach would be to use optimization algorithms to search for the best parameter combinations. A well known module would be "skopt". A possible change for the architecture would be a transformer architecture, which introduces the attention-mechanism \cite{attention}. This works by marking the keywords in a sequence and focus on that keywords. This improves the understanding of the sentence by giving keywords for the context.
 
 
 \begin{thebibliography}{00}
@@ -414,13 +414,14 @@ build up a model, because the last layer has a fixed size. The word-level approa
 \bibitem{tim2} S. Kudugunta and E. Ferrara, ``Deep Neural Network for Bot Detection''. \textit{Information Sciences}, vol. 467, pp. 312-322, 2018.
 \bibitem{tim3} N. Michael, ``Towardsdatascience'', 2018 [Online]. Available: \url{https://towardsdatascience.com/illustrated-guide-to-lstms-and-gru-s-a-step-by-step-explanation-44e9eb85bf21}. [Accessed 22- Jan- 2020].
 \bibitem{tim4} Tensorflow, 2020 [Online]. Available: \url{https://www.tensorflow.org/tutorials/text/word_embeddings#using_the_embedding_layer}. [Accessed 22- Jan- 2020].
-\bibitem{tim5} L.A. dos Santos, 2018 [online]. Available: \url{https://leonardoaraujosantos.gitbooks.io/artificial-inteligence/content/dropout_layer.html}. [Accessed 22- Jan- 2020].
+\bibitem{tim5} L.A. dos Santos, 2018 [Online]. Available: \url{https://leonardoaraujosantos.gitbooks.io/artificial-inteligence/content/dropout_layer.html}. [Accessed 22- Jan- 2020].
 \bibitem{twidev} Twitter Developers, [Online]. Available: \url{https://developer.twitter.com/en.html}. [Accessed: 21- Jan- 2020].
 \bibitem{got} Jefferson Henrique, ``GetOldTweets-python - A project written in Python to get old tweets'' [Online]. Available: \url{https://github.com/Jefferson-Henrique/GetOldTweets-python}. [Accessed: 21- Jan- 2020].
 \bibitem{tweepy} Aaron Hill, Joshua Rosslein and Harmon, ``Tweepy - Twitter for Python'' [Online]. Available: \url{https://github.com/tweepy/tweepy}. [Accessed: 21- Jan- 2020].
 \bibitem{nltk} NLTK Project, ``Natural Language Toolkit 3.4.5'' [Online]. Available: \url{https://www.nltk.org/}. [Accessed: 21- Jan- 2020].
 \bibitem{twidev_rates} Twitter Developers, ``Rate limits'' [Online]. Available: \url{https://developer.twitter.com/en/docs/basics/rate-limits}. [Accessed: 25- Jan- 2020].
 \bibitem{tutrob} Jason Brownlee, ``How to Develop a Word-Level Neural Language Model and Use it to Generate Text'' [Online]. Available: \url{https://machinelearningmastery.com/how-to-develop-a-word-level-neural-language-model-in-keras/}. [Accessed: 22- Jan- 2020].
+\bibitem{attention} Asish Vaswani, Noam Shazeer, Niki Parmer, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, Illia Polosukhin, ``Attention Is All You Need'' 2017 [Online]. Available: \url{https://arxiv.org/abs/1706.03762}. [Accessed: 22- Jan- 2020].
 \end{thebibliography}
 
 \end{document}
