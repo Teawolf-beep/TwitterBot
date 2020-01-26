@@ -1,0 +1,38 @@
+\BOOKMARK [1][]{section.1}{I Introduction}{}% 1
+\BOOKMARK [1][]{section.2}{II Related papers}{}% 2
+\BOOKMARK [1][]{section.3}{III Methods}{}% 3
+\BOOKMARK [2][]{subsection.4}{III-A Architecture}{section.3}% 4
+\BOOKMARK [3][]{subsubsection.7}{III-A1 Forget gate}{subsection.4}% 5
+\BOOKMARK [3][]{subsubsection.8}{III-A2 Input gate}{subsection.4}% 6
+\BOOKMARK [3][]{subsubsection.9}{III-A3 Output gate}{subsection.4}% 7
+\BOOKMARK [2][]{subsection.10}{III-B Optimizations}{section.3}% 8
+\BOOKMARK [3][]{subsubsection.11}{III-B1 Embedding}{subsection.10}% 9
+\BOOKMARK [3][]{subsubsection.12}{III-B2 Dropout}{subsection.10}% 10
+\BOOKMARK [3][]{subsubsection.13}{III-B3 Word level approach}{subsection.10}% 11
+\BOOKMARK [1][]{section.14}{IV Data acquisition}{}% 12
+\BOOKMARK [2][]{subsection.16}{IV-A Twitter developer platform}{section.14}% 13
+\BOOKMARK [3][]{subsubsection.17}{IV-A1 Tweepy}{subsection.16}% 14
+\BOOKMARK [3][]{subsubsection.18}{IV-A2 Limitations}{subsection.16}% 15
+\BOOKMARK [3][]{subsubsection.20}{IV-A3 Findings}{subsection.16}% 16
+\BOOKMARK [2][]{subsection.21}{IV-B GetOldTweets}{section.14}% 17
+\BOOKMARK [3][]{subsubsection.22}{IV-B1 Limitations}{subsection.21}% 18
+\BOOKMARK [3][]{subsubsection.24}{IV-B2 Findings}{subsection.21}% 19
+\BOOKMARK [1][]{section.25}{V Pre-processing}{}% 20
+\BOOKMARK [2][]{subsection.26}{V-A Particular content}{section.25}% 21
+\BOOKMARK [2][]{subsection.31}{V-B Space characters}{section.25}% 22
+\BOOKMARK [2][]{subsection.32}{V-C Termination symbol}{section.25}% 23
+\BOOKMARK [1][]{section.33}{VI Software structure}{}% 24
+\BOOKMARK [2][]{subsection.34}{VI-A Script tweet\137dumper.py}{section.33}% 25
+\BOOKMARK [2][]{subsection.37}{VI-B Script loader.py}{section.33}% 26
+\BOOKMARK [2][]{subsection.39}{VI-C Script trainer.py}{section.33}% 27
+\BOOKMARK [2][]{subsection.41}{VI-D Script generator.py}{section.33}% 28
+\BOOKMARK [1][]{section.43}{VII Experiments}{}% 29
+\BOOKMARK [2][]{subsection.44}{VII-A Character level}{section.43}% 30
+\BOOKMARK [2][]{subsection.45}{VII-B Word level}{section.43}% 31
+\BOOKMARK [3][]{subsubsection.46}{VII-B1 Multiple unidirectional LSTM}{subsection.45}% 32
+\BOOKMARK [3][]{subsubsection.48}{VII-B2 Multiple bidirectional LSTM}{subsection.45}% 33
+\BOOKMARK [2][]{subsection.50}{VII-C Single bidirectional LSTM}{section.43}% 34
+\BOOKMARK [2][]{subsection.52}{VII-D Final model}{section.43}% 35
+\BOOKMARK [1][]{section.53}{VIII Post-Processing}{}% 36
+\BOOKMARK [1][]{section.54}{IX Conclusion}{}% 37
+\BOOKMARK [1][]{section*.55}{References}{}% 38
