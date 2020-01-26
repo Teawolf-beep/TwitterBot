@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2019.11.17)  26 JAN 2020 19:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2019.11.17)  26 JAN 2020 19:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -263,26 +263,40 @@ Underfull \hbox (badness 10000) in paragraph at lines 27--32
 
  []
 
-[1
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 34.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 34.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 34.
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 4
+0.
+(/usr/share/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 40.
+ [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./sources/logo_TH-Koeln_CM
 YK_22pt-eps-converted-to.pdf>] (./work_split.aux) ) 
 Here is how much of TeX's memory you used:
- 2773 strings out of 492167
- 38901 string characters out of 6131557
- 120459 words of memory out of 5000000
- 7098 multiletter control sequences out of 15000+600000
- 4843 words of font info for 18 fonts, out of 8000000 for 9000
+ 2809 strings out of 492167
+ 39375 string characters out of 6131557
+ 122459 words of memory out of 5000000
+ 7124 multiletter control sequences out of 15000+600000
+ 7281 words of font info for 26 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  46i,10n,45p,277b,189s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
-12.pfb>
-Output written on work_split.pdf (1 page, 43619 bytes).
+12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/sha
+re/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on work_split.pdf (1 page, 61912 bytes).
 PDF statistics:
- 23 PDF objects out of 1000 (max. 8388607)
- 15 compressed objects within 1 object stream
+ 31 PDF objects out of 1000 (max. 8388607)
+ 21 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
