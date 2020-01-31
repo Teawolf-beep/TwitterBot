@@ -1,5 +1,7 @@
 # TwitterBot
 
+This project was developed in the University of Applied Sciences Cologne due to a research project in the subject "Deep Learning Architectures".
+
 The objective of this research project is to design and develop a neural network that is able to create and publish short text messages, further named Tweets, on the social networking service Twitter. The content of these tweets will be based on the tweets of a public personality. Since there is a steady increase of machines and algorithms in our everyday life, researches are looking for ways to facilitate human machine interaction. The most natural way for humans to communicate with other beings is spoken and written language. Therefore, on the one side, it is essential to develop algorithms, which are able to extract information from human language. On the other side it is not less important that these algorithms can form sentences, which are understandable for human beings. In this project we propose a LSTM long short-term memory architecture, that is capable of extracting features with long term dependencies. The prediction will be based on a  starting seed with a word-level approach, so that complete words will be predicted. The data will be scraped from Twitter profiles and can be of arbitrary language. 
 
 ## Get a data set
