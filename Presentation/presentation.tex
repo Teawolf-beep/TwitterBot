@@ -1,0 +1,132 @@
+\documentclass{beamer}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{moresize}
+\usepackage{mathptmx}
+\usepackage{helvet}
+\usepackage{hyperref}
+\usepackage[final]{pdfpages}
+
+%\usepackage{multicol}
+
+\usefonttheme{serif}
+
+\definecolor{th_black}{rgb}{0.0, 0.051, 0.075}
+\definecolor{th_red}{rgb}{0.8, 0.176, 0.196}
+\definecolor{th_orange}{rgb}{0.827, 0.373, 0.161}
+\definecolor{th_purple}{rgb}{0.616, 0.192, 0.549}
+\definecolor{light_gray}{rgb}{0.741, 0.784, 0.812}
+\definecolor{dark_gray}{rgb}{0.439, 0.475, 0.498}
+\definecolor{title_box}{HTML}{b683ca}%{a767bf}
+
+
+\setbeamerfont{title}{size=\HUGE}
+\setbeamerfont{frametitle}{size=\Large, series=\bfseries}
+
+\setbeamercolor{title}{bg=white, fg=dark_gray}
+\setbeamercolor{frametitle}{bg=white, fg=dark_gray}
+
+\setbeamercolor{section number projected}{bg=th_red}
+\setbeamercolor{subsection number projected}{bg=th_purple}
+\setbeamercolor{section in toc}{fg=black}
+\setbeamercolor{subsection in toc}{fg=darkgray}
+
+\setbeamercolor{header left}{bg=th_red}
+\setbeamercolor{header center}{bg=th_orange}
+\setbeamercolor{header right}{bg=th_purple}
+
+
+\setbeamertemplate{itemize item}{\color{th_red}$\blacktriangleright$}
+\setbeamertemplate{itemize subitem}{\color{th_purple}$\blacktriangleright$}
+%\setbeamertemplate{itemize subsubitem}{\color{orange}$\blacktriangleright$}
+
+\setbeamertemplate{title page}[default][left]%colsep=-4bp,rounded=true, shadow=true
+
+\setbeamertemplate{section in toc}[ball unnumbered]
+\setbeamertemplate{subsection in toc}[ball unnumbered]
+
+\beamertemplatenavigationsymbolsempty
+
+\setbeamertemplate{footline}{%
+	\leavevmode
+    \begin{beamercolorbox}[wd=0.125\paperwidth,dp=1pt]{}
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=0.875\paperwidth]{}
+    \hrule
+    \vspace{0.1mm}
+    \hrule
+    \vspace{1mm}
+    \parbox[b]{0.5\paperwidth}{\inserttitle\\[1.5mm] \insertshortauthor\\ \insertshortdate}
+    \hfill
+    Slide~\insertframenumber~of~\inserttotalframenumber
+    \hspace{5mm}
+    \includegraphics[width=0.12\paperwidth]{sources/logo_TH-Koeln_CMYK_22pt}
+    \hspace{2mm}
+    \vspace{1mm}
+    \end{beamercolorbox}%
+}
+
+\setbeamertemplate{headline}{%
+    \leavevmode
+    \begin{beamercolorbox}[wd=0.125\paperwidth,ht=1pt,dp=4pt]{}
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=0.292\paperwidth,ht=1pt,dp=4pt]{header left}
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=0.292\paperwidth,ht=1pt,dp=4pt]{header center}
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=0.292\paperwidth,ht=1pt,dp=4pt]{header right}
+    \end{beamercolorbox}
+} 
+
+
+%Information to be included in the title page:
+\title{Twitter Bot}
+\subtitle{Final Presentation}
+\author[Sina Behdidka, Tim Mennicken, Robert Rose]{Sina Behdidka\\ Tim Mennicken\\ Robert Rose}
+\institute[TH Köln]{University of Applied Sciences Cologne}
+\date[04.02.2020] % (optional)
+{Tuesday the 4th of February, 2020}
+%\logo{\includegraphics[height=0.8cm]{sources/logo_TH-Koeln_CMYK_22pt}}
+ 
+ 
+\begin{document}
+\bgroup
+\makeatletter
+\setbeamertemplate{footline}
+{
+	\leavevmode
+    \begin{beamercolorbox}[wd=0.125\paperwidth,dp=1pt]{}
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=0.875\paperwidth,dp=0ex]{}
+    \hrule
+    \vspace{0.1mm}
+    \hrule
+    \vspace{1mm}
+    \parbox[b]{0.3\paperwidth}{\inserttitle\\[1.5mm] \insertshortauthor\\ \insertshortdate}
+    \hfill
+    \includegraphics[width=0.12\paperwidth]{sources/logo_TH-Koeln_CMYK_22pt}
+    \hspace{2mm}
+    \vspace{1mm}
+    \end{beamercolorbox}%
+}
+\makeatother
+\begin{frame}
+\titlepage
+\end{frame}
+\egroup
+
+\setcounter{framenumber}{0}
+
+\begin{frame}
+\frametitle{Table of Contents}
+%\begin{multicols}{2}
+\tableofcontents
+%\end{multicols}
+\end{frame} 
+ 
+
+
+\end{document}
+
