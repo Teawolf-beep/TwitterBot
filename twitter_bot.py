@@ -65,8 +65,8 @@ Trainer.save_tokenizer(tokenizer, TOKENIZER_FILENAME)
 seq_length = len(lines[0].split()) - 1
 
 # Load model and tokenizer
-model = Generator.load_trained_model('model_trump_final.h5')
-tokenizer = Generator.load_tokenizer('tok_trump_final.pkl')
+model = Generator.load_trained_model(MODEL_FILENAME)
+tokenizer = Generator.load_tokenizer(TOKENIZER_FILENAME)
 
 # Select and print a random seed text (we can make up our own seed text as well,
 # better results are expected with this approach tho. The tokenizer ignores word that are not known to him)

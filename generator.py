@@ -1,8 +1,8 @@
 import re
 from pickle import load
 import nltk.data
-from keras.models import load_model
-from keras.preprocessing.sequence import pad_sequences
+from tensorflow.keras.models import load_model
+from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 
 class Generator:
@@ -42,7 +42,8 @@ class Generator:
                 result.append(out_word)
                 in_text += ' ' + out_word
                 # Increase the word count
-                count = count + 1
+
+            count = count + 1
 
         return ' '.join(result)
 
