@@ -1,17 +1,19 @@
 \documentclass{beamer}
 
 \usepackage[english]{babel}
-\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage{graphicx}
 \usepackage{moresize}
 \usepackage{mathptmx}
 \usepackage{helvet}
 \usepackage{hyperref}
 \usepackage[final]{pdfpages}
+\usepackage{tcolorbox}
 
-%\usepackage{multicol}
-
+\tcbuselibrary{skins}
 \usefonttheme{serif}
+
+%\usetheme{Madrid}
 
 \definecolor{th_black}{rgb}{0.0, 0.051, 0.075}
 \definecolor{th_red}{rgb}{0.8, 0.176, 0.196}
@@ -21,6 +23,29 @@
 \definecolor{dark_gray}{rgb}{0.439, 0.475, 0.498}
 \definecolor{title_box}{HTML}{b683ca}%{a767bf}
 
+\newtcolorbox{remark_box}[1][Theorem:]{
+beamer,
+colback=white,
+colbacktitle=white,
+coltitle=th_purple,
+colframe=th_orange,
+boxrule=1pt,
+titlerule=0pt,
+arc=10pt,
+title={\strut#1}
+}
+
+\newtcolorbox{attention_box}[1][Theorem:]{
+beamer,
+colback=white,
+colbacktitle=white,
+coltitle=th_red,
+colframe=th_orange,
+boxrule=1pt,
+titlerule=0pt,
+arc=10pt,
+title={\strut#1}
+}
 
 \setbeamerfont{title}{size=\HUGE}
 \setbeamerfont{frametitle}{size=\Large, series=\bfseries}
@@ -36,6 +61,8 @@
 \setbeamercolor{header left}{bg=th_red}
 \setbeamercolor{header center}{bg=th_orange}
 \setbeamercolor{header right}{bg=th_purple}
+
+\setbeamercolor{enumerate item}{fg=th_purple}
 
 
 \setbeamertemplate{itemize item}{\color{th_red}$\blacktriangleright$}
@@ -84,12 +111,11 @@
 %Information to be included in the title page:
 \title{Twitter Bot}
 \subtitle{Final Presentation}
-\author[Sina Behdidka, Tim Mennicken, Robert Rose]{Sina Behdidka\\ Tim Mennicken\\ Robert Rose}
+\author[Sina Behdidka, Tim Mennicken, Robert Rose]{Sina Behdidka\\ Tim Mennicken\\ Robert Rose }
 \institute[TH Köln]{University of Applied Sciences Cologne}
 \date[04.02.2020] % (optional)
 {Tuesday the 4th of February, 2020}
-%\logo{\includegraphics[height=0.8cm]{sources/logo_TH-Koeln_CMYK_22pt}}
- 
+%\logo{\includegraphics[height=0.8cm]{sources/twitter.png}}
  
 \begin{document}
 \bgroup
@@ -126,7 +152,172 @@
 %\end{multicols}
 \end{frame} 
  
+\section{Introduction}
 
+\section{Methods}
+
+\section{Data Acquisition}
+
+\begin{frame}{Data Acquisition}
+\begin{columns}
+\column{0.5\textwidth}
+\begin{itemize}
+\item Twitter developer platform
+	\begin{itemize}
+	\item Twitter developer account needed
+	\item Tweepy: Python wrapper
+	\item Complete functionality
+	\end{itemize}
+\end{itemize}
+\vspace{0.5cm}
+\centering{\includegraphics[height=2.5cm]{sources/twitter.png}}
+\pause
+\column{0.5\textwidth}
+\begin{itemize}
+\item GetOldTweets
+	\begin{itemize}
+	\item Fetches Tweets from the website
+	\item Python package
+	\item Read only access
+	\end{itemize}
+\end{itemize}
+\vspace{0.5cm}
+\centering{\includegraphics[height=2.5cm]{sources/pypi.jpg}}
+\end{columns}
+\end{frame}
+
+\subsection{Twitter API}
+
+\begin{frame}{Data Acquisition}
+\framesubtitle{Twitter API}
+\begin{itemize}
+\item Amount of Tweets limited
+	\begin{itemize}
+	\item Request windows are separated in 15 minutes chunks
+	\item Specific amount of requests per window
+	\item Can be bypassed by cyclic requests paired with pauses
+	\end{itemize}
+\vspace{5mm}
+\item<2-> Cannot go arbitrarily far to the past
+	\begin{itemize}
+	\item Returns no Tweets older than roundabout a month
+	\item Cannot be bypassed
+	\end{itemize}
+\vspace{5mm}
+\item<3-> Account got blacklisted
+	\begin{itemize}
+	\item No further access to the Twitter API
+	\item Got unblocked on request
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\subsection{GetOldTweets}
+
+\begin{frame}{Data Acquisition}
+\framesubtitle{GetOldTweets}
+\begin{itemize}
+\item No limitation
+	\begin{itemize}
+	\item Arbitrary amount of Tweets
+	\item No restrictions with respect to publication date
+	\end{itemize}
+\vspace{5mm}
+\item<2-> Shortened functionality
+	\begin{itemize}
+	\item Limited meta data of Tweets
+	\item No functionality for publishing Tweets
+	\end{itemize}
+\vspace{5mm}
+\item<3-> Better suited for getting large data sets
+\end{itemize}
+\end{frame}
+
+\section{Pre-Processing}
+
+\begin{frame}{Pre-Processing}
+\framesubtitle{Particular Content}
+\begin{itemize}
+\item Weblinks
+\item Picture \& video links
+\item Punctuation symbols
+\item Special characters
+\item Retweets
+\item Hashtags
+\item Username references
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Pre-Processing}
+\framesubtitle{Particular Content}
+\begin{remark_box}[Content we keep:]
+\begin{enumerate}
+ \item Selected punctuation symbols
+ \item[] \small{point, comma, exclamation mark, interrogation mark, colon and hash}
+ \normalsize
+ \item Hashtags
+ \item References to usernames
+\end{enumerate}
+\end{remark_box} 
+\end{frame}
+
+\begin{frame}{Pre-Processing}
+\framesubtitle{Space characters}
+\begin{itemize}
+\item Union of several space characters
+\item The Tokenizer splits the input text at space characters
+\end{itemize}
+\vspace{5mm}
+\pause
+\begin{attention_box}[Why we need to add spaces]
+house.~~$\Rightarrow$ [\textquotedbl house.\textquotedbl]\\
+house .~$\Rightarrow$ [\textquotedbl house\textquotedbl , \textquotedbl .\textquotedbl]
+\end{attention_box}
+\end{frame}
+
+\begin{frame}{Pre-Processing}
+\framesubtitle{Termination Symbol}
+\end{frame}
+
+\section{Software}
+
+\begin{frame}{Software}
+\framesubtitle{Structure}
+\end{frame}
+
+\begin{frame}{Software}
+\framesubtitle{Interaction}
+\end{frame}
+
+\section{Experiments}
+
+\section{Post-Processing}
+
+\section{References}
+
+\begin{frame}{References}
+\begin{small}
+\begin{itemize}
+\item Twitter Developers -- \url{https://developer.twitter.com/en.html}
+\item GetOldTweets -- \url{https://github.com/Jefferson-Henrique/GetOldTweets-python}
+\end{itemize}
+\end{small}
+\end{frame}
+
+%\begin{thebibliography}{00}
+%\bibitem{tim1} O. Varol, ``Online Human-Bot Interactions: Detection, Estimation and Characterization''. \textit{ICWSM'17}, Montreal, 2017.
+%\bibitem{tim2} S. Kudugunta and E. Ferrara, ``Deep Neural Network for Bot Detection''. \textit{Information Sciences}, vol. 467, pp. 312-322, 2018.
+%\bibitem{tim3} N. Michael, ``Towardsdatascience'', 2018 [Online]. Available: \url{https://towardsdatascience.com/illustrated-guide-to-lstms-and-gru-s-a-step-by-step-explanation-44e9eb85bf21}. [Accessed 22- Jan- 2020].
+%\bibitem{tim4} Tensorflow, 2020 [Online]. Available: \url{https://www.tensorflow.org/tutorials/text/word_embeddings#using_the_embedding_layer}. [Accessed 22- Jan- 2020].
+%\bibitem{tim5} L.A. dos Santos, 2018 [Online]. Available: \url{https://leonardoaraujosantos.gitbooks.io/artificial-inteligence/content/dropout_layer.html}. [Accessed 22- Jan- 2020].
+%\bibitem{twidev} Twitter Developers, [Online]. Available: \url{https://developer.twitter.com/en.html}. [Accessed: 21- Jan- 2020].
+%\bibitem{got} Jefferson Henrique, ``GetOldTweets-python - A project written in Python to get old tweets'' [Online]. Available: \url{https://github.com/Jefferson-Henrique/GetOldTweets-python}. [Accessed: 21- Jan- 2020].
+%\bibitem{tweepy} Aaron Hill, Joshua Rosslein and Harmon, ``Tweepy - Twitter for Python'' [Online]. Available: \url{https://github.com/tweepy/tweepy}. [Accessed: 21- Jan- 2020].
+%\bibitem{nltk} NLTK Project, ``Natural Language Toolkit 3.4.5'' [Online]. Available: \url{https://www.nltk.org/}. [Accessed: 21- Jan- 2020].
+%\bibitem{twidev_rates} Twitter Developers, ``Rate limits'' [Online]. Available: \url{https://developer.twitter.com/en/docs/basics/rate-limits}. [Accessed: 25- Jan- 2020].
+%\bibitem{tutrob} Jason Brownlee, ``How to Develop a Word-Level Neural Language Model and Use it to Generate Text'' [Online]. Available: \url{https://machinelearningmastery.com/how-to-develop-a-word-level-neural-language-model-in-keras/}. [Accessed: 22- Jan- 2020].
+%\bibitem{attention} Asish Vaswani, Noam Shazeer, Niki Parmer, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, Illia Polosukhin, ``Attention Is All You Need'' 2017 [Online]. Available: \url{https://arxiv.org/abs/1706.03762}. [Accessed: 22- Jan- 2020].
+%\end{thebibliography}
 
 \end{document}
 
