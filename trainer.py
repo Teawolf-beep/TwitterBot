@@ -1,14 +1,14 @@
 from numpy import array
 from pickle import dump
 from matplotlib import pyplot 
-from keras.preprocessing.text import Tokenizer
-from keras.utils import to_categorical
-from keras.models import Sequential
-from keras.layers import Dense
-from keras.layers import LSTM, GRU, Flatten
-from keras.layers import Embedding, Bidirectional
-from keras.layers import Dropout
-from keras.callbacks import EarlyStopping
+from tensorflow.keras.preprocessing.text import Tokenizer
+from tensorflow.keras.utils import to_categorical
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
+from tensorflow.keras.layers import LSTM, GRU, Flatten
+from tensorflow.keras.layers import Embedding, Bidirectional
+from tensorflow.keras.layers import Dropout
+from tensorflow.keras.callbacks import EarlyStopping
 
 
 class Trainer:
@@ -49,9 +49,9 @@ class Trainer:
         model = Sequential()
         # Embedding layer
         model.add(Embedding(vocab_size, 50, input_length=seq_length))
-        # Two LSTM hidden layer with 100 memory cells each
-        model.add(Bidirectional(LSTM(100)))
+        model.add(LSTM(128), return_sequences=True)
         model.add(Dropout(0.5))
+        model.add(Bidirectional(LSTM(128)))
         model.add(Dense(100, activation='relu'))
         model.add(Dense(vocab_size, activation='softmax'))
         # Print some information about the model
