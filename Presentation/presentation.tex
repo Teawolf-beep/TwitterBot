@@ -9,6 +9,7 @@
 \usepackage{hyperref}
 \usepackage[final]{pdfpages}
 \usepackage{tcolorbox}
+\usepackage{amssymb}
 
 \tcbuselibrary{skins}
 \usefonttheme{serif}
@@ -152,7 +153,56 @@ title={\strut#1}
  
 \section{Introduction}
 
-\section{Methods}
+\begin{frame}{Introduction}
+\framesubtitle{Goal}
+\begin{itemize}
+\item Develop neural network, which is able to create Tweets
+\item Tweets should imitate a person as good as possible
+\item People to imitate:
+\end{itemize}
+\pause
+\vfill
+\centering{\includegraphics[height=4cm]{sources/clinton_trump.jpg}}
+\end{frame}
+
+\begin{frame}{Introduction}
+\framesubtitle{Goal}
+Wokflow divided into three parts:
+\vspace{5mm}
+\begin{itemize}
+\item Create a dataset
+	\begin{itemize}
+	\item Crawl Tweets
+	\item Preprocess gathered Tweets
+	\end{itemize}
+\vspace{3mm}
+\item<2-> Design a network
+	\begin{itemize}
+	\item Develop the architecture
+	\item Experiment with different setups
+	\end{itemize}
+\vspace{3mm}
+\item<3-> Generate Tweets
+	\begin{itemize}
+	\item Post-process predictions
+	\item Present the results
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Introduction}
+\framesubtitle{Motivation}
+\begin{itemize}
+\item Twitter is on of the big players in social media
+\item Microsoft tried to setup a chat bot to learn how young people communicate
+	\begin{itemize}
+	\item Got token down after 24 hours
+	\end{itemize}
+\item 9-17\,\% of Twitter users are bots
+\item Risk of political manipulation is high
+\end{itemize}
+\centering{\includegraphics[height=4cm]{sources/Tay.JPG}}
+\end{frame}
 
 \section{Data Acquisition}
 
@@ -275,21 +325,185 @@ house .~$\Rightarrow$ [\textquotedbl house\textquotedbl , \textquotedbl .\textqu
 
 \begin{frame}{Pre-Processing}
 \framesubtitle{Termination Symbol}
+\begin{itemize}
+\item Model does not know when to stop
+\vspace{3mm}
+\item Stopping generation at an arbitrary number looks choppy
+\vspace{3mm}
+\item Termination symbol is introduced
+\end{itemize}
 \end{frame}
 
-\section{Software}
+\section{Post-Processing}
 
-\begin{frame}{Software}
-\framesubtitle{Structure}
-\end{frame}
-
-\begin{frame}{Software}
-\framesubtitle{Interaction}
+\begin{frame}{Post-Processing}
+\begin{itemize}
+\item Remove unfitting space characters
+	\begin{itemize}
+	\item E.g. before punctuation symbols
+	\end{itemize}
+\vspace{3mm}
+\item<2-> Make words uppercase
+	\begin{itemize}
+	\item E.g. at the beginning of a sentence
+	\end{itemize}
+\vspace{3mm}
+\item<3-> Restrict generation
+	\begin{itemize}
+	\item Lower limit
+	\item Upper limit
+	\end{itemize}
+\end{itemize}
 \end{frame}
 
 \section{Experiments}
 
-\section{Post-Processing}
+\subsection{Character level}
+
+\begin{frame}{Experiments}
+\begin{itemize}
+\item Character level model
+\vspace{3mm}
+\item Word level model
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Experiments}
+\framesubtitle{Character level model}
+\centering{\includegraphics[width=\textwidth]{sources/character_level_model.png}}
+\end{frame}
+
+\begin{frame}{Experiments}
+\framesubtitle{Character level model}
+\begin{itemize}
+\item Seed:
+\item[] ``i just realized that if you listen to ca''
+\vspace{5mm}
+\item Generated text:
+\item[] ``nt beloels like scobous dveb ! vote selffiending up. \#fitn graham of his tonight dominater wsa an ands. comfuntstaheos,''
+\end{itemize}
+\end{frame}
+
+\subsection{Word level}
+
+\begin{frame}{Experiments}
+\framesubtitle{Word level model}
+\begin{itemize}
+\item Multiple undirectional LSTM
+\vspace{3mm}
+\item Single bidirectional LSTM
+\vspace{3mm}
+\item Multiple bidirectional LSTM
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Experiments}
+\framesubtitle{Word level model -- Multiple undirectional LSTM}
+\centering{\includegraphics[width=\textwidth]{sources/multiple_unidirectional_lstm.png}}
+\end{frame}
+
+\begin{frame}{Experiments}
+\framesubtitle{Word level model -- Multiple undirectional LSTM}
+\begin{itemize}
+\item Seed:
+\item[] ``and how innocent she is , ask her to read peters insurance policy text , to her , just in case hillary loses . also , why were the lovers text messages scrubbed after he left mueller . where are they lisa ? ; the republican party has never been so''
+\vspace{5mm}
+\item Generated text:
+\item[] ``easy to gain. They are entrapping people with china. They have gone bonkers, and I havent seen millions of americans!''
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Experiments}
+\framesubtitle{Word level model -- Single bidirectional LSTM}
+\centering{\includegraphics[width=\textwidth]{sources/single_bidirectional_lstm.jpg}}
+\end{frame}
+
+\begin{frame}{Experiments}
+\framesubtitle{Word level model -- Single bidirectional LSTM}
+\begin{itemize}
+\item Seed:
+\item[] ``co-founder of greenpeace: the whole climate crisis is not only fake news , its fake science . there is no climate crisis , theres weather and climate all around the world , and in fact carbon dioxide is the main building block of all life . @foxandfriends wow ! ; jewish''
+\vspace{5mm}
+\item Generated text:
+\item[] ``people are leaving the democratic party. The fires lost in favor of our seniors. Presidential world''
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Experiments}
+\framesubtitle{Word level model -- Multiple bidirectional LSTM}
+\begin{itemize}
+\item Seed:
+\item[] ``fraudulent speech knowingly delivered as a ruthless con , and the illegal meetings with a highly partisan whistleblower \& lawyer . @60minutes forgot to report that we are helping the great farmers of the usa to the tune of 28 billion dollars , for the last two years , paid for''
+\vspace{5mm}
+\item Generated text:
+\item[] ``the democrats . the democrats are a very good of the democrats . the democrats are a very good of the democrats . the democrats are a very good of''
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Experiments}
+\framesubtitle{Suggested Model}
+\begin{center}
+\begin{tabular}{l l l}
+\hline
+Layer (type) & Output Shape & Param \#\\
+\hline
+\hline
+embedding\_1 (Embedding) & (None, 50, 50) & 503500\\
+\hline
+lstm\_1 (LSTM) & (None, 50, 128) & 91648\\
+\hline
+dropout\_1 (Dropout) & (None, 50, 128) & 0\\
+\hline
+bidirectional\_1 (Bidirection & (None, 256) & 263168\\
+\hline
+dense\_1 (Dense) & (None, 100) & 25700\\
+\hline
+dense\_2 (Dense) & (None, 10070) & 1017070\\
+\hline
+\hline
+\end{tabular}
+\begin{flushleft}
+\hspace{8mm}
+\parbox[b]{0.5\paperwidth}{
+Total params: 1,901,086\\
+Trainable params: 1,901,086\\
+Non-trainable params: 0}
+\end{flushleft}
+\end{center}
+\end{frame}
+
+\section{Conclusion}
+
+\begin{frame}{Conclusion}
+\framesubtitle{Results}
+\begin{itemize}
+\item[\color{th_red}\checkmark] Char-level tweet creation
+\item[\color{th_red}\checkmark] Word-level creation
+\item[\color{th_red}\checkmark] Readable results
+\vspace{4mm}
+\item[\color{th_red}--] Still easy to distinguish
+\item[\color{th_red}--] Clinton model sometimes won't predict readable results
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Conclusion}
+\framesubtitle{Possible Improvements}
+\begin{columns}
+\column{0.5\textwidth}
+\begin{itemize}
+\itemsep1em
+\item Gather more data
+\item Deeper network
+\item Use optimization tools to find good hyperparameter combinations
+\item Implement beam search
+\item Use Attention techniques
+\end{itemize}
+
+\column{0.5\textwidth}
+\centering{\includegraphics<2>[width=\textwidth]{sources/beam_search.png}}
+\centering{\includegraphics<3>[height=7cm]{sources/attention_example.png}}
+\end{columns}
+\end{frame}
 
 \section{References}
 
@@ -298,6 +512,9 @@ house .~$\Rightarrow$ [\textquotedbl house\textquotedbl , \textquotedbl .\textqu
 \begin{itemize}
 \item Twitter Developers -- \url{https://developer.twitter.com/en.html}
 \item GetOldTweets -- \url{https://github.com/Jefferson-Henrique/GetOldTweets-python}
+\item Transformer -- \url{https://ai.googleblog.com/2017/08/transformer-novel-neural-network.html}
+\item Beam Search -- \url{https://towardsdatascience.com/the-arti-canon-neural-text-generation-2wwa8f032c2a68}
+\item Tay (German source) -- \url{https://www.faz.net/aktuell/wirtschaft/netzwirtschaft/microsofts-bot-tay-wird-durch-nutzer-zum-nazi-und-sexist-14144019.html}
 \end{itemize}
 \end{small}
 \end{frame}
